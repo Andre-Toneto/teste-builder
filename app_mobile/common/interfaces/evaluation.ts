@@ -1,0 +1,32 @@
+export default interface TEvaluation {
+    id : string | null;
+    name : string | null;
+    identification: string | null;
+    landline: string | null;
+    cell_phone: string | null;
+    email: string | null;
+    city: string | null;
+    state: string | null;
+    zip_code: string | null;
+    address: string | null;
+    number: string | null;
+    complement: string | null;
+    neighborhood: string | null;
+    status: string | null;
+    created_at: string | null;
+    type: string | null;
+    type_professional: string | null;
+    workspace: string | null;
+    number_rooms: number | null;
+    professional_council_number: string | null;
+    professional_training: string | null;
+    name_of_institution: string | null;
+    completion_date: string | null;
+    proof_of_completion: string | null;
+    experience_in_injectables: number | null;
+    fillers: number | null;
+    botulinum_toxin: number | null;
+    pdo_threads: number | null;
+    specialty_to_perform_aesthetic_procedures: number | null;
+    image_profile: string | null;
+}

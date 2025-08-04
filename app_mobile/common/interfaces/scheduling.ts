@@ -1,0 +1,18 @@
+export default interface TSchedule {
+    id : string | null,
+    startTime  : string | null,
+    endTime : string | null,
+    subject : string | null,
+    id_product : string | null,
+    id_patient : string | null,
+    id_professional : string | null,
+    location : string | null,
+    id_clinic : string | null,
+    description : string | null,
+    product :  string | null,
+    clinic : string | null,
+    professional : string | null,
+    patient : string | null,
+    status : string | null,
+    color : string | null,
+}
