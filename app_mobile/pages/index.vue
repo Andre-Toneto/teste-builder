@@ -162,39 +162,7 @@ const lastAppointment = computed(() => {
     .sort((a, b) => new Date(b.startTime).getTime() - new Date(a.startTime).getTime())[0];
 });
 
-// Mock data para salas disponíveis
-const availableRooms = ref([
-  {
-    id: '1',
-    name: 'Consultório Premium',
-    description: 'Sala com equipamentos completos',
-    status: 'disponivel',
-    capacity: 2,
-    nextAvailable: 'Agora'
-  },
-  {
-    id: '2',
-    name: 'Sala de Procedimentos',
-    description: 'Ideal para injetáveis e preenchimentos',
-    status: 'disponivel',
-    capacity: 1,
-    nextAvailable: '14:00'
-  }
-])
-
-// Função para obter próximo agendamento
-const getNextAppointmentTime = () => {
-  const appointments = useScheduling().datasource
-  if (!appointments.length) return ''
-
-  const next = appointments.find(app => new Date(app.startTime) > new Date())
-  return next ? new Date(next.startTime).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }) : ''
-}
-
-// Handler para reserva de sala
-const handleRoomReservation = (room) => {
-  navigateTo(`/appointments/new?room=${room.id}`)
-}
+// Funções simplificadas
 
 // Onboarding logic removida temporariamente
 
