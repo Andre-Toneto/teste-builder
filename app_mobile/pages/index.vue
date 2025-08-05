@@ -205,6 +205,14 @@ const lastAppointment = computed(() => {
 
 // Funções simplificadas
 
+// Função para saudação baseada no horário
+const getGreeting = () => {
+  const hour = new Date().getHours()
+  if (hour < 12) return 'Bom dia, estrela! ☀️'
+  if (hour < 18) return 'Boa tarde, sucesso! 🌟'
+  return 'Boa noite, campeão! 🌙'
+}
+
 // Onboarding logic removida temporariamente
 
 onMounted( async() => {
