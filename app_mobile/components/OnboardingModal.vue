@@ -59,7 +59,7 @@
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-blue-800 text-sm">🛡️ Suporte Técnico 24/7</h3>
+              <h3 class="font-bold text-blue-800 text-sm">🛡�� Suporte Técnico 24/7</h3>
               <p class="text-blue-700 text-xs">Equipe especializada sempre disponível durante seus atendimentos</p>
             </div>
           </div>
@@ -204,23 +204,13 @@
         <div v-else class="flex-1"></div>
 
         <button
-          @click.prevent="nextSlide"
-          type="button"
-          style="position: relative; z-index: 1000; pointer-events: auto;"
+          @click="nextSlide"
           class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-xl text-sm font-bold hover:from-purple-600 hover:to-pink-600 transition-all flex items-center shadow-lg"
         >
           Continuar
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
           </svg>
-        </button>
-
-        <!-- Botão de teste temporário -->
-        <button
-          @click="currentSlide++"
-          class="ml-2 bg-red-500 text-white px-2 py-1 rounded text-xs"
-        >
-          TESTE +
         </button>
       </div>
 
