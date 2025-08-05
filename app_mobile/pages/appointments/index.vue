@@ -107,7 +107,7 @@
           <input
             type="text"
             class="w-full pl-12 pr-4 py-3 bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl text-gray-700 placeholder-purple-400 focus:border-purple-400 focus:outline-none transition-all"
-            placeholder="🔍 Encontre seu próximo atendimento especial..."
+            placeholder="🔍 Procurar por um dia específico ou procedimento..."
             v-model="searchQuery"
           />
           <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
