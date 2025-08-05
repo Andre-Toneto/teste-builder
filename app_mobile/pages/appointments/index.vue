@@ -368,6 +368,27 @@ const editAppointment = (id) => {
   router.push(`appointments/${id}`)
 }
 
+// Funções para manuseio da agenda
+const handleSlotClick = (slotData) => {
+  // Mostrar feedback de confirmação
+  const date = new Date(slotData.date)
+  confirmationDetails.value = {
+    date: date.toLocaleDateString('pt-BR', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    }),
+    time: `${slotData.hour}:00 - ${slotData.hour + 1}:00`
+  }
+  showConfirmationFeedback.value = true
+}
+
+const handleAppointmentClick = (appointment) => {
+  // Editar agendamento existente
+  editAppointment(appointment.id)
+}
+
 onMounted( async() => {
 
   if (useApp().user.user_type == 'P') {
