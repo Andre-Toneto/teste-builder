@@ -182,9 +182,9 @@ const router = useRouter();
 const searchQuery = ref('');
 const activeTab = ref('upcoming');
 const tabs = [
-  { label: 'Minha agenda', value: 'upcoming' },
-  { label: 'Finalizados', value: 'past' },
-  { label: 'Em aberto', value: 'open' },
+  { label: '📅 Meus próximos sonhos', value: 'upcoming' },
+  { label: '✨ Transformações realizadas', value: 'past' },
+  { label: '⏳ Aguardando confirmação', value: 'open' },
 ];
 
 // Função para contar items em cada tab
