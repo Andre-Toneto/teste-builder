@@ -206,6 +206,7 @@
         <button
           @click.prevent="nextSlide"
           type="button"
+          style="position: relative; z-index: 1000; pointer-events: auto;"
           class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-xl text-sm font-bold hover:from-purple-600 hover:to-pink-600 transition-all flex items-center shadow-lg"
         >
           Continuar
