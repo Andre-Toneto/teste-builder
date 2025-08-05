@@ -1,23 +1,51 @@
 <template>
   <div class="page-container">
-    <!-- Header acolhedor -->
-    <div class="mb-6">
-      <h1 class="text-2xl font-bold text-gray-800 mb-2">Seus horários na Neo Viso</h1>
-      <p class="text-gray-600">Gerencie sua agenda e escolha os melhores horários para seus atendimentos</p>
+    <!-- Header emocional e acolhedor -->
+    <div class="mb-8">
+      <div class="bg-gradient-to-br from-violet-500 via-purple-500 to-pink-500 rounded-2xl p-6 text-white shadow-2xl">
+        <div class="flex items-start justify-between">
+          <div class="flex-1">
+            <div class="flex items-center mb-3">
+              <div class="bg-white/20 rounded-full p-2 mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <span class="text-white/80 text-sm font-medium">SUA CLÍNICA PARTICULAR</span>
+            </div>
+            <h1 class="text-2xl font-bold mb-2">Sua agenda de transformações</h1>
+            <p class="text-white/90 text-sm leading-relaxed">
+              Cada agendamento é uma oportunidade de realizar sonhos. <br>
+              <span class="font-medium">Este é o seu espaço para brilhar! ✨</span>
+            </p>
+          </div>
+          <div class="bg-white/10 rounded-xl px-3 py-2 backdrop-blur-sm">
+            <div class="text-xs text-white/70 mb-1">Próximos dias</div>
+            <div class="text-lg font-bold">{{ getTabCount('upcoming') }}</div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- CTA destacado -->
-    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl p-4 mb-6 text-white">
+    <!-- CTA Call-to-Action Emocional -->
+    <div class="bg-gradient-to-r from-emerald-400 via-teal-500 to-blue-500 rounded-2xl p-5 mb-6 text-white shadow-xl">
       <div class="flex items-center justify-between">
-        <div>
-          <h3 class="font-semibold mb-1">Pronto para mais um dia incrível?</h3>
-          <p class="text-primary-100 text-sm">Reserve seu consultório e transforme vidas</p>
+        <div class="flex items-center">
+          <div class="bg-white/20 rounded-full p-3 mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-1">Que tal mais um dia de sucesso? 🌟</h3>
+            <p class="text-white/90 text-sm">Reserve seu consultório dos sonhos agora mesmo</p>
+          </div>
         </div>
         <button
-          class="bg-white text-primary-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-50 transition-colors"
+          class="bg-white text-emerald-600 px-6 py-3 rounded-xl text-sm font-bold hover:bg-emerald-50 transition-all transform hover:scale-105 shadow-lg"
           @click="navigateToNewAppointment"
         >
-          Reservar horário
+          Quero reservar! 🎯
         </button>
       </div>
     </div>
