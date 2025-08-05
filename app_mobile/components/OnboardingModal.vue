@@ -224,14 +224,15 @@
 </template>
 
 <script setup>
-interface Props {
-  show?: boolean
-  userName?: string
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  show: true,
-  userName: 'Doutor(a)'
+const props = defineProps({
+  show: {
+    type: Boolean,
+    default: true
+  },
+  userName: {
+    type: String,
+    default: 'Doutor(a)'
+  }
 })
 
 const emit = defineEmits(['close', 'startReservation'])
