@@ -1,5 +1,13 @@
 <template>
   <div class="page-container">
+    <!-- Onboarding Modal -->
+    <OnboardingModal
+      :show="showOnboarding"
+      :user-name="useApp().user.name || 'Doutor(a)'"
+      @close="closeOnboarding"
+      @start-reservation="startReservation"
+    />
+
     <!-- Bloco de boas-vindas emocional -->
     <div class="relative overflow-hidden bg-gradient-to-br from-violet-600 via-purple-600 to-pink-600 rounded-2xl p-6 shadow-2xl text-white mb-8">
       <!-- Decoração de fundo -->
