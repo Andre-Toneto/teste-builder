@@ -50,6 +50,14 @@
       </div>
     </div>
 
+    <!-- Dica Neo Viso -->
+    <NeoVisoTip
+      tip-id="appointments_concept"
+      tip-title="Conceito Neo Viso: Sua clínica por um dia!"
+      tip-content="Aqui você não está apenas alugando uma sala. Você se torna o dono da clínica durante seu atendimento! Estrutura completa, produtos premium e suporte 24/7 para você brilhar."
+      :tip-action="{ text: '🎯 Ver como funciona', callback: () => navigateTo('/') }"
+    />
+
     <!-- Filtros Empáticos -->
     <div class="mb-8">
       <div class="bg-white rounded-2xl p-4 shadow-lg border border-purple-100">
