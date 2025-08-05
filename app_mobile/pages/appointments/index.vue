@@ -83,39 +83,51 @@
       </div>
     </div>
     
-    <!-- Past appointments section -->
+    <!-- Agendamentos realizados -->
     <div v-if="activeTab === 'past'">
-      <div v-if="appointmentsDone.length > 0">
-        <AppointmentCard 
-          v-for="appointment in appointmentsDone" 
-          :key="appointment.id" 
-          :appointment="appointment" 
+      <div v-if="appointmentsDone.length > 0" class="space-y-3">
+        <AppointmentCard
+          v-for="appointment in appointmentsDone"
+          :key="appointment.id"
+          :appointment="appointment"
           @edit="editAppointment"
         />
       </div>
-      <div v-else class="text-center py-8">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-gray-300 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <p class="text-gray-500">Sem agendamentos realizados</p>
+      <div v-else class="card text-center py-12">
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Sem atendimentos finalizados ainda</h3>
+        <p class="text-gray-500 leading-relaxed">
+          Quando você realizar seus primeiros atendimentos na Neo Viso,<br>
+          eles aparecerão aqui como seu histórico de sucesso.
+        </p>
       </div>
     </div>
-    
-    <!-- Cancelled appointments section -->
+
+    <!-- Agendamentos em aberto -->
     <div v-if="activeTab === 'open'">
-      <div v-if="appointmentsOpen.length > 0">
-        <AppointmentCard 
-          v-for="appointment in appointmentsOpen" 
-          :key="appointment.id" 
-          :appointment="appointment" 
+      <div v-if="appointmentsOpen.length > 0" class="space-y-3">
+        <AppointmentCard
+          v-for="appointment in appointmentsOpen"
+          :key="appointment.id"
+          :appointment="appointment"
           @edit="editAppointment"
         />
       </div>
-      <div v-else class="text-center py-8">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-gray-300 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-        <p class="text-gray-500">Sem agendamentos abertos</p>
+      <div v-else class="card text-center py-12">
+        <div class="bg-gradient-to-br from-blue-50 to-sky-50 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Nenhum agendamento em aberto</h3>
+        <p class="text-gray-500 leading-relaxed">
+          Perfeito! Você está com a agenda organizada.<br>
+          Todos os seus horários estão confirmados ou finalizados.
+        </p>
       </div>
     </div>
   </div>
