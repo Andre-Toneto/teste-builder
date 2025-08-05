@@ -1,8 +1,8 @@
 <template>
   <div class="min-h-screen flex flex-col">
-    <div class="bg-primary-600 text-white py-6 px-4">
-      <h1 class="text-2xl font-semibold">Bem vindo de volta!</h1>
-      <p class="text-primary-100">Entre em sua conta Neoviso</p>
+    <div class="bg-primary-600 text-white py-8 px-4">
+      <h1 class="text-2xl font-semibold">Bem-vindo(a) de volta!</h1>
+      <p class="text-primary-100">Sua clínica particular te espera na Neo Viso</p>
     </div>
     
     <div class="flex-1 p-6">
