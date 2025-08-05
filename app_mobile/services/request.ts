@@ -6,13 +6,8 @@ class HttpRequest {
     private baseUrl: string;
 
     constructor() {
-        if (process.env.NODE_ENV === 'production') {
-            this.baseUrl = 'https://api.neovisoapp.online/api/';
-        }
-        else {
-            this.baseUrl = 'http://localhost:8081/api/';
-        }
-
+        // Sempre usar URL de produção conforme solicitado
+        this.baseUrl = 'https://api.neovisoapp.online/api/';
     }
 
     public async request<T>(method: 'GET' | 'POST' | 'PUT' | 'DELETE', route: string, body?: any): Promise<AxiosResponse<T>> {
