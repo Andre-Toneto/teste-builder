@@ -1,5 +1,8 @@
 <template>
   <div class="page-container">
+    <!-- Modal de onboarding -->
+    <OnboardingModal :show="showOnboarding" @close="closeOnboarding" />
+
     <!-- Bloco de boas-vindas personalizado -->
     <WelcomeBlock
       :user-name="useApp().user.name || 'Doutor(a)'"
