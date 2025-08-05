@@ -135,24 +135,12 @@ const menuItems = [
 ];
 
 const handleLogout = () => {
-  // Will be implemented with actual auth logic
-  useApp().logged = false;
-  localStorage.setItem("logged", false);
-  router.push('/auth/login')
-}
-
-onBeforeMount(() => {
-  if (localStorage.getItem("logged")) {
-    let login_data = {
-      user: localStorage.getItem("user"),
-      password: localStorage.getItem("password")
-    }
-    useApp().login(login_data).then((res) => {
-      useApp().setUser(res)
-    })
+  if (process.client) {
+    useApp().logged = false;
+    localStorage.setItem("logged", 'false');
+    localStorage.removeItem("user");
+    localStorage.removeItem("password");
+    router.push('/auth/login')
   }
-
-  
-
-})
+}
 </script>
