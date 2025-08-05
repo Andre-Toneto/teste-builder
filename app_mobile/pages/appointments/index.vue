@@ -50,34 +50,45 @@
       </div>
     </div>
 
-    <!-- Filtros melhorados -->
-    <div class="mb-6">
-      <div class="flex flex-wrap gap-2 mb-4">
-        <button
-          v-for="tab in tabs"
-          :key="tab.value"
-          @click="activeTab = tab.value"
-          class="px-4 py-2 text-sm font-medium rounded-full transition-all"
-          :class="activeTab === tab.value ? 'bg-primary-600 text-white shadow-sm' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'"
-        >
-          {{ tab.label }}
-          <span v-if="getTabCount(tab.value) > 0" class="ml-1 text-xs bg-white bg-opacity-20 px-1.5 py-0.5 rounded-full">
-            {{ getTabCount(tab.value) }}
-          </span>
-        </button>
-      </div>
-
-      <div class="relative">
-        <input
-          type="text"
-          class="input-field pl-10 bg-white"
-          placeholder="Buscar por procedimento ou data..."
-          v-model="searchQuery"
-        />
-        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+    <!-- Filtros Empáticos -->
+    <div class="mb-8">
+      <div class="bg-white rounded-2xl p-4 shadow-lg border border-purple-100">
+        <h3 class="text-sm font-bold text-gray-700 mb-3 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4" />
           </svg>
+          Organize seus atendimentos do seu jeito
+        </h3>
+
+        <div class="flex flex-wrap gap-3 mb-4">
+          <button
+            v-for="tab in tabs"
+            :key="tab.value"
+            @click="activeTab = tab.value"
+            class="px-4 py-2.5 text-sm font-semibold rounded-full transition-all transform hover:scale-105"
+            :class="activeTab === tab.value ?
+              'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg' :
+              'bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 hover:from-purple-100 hover:to-pink-100'"
+          >
+            {{ tab.label }}
+            <span v-if="getTabCount(tab.value) > 0" class="ml-2 text-xs bg-white/30 px-2 py-0.5 rounded-full">
+              {{ getTabCount(tab.value) }}
+            </span>
+          </button>
+        </div>
+
+        <div class="relative">
+          <input
+            type="text"
+            class="w-full pl-12 pr-4 py-3 bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl text-gray-700 placeholder-purple-400 focus:border-purple-400 focus:outline-none transition-all"
+            placeholder="🔍 Encontre seu próximo atendimento especial..."
+            v-model="searchQuery"
+          />
+          <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
