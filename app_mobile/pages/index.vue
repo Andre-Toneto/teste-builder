@@ -336,6 +336,13 @@ onMounted( async() => {
     checkFirstVisit()
   }, 1000) // Delay para garantir que a página carregou
 
+  // Listener para reabrir onboarding do header
+  if (process.client) {
+    window.addEventListener('open-onboarding', () => {
+      showOnboarding.value = true
+    })
+  }
+
   await useAppProducts().getProducts()
 
   if (useApp().user.user_type == 'P') {
