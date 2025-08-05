@@ -35,20 +35,24 @@
 </template>
 
 <script setup>
-interface TipAction {
-  text: string
-  route?: string
-  callback?: () => void
-}
-
-interface Props {
-  tipId: string
-  tipTitle: string
-  tipContent: string
-  tipAction?: TipAction
-}
-
-const props = defineProps<Props>()
+const props = defineProps({
+  tipId: {
+    type: String,
+    required: true
+  },
+  tipTitle: {
+    type: String,
+    required: true
+  },
+  tipContent: {
+    type: String,
+    required: true
+  },
+  tipAction: {
+    type: Object,
+    default: null
+  }
+})
 
 const isDismissed = ref(false)
 
