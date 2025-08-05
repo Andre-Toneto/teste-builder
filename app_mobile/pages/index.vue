@@ -51,31 +51,64 @@
       </div>
     </div>
 
-    <!-- Estruturas disponíveis -->
+    <!-- Sua clínica dos sonhos -->
     <section class="mb-8">
-      <div class="flex items-center justify-between mb-4">
-        <h2 class="text-lg font-semibold text-gray-800">Estruturas disponíveis</h2>
-        <NuxtLink to="/locations" class="text-primary-600 text-sm font-medium">Ver todas</NuxtLink>
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h2 class="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+            🏰 Sua clínica dos sonhos
+          </h2>
+          <p class="text-gray-600 text-sm">Escolha seu consultório particular</p>
+        </div>
+        <NuxtLink to="/locations" class="text-emerald-600 text-sm font-semibold hover:text-emerald-700">
+          Ver todas 🏢
+        </NuxtLink>
       </div>
 
-      <div class="card mb-4">
-        <h3 class="font-medium text-gray-800 mb-2">Consultório Premium</h3>
-        <p class="text-gray-600 text-sm mb-3">Sala com equipamentos completos - Disponível agora</p>
-        <NuxtLink to="/appointments/new" class="btn-primary text-sm">Reservar agora</NuxtLink>
+      <div class="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 rounded-2xl p-6 mb-4 border border-emerald-100 shadow-lg">
+        <div class="flex items-start justify-between">
+          <div class="flex-1">
+            <div class="flex items-center mb-3">
+              <div class="bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full p-2 mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h4a1 1 0 011 1v5m-6 0h6" />
+                </svg>
+              </div>
+              <span class="bg-green-500 text-white text-xs px-2 py-1 rounded-full font-semibold">✨ DISPONÍVEL AGORA</span>
+            </div>
+            <h3 class="font-bold text-emerald-800 mb-2 text-lg">💎 Consultório Premium VIP</h3>
+            <p class="text-emerald-700 text-sm mb-3 leading-relaxed">
+              <span class="font-semibold">Equipamentos de última geração,</span> ambiente climatizado,<br>
+              <span class="text-emerald-600">música relaxante e toda estrutura para você brilhar! 🌟</span>
+            </p>
+          </div>
+        </div>
+        <NuxtLink
+          to="/appointments/new"
+          class="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-6 py-3 rounded-xl text-sm font-bold hover:from-emerald-600 hover:to-teal-600 transition-all transform hover:scale-105 shadow-lg inline-flex items-center"
+        >
+          🚀 Quero este consultório!
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </NuxtLink>
       </div>
 
-      <div class="bg-primary-50 border border-primary-100 rounded-xl p-4">
-        <div class="flex items-start space-x-3">
-          <div class="bg-primary-100 rounded-full p-2 flex-shrink-0">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <div class="bg-gradient-to-r from-purple-100 via-pink-100 to-indigo-100 rounded-2xl p-5 border border-purple-200">
+        <div class="flex items-start space-x-4">
+          <div class="bg-gradient-to-r from-purple-500 to-pink-500 rounded-full p-3 flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
           <div>
-            <p class="text-sm font-medium text-primary-800 mb-1">Sua estrutura completa te espera</p>
-            <p class="text-xs text-primary-600 leading-relaxed">
-              Consultórios equipados, suporte técnico e ambiente acolhedor para seus pacientes.
-            </p>
+            <h4 class="font-bold text-purple-800 mb-2">🎯 Por que a Neo Viso é especial?</h4>
+            <ul class="text-purple-700 text-sm space-y-1">
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Consultórios com tecnologia de ponta</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Suporte técnico 24/7 durante atendimentos</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Ambiente acolhedor para seus pacientes</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> <span class="font-semibold">Marketing de resultados para alavancar seus negócios! 📈</span></li>
+            </ul>
           </div>
         </div>
       </div>
