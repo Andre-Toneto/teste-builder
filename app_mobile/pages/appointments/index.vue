@@ -1,24 +1,49 @@
 <template>
   <div class="page-container">
-    <h1 class="page-title">Agendamentos</h1>
-    
-    <div class="mb-6 flex justify-between items-center">
-      <button 
-        v-for="tab in tabs" 
-        :key="tab.value" 
-        @click="activeTab = tab.value" 
-        class="px-3 py-2 text-sm font-medium rounded-md"
-        :class="activeTab === tab.value ? 'bg-primary-100 text-primary-700' : 'text-gray-600 hover:bg-gray-100'"
-      >
-        {{ tab.label }}
-      </button>
+    <!-- Header acolhedor -->
+    <div class="mb-6">
+      <h1 class="text-2xl font-bold text-gray-800 mb-2">Seus horários na Neo Viso</h1>
+      <p class="text-gray-600">Gerencie sua agenda e escolha os melhores horários para seus atendimentos</p>
     </div>
-    <div class="mb-2">
+
+    <!-- CTA destacado -->
+    <div class="bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl p-4 mb-6 text-white">
+      <div class="flex items-center justify-between">
+        <div>
+          <h3 class="font-semibold mb-1">Pronto para mais um dia incrível?</h3>
+          <p class="text-primary-100 text-sm">Reserve seu consultório e transforme vidas</p>
+        </div>
+        <button
+          class="bg-white text-primary-600 px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-50 transition-colors"
+          @click="navigateToNewAppointment"
+        >
+          Reservar horário
+        </button>
+      </div>
+    </div>
+
+    <!-- Filtros melhorados -->
+    <div class="mb-6">
+      <div class="flex flex-wrap gap-2 mb-4">
+        <button
+          v-for="tab in tabs"
+          :key="tab.value"
+          @click="activeTab = tab.value"
+          class="px-4 py-2 text-sm font-medium rounded-full transition-all"
+          :class="activeTab === tab.value ? 'bg-primary-600 text-white shadow-sm' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'"
+        >
+          {{ tab.label }}
+          <span v-if="getTabCount(tab.value) > 0" class="ml-1 text-xs bg-white bg-opacity-20 px-1.5 py-0.5 rounded-full">
+            {{ getTabCount(tab.value) }}
+          </span>
+        </button>
+      </div>
+
       <div class="relative">
-        <input 
-          type="text" 
-          class="input-field pl-10" 
-          placeholder="Procurar por Serviço ou Data"
+        <input
+          type="text"
+          class="input-field pl-10 bg-white"
+          placeholder="Buscar por procedimento ou data..."
           v-model="searchQuery"
         />
         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -27,15 +52,6 @@
           </svg>
         </div>
       </div>
-    </div>
-    
-    <div class="mb-4">
-      <button 
-        class="btn-primary w-full mb-6"
-        @click="navigateToNewAppointment"
-      >
-        Novo Agendamento
-      </button>
     </div>
 
     <!-- Upcoming appointments section -->
