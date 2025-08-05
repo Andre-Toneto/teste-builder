@@ -65,8 +65,8 @@
       
       <div class="mt-6 text-center">
         <p class="text-sm text-gray-600">
-          Não tem uma conta?
-          <NuxtLink to="/auth/register" class="text-primary-600 font-medium">Cadastre-se</NuxtLink>
+          Ainda não faz parte da Neo Viso?
+          <NuxtLink to="/auth/register" class="text-primary-600 font-medium">Quero me cadastrar</NuxtLink>
         </p>
       </div>
     </div>
