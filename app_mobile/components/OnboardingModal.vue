@@ -214,6 +214,14 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
           </svg>
         </button>
+
+        <!-- Botão de teste temporário -->
+        <button
+          @click="currentSlide++"
+          class="ml-2 bg-red-500 text-white px-2 py-1 rounded text-xs"
+        >
+          TESTE +
+        </button>
       </div>
 
       <!-- Close Button -->
