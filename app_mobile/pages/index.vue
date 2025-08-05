@@ -1,15 +1,54 @@
 <template>
   <div class="page-container">
-    <!-- Bloco de boas-vindas personalizado -->
-    <div class="bg-gradient-to-br from-primary-600 to-primary-700 rounded-xl p-5 shadow-lg text-white mb-6">
-      <h2 class="text-lg font-semibold mb-1">
-        <ClientOnly fallback="Bem-vindo(a), Doutor(a)!">
-          Bem-vindo(a), {{ useApp().user.name || 'Doutor(a)' }}!
-        </ClientOnly>
-      </h2>
-      <p class="text-primary-100 text-sm leading-relaxed">
-        Hoje a clínica Neo Viso é sua! Nossa estrutura te espera.
-      </p>
+    <!-- Bloco de boas-vindas emocional -->
+    <div class="relative overflow-hidden bg-gradient-to-br from-violet-600 via-purple-600 to-pink-600 rounded-2xl p-6 shadow-2xl text-white mb-8">
+      <!-- Decoração de fundo -->
+      <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-white/10 rounded-full"></div>
+      <div class="absolute bottom-0 left-0 -mb-8 -ml-8 w-32 h-32 bg-white/5 rounded-full"></div>
+
+      <div class="relative z-10">
+        <div class="flex items-center mb-4">
+          <div class="bg-white/20 rounded-full p-3 mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <div class="flex-1">
+            <div class="text-white/80 text-xs font-semibold tracking-wider uppercase mb-1">BEM-VINDO AO SEU REINO ✨</div>
+            <h2 class="text-xl font-bold">
+              <ClientOnly fallback="Olá, Doutor(a) incrível! 🌟">
+                Olá, {{ useApp().user.name || 'Doutor(a)' }} incrível! 🌟
+              </ClientOnly>
+            </h2>
+          </div>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 mb-4">
+          <p class="text-white text-sm leading-relaxed mb-2">
+            <span class="font-semibold">🏰 Hoje a Neo Viso é inteiramente sua!</span><br>
+            Sua estrutura dos sonhos te espera para mais um dia de transformações incríveis.
+          </p>
+          <p class="text-white/90 text-xs">
+            💫 Cada atendimento é uma oportunidade de realizar sonhos!
+          </p>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-4">
+            <div class="text-center">
+              <div class="text-2xl font-bold">{{ new Date().getDate() }}</div>
+              <div class="text-xs text-white/80">{{ new Date().toLocaleDateString('pt-BR', { month: 'short' }) }}</div>
+            </div>
+            <div class="text-left">
+              <div class="text-sm font-semibold">{{ getGreeting() }}</div>
+              <div class="text-xs text-white/80">Vamos brilhar hoje? ✨</div>
+            </div>
+          </div>
+          <NuxtLink to="/appointments/new" class="bg-white text-purple-600 px-4 py-2 rounded-xl text-sm font-bold hover:bg-purple-50 transition-all transform hover:scale-105">
+            🚀 Vou reservar!
+          </NuxtLink>
+        </div>
+      </div>
     </div>
 
     <!-- Estruturas disponíveis -->
