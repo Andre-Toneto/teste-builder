@@ -1,36 +1,215 @@
 <template>
   <div class="page-container">
-    <div class="mb-8">
-      <h1 class="text-2xl font-semibold text-gray-800 mb-2">Bem vindo(a) de volta, {{ useApp().user.name }}!</h1>
-      <p class="text-gray-600">Vamos agendar um serviço hoje?</p>
+    <!-- Onboarding Modal -->
+    <ClientOnly>
+      <OnboardingModal
+        :show="showOnboarding"
+        :user-name="userName"
+        @close="closeOnboarding"
+        @start-reservation="startReservation"
+      />
+    </ClientOnly>
+
+    <!-- Bloco de boas-vindas emocional -->
+    <div class="relative overflow-hidden bg-gradient-to-br from-violet-600 via-purple-600 to-pink-600 rounded-2xl p-6 shadow-2xl text-white mb-8">
+      <!-- Decoração de fundo -->
+      <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-white/10 rounded-full"></div>
+      <div class="absolute bottom-0 left-0 -mb-8 -ml-8 w-32 h-32 bg-white/5 rounded-full"></div>
+
+      <div class="relative z-10">
+        <div class="flex items-center mb-4">
+          <div class="bg-white/20 rounded-full p-3 mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <div class="flex-1">
+            <div class="text-white/80 text-xs font-semibold tracking-wider uppercase mb-1">BEM-VINDO AO SEU REINO ✨</div>
+            <h2 class="text-xl font-bold">
+              <ClientOnly fallback="Olá, Doutor(a) incrível! 🌟">
+                Olá, {{ useApp().user.name || 'Doutor(a)' }} incrível! 🌟
+              </ClientOnly>
+            </h2>
+          </div>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 mb-4">
+          <p class="text-white text-sm leading-relaxed mb-2">
+            <span class="font-semibold">🏰 Hoje a Neo Viso é inteiramente sua!</span><br>
+            Sua estrutura dos sonhos te espera para mais um dia de transformações incríveis.
+          </p>
+          <p class="text-white/90 text-xs">
+            💫 Cada atendimento é uma oportunidade de realizar sonhos!
+          </p>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-4">
+            <ClientOnly fallback="<div class='text-center'><div class='text-2xl font-bold'>--</div><div class='text-xs text-white/80'>---</div></div>">
+              <div class="text-center">
+                <div class="text-2xl font-bold">{{ currentDate.day }}</div>
+                <div class="text-xs text-white/80">{{ currentDate.month }}</div>
+              </div>
+            </ClientOnly>
+            <div class="text-left">
+              <ClientOnly fallback="<div class='text-sm font-semibold'>Olá!</div>">
+                <div class="text-sm font-semibold">{{ currentGreeting }}</div>
+              </ClientOnly>
+              <div class="text-xs text-white/80">Vamos brilhar hoje? ✨</div>
+            </div>
+          </div>
+          <NuxtLink to="/appointments/new" class="bg-white text-purple-600 px-4 py-2 rounded-xl text-sm font-bold hover:bg-purple-50 transition-all transform hover:scale-105">
+            🚀 Montar meu dia!
+          </NuxtLink>
+        </div>
+      </div>
     </div>
+
+    <!-- Sua clínica dos sonhos -->
+    <section class="mb-8">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h2 class="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+            🏰 Reserve seu consultório particular
+          </h2>
+          <p class="text-gray-600 text-sm">Estrutura completa para seus dias de trabalho</p>
+        </div>
+        <NuxtLink to="/locations" class="text-emerald-600 text-sm font-semibold hover:text-emerald-700">
+          Ver todas ��
+        </NuxtLink>
+      </div>
+
+      <div class="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 rounded-2xl p-6 mb-4 border border-emerald-100 shadow-lg">
+        <div class="flex items-start justify-between">
+          <div class="flex-1">
+            <div class="flex items-center mb-3">
+              <div class="bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full p-2 mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h4a1 1 0 011 1v5m-6 0h6" />
+                </svg>
+              </div>
+              <span class="bg-green-500 text-white text-xs px-2 py-1 rounded-full font-semibold">✨ DISPONÍVEL AGORA</span>
+            </div>
+            <h3 class="font-bold text-emerald-800 mb-2 text-lg">💎 Consultório Premium VIP</h3>
+            <p class="text-emerald-700 text-sm mb-3 leading-relaxed">
+              <span class="font-semibold">Equipamentos de última geração,</span> ambiente climatizado,<br>
+              <span class="text-emerald-600">música relaxante e toda estrutura para você brilhar! 🌟</span>
+            </p>
+          </div>
+        </div>
+        <NuxtLink
+          to="/appointments/new"
+          class="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-6 py-3 rounded-xl text-sm font-bold hover:from-emerald-600 hover:to-teal-600 transition-all transform hover:scale-105 shadow-lg inline-flex items-center"
+        >
+          🚀 Reservar este espaço!
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </NuxtLink>
+      </div>
+
+      <div class="bg-gradient-to-r from-purple-100 via-pink-100 to-indigo-100 rounded-2xl p-5 border border-purple-200">
+        <div class="flex items-start space-x-4">
+          <div class="bg-gradient-to-r from-purple-500 to-pink-500 rounded-full p-3 flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h4 class="font-bold text-purple-800 mb-2">🎯 Por que a Neo Viso é especial?</h4>
+            <ul class="text-purple-700 text-sm space-y-1">
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Consultórios com tecnologia de ponta</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Suporte técnico 24/7 durante atendimentos</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Ambiente acolhedor para seus pacientes</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> <span class="font-semibold">Marketing de resultados para alavancar seus negócios! 📈</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
     
+    <!-- Seção dos Diferenciais Neo Viso -->
+    <section class="mb-8">
+      <div class="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-2xl p-6 text-white shadow-2xl">
+        <div class="text-center mb-6">
+          <div class="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h2 class="text-xl font-bold mb-2">🏆 Por que a Neo Viso é diferente?</h2>
+          <p class="text-white/90 text-sm">Sua clínica particular com tudo incluso!</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+            <div class="text-2xl mb-2">💎</div>
+            <h3 class="font-bold text-sm mb-1">Estrutura VIP</h3>
+            <p class="text-white/80 text-xs">Consultórios premium com equipamentos de última geração</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+            <div class="text-2xl mb-2">🛡️</div>
+            <h3 class="font-bold text-sm mb-1">Suporte 24/7</h3>
+            <p class="text-white/80 text-xs">Equipe especializada sempre disponível</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+            <div class="text-2xl mb-2">📈</div>
+            <h3 class="font-bold text-sm mb-1">Marketing</h3>
+            <p class="text-white/80 text-xs">Estratégias para alavancar seus negócios</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+            <div class="text-2xl mb-2">🎨</div>
+            <h3 class="font-bold text-sm mb-1">Produtos</h3>
+            <p class="text-white/80 text-xs">Linha completa de produtos premium</p>
+          </div>
+        </div>
+
+        <div class="mt-6 text-center">
+          <p class="text-white/90 text-sm font-medium mb-2">
+            💡 <span class="font-bold">Conceito único:</span> Você é o dono por um dia!
+          </p>
+          <button
+            @click="showOnboarding = true"
+            class="bg-white text-purple-600 px-4 py-2 rounded-xl text-sm font-bold hover:bg-purple-50 transition-all"
+          >
+            🎯 Ver como funciona
+          </button>
+        </div>
+      </div>
+    </section>
+
     <section class="mb-8">
       <div class="flex items-center justify-between mb-4">
-        <h2 class="text-md font-medium">Último agendamento</h2>
-        <NuxtLink to="/appointments" class="text-primary-600 text-sm font-medium">Ver todos</NuxtLink>
+        <h2 class="text-lg font-semibold text-gray-800">Seus próximos atendimentos</h2>
+        <NuxtLink to="/appointments" class="text-primary-600 text-sm font-medium">Ver agenda completa</NuxtLink>
       </div>
-      
+
       <div v-if="lastAppointment">
-        <AppointmentCard 
-          :key="lastAppointment.id" 
-          :appointment="lastAppointment" 
+        <AppointmentCard
+          :key="lastAppointment.id"
+          :appointment="lastAppointment"
           class="mb-3"
         />
       </div>
       <div v-else class="card flex flex-col items-center justify-center py-8">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-300 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-        <p class="text-gray-500 mb-4">Sem agendamentos</p>
-        <NuxtLink to="/appointments/new" class="btn-primary">Agende agora!</NuxtLink>
+        <div class="bg-primary-100 rounded-full p-4 mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-medium text-gray-800 mb-2">Pronto para seu primeiro atendimento?</h3>
+        <p class="text-gray-500 mb-4 text-center">Reserve seu horário e comece a transformar vidas com a estrutura completa da Neo Viso</p>
+        <NuxtLink to="/appointments/new" class="btn-primary">Escolher meu horário</NuxtLink>
       </div>
     </section>
     
     <section class="mb-8">
       <div class="flex items-center justify-between mb-4">
-        <h2 class="text-lg font-medium">Serviços em destaque</h2>
-        <NuxtLink to="/appointments" class="text-primary-600 text-sm font-medium">Ver todos</NuxtLink>
+        <h2 class="text-lg font-semibold text-gray-800">Procedimentos em alta</h2>
+        <NuxtLink to="/appointments" class="text-primary-600 text-sm font-medium">Ver catálogo completo</NuxtLink>
       </div>
       
       <div class="grid grid-cols-2 gap-3">
@@ -124,19 +303,90 @@ const lastAppointment = computed(() => {
     .sort((a, b) => new Date(b.startTime).getTime() - new Date(a.startTime).getTime())[0];
 });
 
+// Funções simplificadas
+
+// Variáveis reativas para evitar hidratação mismatch
+const showOnboarding = ref(false)
+const userName = ref('Doutor(a)')
+const currentDate = ref({
+  day: '--',
+  month: '---'
+})
+const currentGreeting = ref('Olá!')
+
+// Função para saudação baseada no horário
+const getGreeting = () => {
+  const hour = new Date().getHours()
+  if (hour < 12) return 'Bom dia, estrela! ☀️'
+  if (hour < 18) return 'Boa tarde, sucesso! 🌟'
+  return 'Boa noite, campeão! 🌙'
+}
+
+// Funções de onboarding
+const checkFirstVisit = () => {
+  if (process.client) {
+    const hasCompletedOnboarding = localStorage.getItem('onboarding_completed')
+    // Só mostra onboarding se nunca foi completado
+    if (!hasCompletedOnboarding) {
+      showOnboarding.value = true
+    }
+  }
+}
+
+const closeOnboarding = () => {
+  showOnboarding.value = false
+}
+
+const startReservation = () => {
+  showOnboarding.value = false
+  navigateTo('/appointments/new')
+}
+
+// Inicializar dados do cliente
+const initializeClientData = () => {
+  if (process.client) {
+    // Configurar dados de usuário
+    const appUser = useApp().user
+    userName.value = appUser.name || 'Doutor(a)'
+
+    // Configurar data atual
+    const now = new Date()
+    currentDate.value = {
+      day: now.getDate().toString(),
+      month: now.toLocaleDateString('pt-BR', { month: 'short' })
+    }
+
+    // Configurar saudação
+    currentGreeting.value = getGreeting()
+
+    // Verificar onboarding
+    setTimeout(() => {
+      checkFirstVisit()
+    }, 1000)
+  }
+}
+
 onMounted( async() => {
+  // Inicializar dados do cliente
+  initializeClientData()
+
+  // Listener para reabrir onboarding do header
+  if (process.client) {
+    window.addEventListener('open-onboarding', () => {
+      showOnboarding.value = true
+    })
+  }
+
   await useAppProducts().getProducts()
-  
+
   if (useApp().user.user_type == 'P') {
-    await useScheduling().getScheduleOwner(useApp().user.user_type, useApp().user.id) 
-  } 
+    await useScheduling().getScheduleOwner(useApp().user.user_type, useApp().user.id)
+  }
   else if (useApp().user.user_type == 'C') {
-    await useScheduling().getScheduleOwner(useApp().user.user_type, useApp().user.id_clinic) 
+    await useScheduling().getScheduleOwner(useApp().user.user_type, useApp().user.id_clinic)
   }
   else {
     await useScheduling().getSchedule()
   }
-
-
 })
 </script>
