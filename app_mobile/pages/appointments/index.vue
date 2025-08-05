@@ -58,7 +58,7 @@
       :tip-action="{ text: '🎯 Ver como funciona', callback: () => navigateTo('/') }"
     />
 
-    <!-- Filtros Empáticos -->
+    <!-- Filtros Empáticos e Controles de Visualização -->
     <div class="mb-8">
       <div class="bg-white rounded-2xl p-4 shadow-lg border border-purple-100">
         <h3 class="text-sm font-bold text-gray-700 mb-3 flex items-center">
@@ -68,7 +68,25 @@
           Organize seus atendimentos do seu jeito
         </h3>
 
-        <div class="flex flex-wrap gap-3 mb-4">
+        <!-- Seletor de Visualização -->
+        <div class="flex space-x-2 mb-4">
+          <button
+            @click="viewMode = 'list'"
+            :class="viewMode === 'list' ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white' : 'bg-gray-100 text-gray-700 hover:bg-purple-100'"
+            class="px-4 py-2 rounded-lg text-sm font-semibold transition-all"
+          >
+            📋 Lista
+          </button>
+          <button
+            @click="viewMode = 'calendar'"
+            :class="viewMode === 'calendar' ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white' : 'bg-gray-100 text-gray-700 hover:bg-purple-100'"
+            class="px-4 py-2 rounded-lg text-sm font-semibold transition-all"
+          >
+            📅 Agenda
+          </button>
+        </div>
+
+        <div v-if="viewMode === 'list'" class="flex flex-wrap gap-3 mb-4">
           <button
             v-for="tab in tabs"
             :key="tab.value"
@@ -85,7 +103,7 @@
           </button>
         </div>
 
-        <div class="relative">
+        <div v-if="viewMode === 'list'" class="relative">
           <input
             type="text"
             class="w-full pl-12 pr-4 py-3 bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl text-gray-700 placeholder-purple-400 focus:border-purple-400 focus:outline-none transition-all"
