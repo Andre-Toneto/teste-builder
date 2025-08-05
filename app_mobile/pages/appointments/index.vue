@@ -13,10 +13,10 @@
               </div>
               <span class="text-white/80 text-sm font-medium">SUA CLÍNICA PARTICULAR</span>
             </div>
-            <h1 class="text-2xl font-bold mb-2">Sua agenda de transformações</h1>
+            <h1 class="text-2xl font-bold mb-2">Monte seu dia com a estrutura da Neo Viso</h1>
             <p class="text-white/90 text-sm leading-relaxed">
-              Cada agendamento é uma oportunidade de realizar sonhos. <br>
-              <span class="font-medium">Este é o seu espaço para brilhar! ✨</span>
+              Cada dia que você reserva é uma oportunidade de transformar vidas. <br>
+              <span class="font-medium">Sua agenda, seu consultório, seu sucesso! ✨</span>
             </p>
           </div>
           <div class="bg-white/10 rounded-xl px-3 py-2 backdrop-blur-sm">
