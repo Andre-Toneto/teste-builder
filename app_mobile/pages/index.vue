@@ -42,23 +42,26 @@
     
     <section class="mb-8">
       <div class="flex items-center justify-between mb-4">
-        <h2 class="text-md font-medium">Último agendamento</h2>
-        <NuxtLink to="/appointments" class="text-primary-600 text-sm font-medium">Ver todos</NuxtLink>
+        <h2 class="text-lg font-semibold text-gray-800">Seus próximos atendimentos</h2>
+        <NuxtLink to="/appointments" class="text-primary-600 text-sm font-medium">Ver agenda completa</NuxtLink>
       </div>
-      
+
       <div v-if="lastAppointment">
-        <AppointmentCard 
-          :key="lastAppointment.id" 
-          :appointment="lastAppointment" 
+        <AppointmentCard
+          :key="lastAppointment.id"
+          :appointment="lastAppointment"
           class="mb-3"
         />
       </div>
       <div v-else class="card flex flex-col items-center justify-center py-8">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-300 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-        <p class="text-gray-500 mb-4">Sem agendamentos</p>
-        <NuxtLink to="/appointments/new" class="btn-primary">Agende agora!</NuxtLink>
+        <div class="bg-primary-100 rounded-full p-4 mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-medium text-gray-800 mb-2">Pronto para seu primeiro atendimento?</h3>
+        <p class="text-gray-500 mb-4 text-center">Reserve seu horário e comece a transformar vidas com a estrutura completa da Neo Viso</p>
+        <NuxtLink to="/appointments/new" class="btn-primary">Escolher meu horário</NuxtLink>
       </div>
     </section>
     
