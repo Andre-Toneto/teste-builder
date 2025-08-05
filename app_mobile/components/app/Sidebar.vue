@@ -16,25 +16,32 @@
       <div class="flex flex-col h-full">
         <!-- User profile section -->
         <div class="px-6 py-8 bg-primary-600">
-          <div v-if="user" class="flex items-center">
-            <div class="flex-shrink-0 h-12 w-12 rounded-full bg-white text-primary-600 flex items-center justify-center text-xl font-bold">
-              {{ useApp().user.name.charAt(0) }}
+          <ClientOnly>
+            <div v-if="useApp().logged && useApp().user.name" class="flex items-center">
+              <div class="flex-shrink-0 h-12 w-12 rounded-full bg-white text-primary-600 flex items-center justify-center text-xl font-bold">
+                {{ useApp().user.name.charAt(0) }}
+              </div>
+              <div class="ml-4 text-white">
+                <div class="font-medium text-lg">{{ useApp().user.name }}</div>
+                <div class="text-sm opacity-80">{{ useApp().user.email }}</div>
+              </div>
             </div>
-            <div class="ml-4 text-white">
-              <div class="font-medium text-lg">{{ useApp().user.name }}</div>
-              <div class="text-sm opacity-80">{{ useApp().user.email }}</div>
+            <div v-else class="flex flex-col space-y-3">
+              <p class="text-white font-medium">Bem-vindo à Neo Viso</p>
+              <NuxtLink
+                to="/auth/login"
+                class="btn-outline bg-white text-primary-600 border-none text-center"
+                @click="$emit('close')"
+              >
+                Entrar
+              </NuxtLink>
             </div>
-          </div>
-          <div v-else class="flex flex-col space-y-3">
-            <p class="text-white font-medium">Welcome to Neoviso</p>
-            <NuxtLink 
-              to="/auth/login" 
-              class="btn-outline bg-white text-primary-600 border-none text-center"
-              @click="$emit('close')"
-            >
-              Sign in
-            </NuxtLink>
-          </div>
+            <template #fallback>
+              <div class="flex flex-col space-y-3">
+                <p class="text-white font-medium">Bem-vindo à Neo Viso</p>
+              </div>
+            </template>
+          </ClientOnly>
         </div>
         
         <!-- Menu items -->
