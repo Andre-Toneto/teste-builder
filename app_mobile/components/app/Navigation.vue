@@ -31,7 +31,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 4v16m8-8H4" />
               </svg>
             </div>
-            <span class="text-xs font-bold text-emerald-600">🚀 Reservar!</span>
+            <span class="text-xs font-bold text-emerald-600">🚀 Montar dia!</span>
           </div>
         </NuxtLink>
 
