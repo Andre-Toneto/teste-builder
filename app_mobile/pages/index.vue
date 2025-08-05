@@ -43,12 +43,16 @@
 
         <div class="flex items-center justify-between">
           <div class="flex items-center space-x-4">
-            <div class="text-center">
-              <div class="text-2xl font-bold">{{ new Date().getDate() }}</div>
-              <div class="text-xs text-white/80">{{ new Date().toLocaleDateString('pt-BR', { month: 'short' }) }}</div>
-            </div>
+            <ClientOnly fallback="<div class='text-center'><div class='text-2xl font-bold'>--</div><div class='text-xs text-white/80'>---</div></div>">
+              <div class="text-center">
+                <div class="text-2xl font-bold">{{ currentDate.day }}</div>
+                <div class="text-xs text-white/80">{{ currentDate.month }}</div>
+              </div>
+            </ClientOnly>
             <div class="text-left">
-              <div class="text-sm font-semibold">{{ getGreeting() }}</div>
+              <ClientOnly fallback="<div class='text-sm font-semibold'>Olá!</div>">
+                <div class="text-sm font-semibold">{{ currentGreeting }}</div>
+              </ClientOnly>
               <div class="text-xs text-white/80">Vamos brilhar hoje? ✨</div>
             </div>
           </div>
