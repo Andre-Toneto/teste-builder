@@ -59,7 +59,7 @@
             </div>
           </div>
           <NuxtLink to="/appointments/new" class="bg-white text-purple-600 px-4 py-2 rounded-xl text-sm font-bold hover:bg-purple-50 transition-all transform hover:scale-105">
-            🚀 Vou reservar!
+            🚀 Montar meu dia!
           </NuxtLink>
         </div>
       </div>
