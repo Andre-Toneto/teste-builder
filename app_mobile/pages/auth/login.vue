@@ -33,6 +33,55 @@
 
         <button type="submit" class="btn-primary w-full text-white" >Acessar minha clínica</button>
       </form>
+
+      <!-- Diferenciais da Neo Viso -->
+      <div class="mt-8 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-5 border border-purple-100">
+        <h3 class="font-bold text-purple-800 text-center mb-4">🏆 Por que escolher a Neo Viso?</h3>
+
+        <div class="space-y-3">
+          <div class="flex items-center space-x-3">
+            <div class="bg-purple-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <p class="text-purple-700 text-sm"><span class="font-semibold">Consultórios VIP</span> com equipamentos de última geração</p>
+          </div>
+
+          <div class="flex items-center space-x-3">
+            <div class="bg-purple-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <p class="text-purple-700 text-sm"><span class="font-semibold">Suporte técnico 24/7</span> durante seus atendimentos</p>
+          </div>
+
+          <div class="flex items-center space-x-3">
+            <div class="bg-purple-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <p class="text-purple-700 text-sm"><span class="font-semibold">Marketing especializado</span> para alavancar seus negócios</p>
+          </div>
+
+          <div class="flex items-center space-x-3">
+            <div class="bg-purple-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <p class="text-purple-700 text-sm"><span class="font-semibold">Produtos premium</span> disponíveis no local</p>
+          </div>
+        </div>
+
+        <div class="mt-4 p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl text-center">
+          <p class="text-white text-sm font-bold">
+            🎯 Conceito único: <span class="text-yellow-300">Você é o dono por um dia!</span>
+          </p>
+        </div>
+      </div>
 <!--       
       <div class="mt-8">
         <div class="relative">
