@@ -7,9 +7,5 @@
 </template>
 
 <script setup>
-
-definePageMeta({
-  middleware: 'auth'
-})
-
+// Middleware de auth é aplicado globalmente via middleware/auth.global.ts
 </script>
