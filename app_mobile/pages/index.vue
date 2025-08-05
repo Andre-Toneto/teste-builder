@@ -322,9 +322,7 @@ const getGreeting = () => {
   return 'Boa noite, campeão! 🌙'
 }
 
-// Onboarding Logic
-const showOnboarding = ref(false)
-
+// Funções de onboarding
 const checkFirstVisit = () => {
   if (process.client) {
     const hasCompletedOnboarding = localStorage.getItem('onboarding_completed')
@@ -344,11 +342,33 @@ const startReservation = () => {
   navigateTo('/appointments/new')
 }
 
+// Inicializar dados do cliente
+const initializeClientData = () => {
+  if (process.client) {
+    // Configurar dados de usuário
+    const appUser = useApp().user
+    userName.value = appUser.name || 'Doutor(a)'
+
+    // Configurar data atual
+    const now = new Date()
+    currentDate.value = {
+      day: now.getDate().toString(),
+      month: now.toLocaleDateString('pt-BR', { month: 'short' })
+    }
+
+    // Configurar saudação
+    currentGreeting.value = getGreeting()
+
+    // Verificar onboarding
+    setTimeout(() => {
+      checkFirstVisit()
+    }, 1000)
+  }
+}
+
 onMounted( async() => {
-  // Verificar se é primeira visita para mostrar onboarding
-  setTimeout(() => {
-    checkFirstVisit()
-  }, 1000) // Delay para garantir que a página carregou
+  // Inicializar dados do cliente
+  initializeClientData()
 
   // Listener para reabrir onboarding do header
   if (process.client) {
