@@ -8,44 +8,30 @@
     <div class="flex-1 p-6">
       <form @submit.prevent="handleLogin" class="space-y-5">
         <div>
-          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Usuário</label>
-          <input 
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Seu usuário</label>
+          <input
             id="email"
-            type="text" 
+            type="text"
             v-model="userLogin"
-            class="input-field" 
-            placeholder="João"
+            class="input-field"
+            placeholder="Digite seu usuário"
             required
           />
         </div>
-        
+
         <div>
-          <!-- <div class="flex items-center justify-between mb-1">
-            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-            <NuxtLink to="/auth/forgot-password" class="text-xs text-primary-600 font-medium">Forgot Password?</NuxtLink>
-          </div> -->
-          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Senha</label>
-          <input 
+          <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Sua senha</label>
+          <input
             id="password"
-            type="password" 
+            type="password"
             v-model="passLogin"
-            class="input-field" 
-            placeholder="••••••••"
+            class="input-field"
+            placeholder="Digite sua senha"
             required
           />
         </div>
-        
-        <!-- <div class="flex items-center">
-          <input 
-            id="remember-me" 
-            type="checkbox" 
-            v-model="rememberMe"
-            class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
-          />
-          <label for="remember-me" class="ml-2 block text-sm text-gray-700">Remember me</label>
-        </div> -->
-        
-        <button type="submit" class="btn-primary w-full text-white" >Entrar</button>
+
+        <button type="submit" class="btn-primary w-full text-white" >Acessar minha clínica</button>
       </form>
 <!--       
       <div class="mt-8">
