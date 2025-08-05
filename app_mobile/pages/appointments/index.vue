@@ -231,12 +231,12 @@
           </div>
 
           <h3 class="text-xl font-bold text-gray-800 mb-3">
-            🎉 Agendamento confirmado!
+            🎉 Perfeito! Seu dia foi montado!
           </h3>
 
           <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4 mb-6">
             <p class="text-gray-700 text-sm mb-3">
-              <span class="font-semibold text-purple-600">Sua sala VIP estará pronta para te receber!</span>
+              <span class="font-semibold text-purple-600">Sua estrutura dos sonhos estará pronta para você brilhar!</span>
             </p>
             <div class="space-y-2 text-xs text-gray-600">
               <div class="flex items-center justify-between">
