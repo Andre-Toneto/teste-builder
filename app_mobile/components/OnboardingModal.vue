@@ -189,6 +189,16 @@
         Slide atual: {{ currentSlide + 1 }} / 4
       </div>
 
+      <!-- Botão de Debug (temporário) -->
+      <div v-if="currentSlide < 3" class="text-center pb-4">
+        <button
+          @click="currentSlide = currentSlide + 1"
+          class="bg-red-500 text-white px-4 py-2 rounded-lg text-xs font-bold"
+        >
+          DEBUG: Próximo ({{ currentSlide }})
+        </button>
+      </div>
+
       <!-- Navigation Buttons -->
       <div v-if="currentSlide < 3" class="flex justify-between items-center px-8 pb-6">
         <button
