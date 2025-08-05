@@ -108,7 +108,7 @@
           <div class="space-y-3">
             <div class="flex items-center space-x-3">
               <div class="bg-orange-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">1</div>
-              <p class="text-orange-800 text-sm"><span class="font-semibold">Você reserva</span> o horário que desejar</p>
+              <p class="text-orange-800 text-sm"><span class="font-semibold">Voc�� reserva</span> o horário que desejar</p>
             </div>
             
             <div class="flex items-center space-x-3">
@@ -214,11 +214,10 @@
         </button>
       </div>
 
-      <!-- Close Button -->
-      <button 
-        v-if="currentSlide === 3"
-        @click="closeOnboarding" 
-        class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 p-2 rounded-full hover:bg-gray-100 transition-all"
+      <!-- Close Button (em todos os slides) -->
+      <button
+        @click="closeOnboarding"
+        class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 p-2 rounded-full hover:bg-gray-100 transition-all z-10"
       >
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
