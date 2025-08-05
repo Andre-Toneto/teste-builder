@@ -69,4 +69,9 @@ function toggleSidebar() {
 function closeSidebar() {
   isSidebarOpen.value = false;
 }
+
+function openOnboarding() {
+  // Emitir evento para abrir onboarding
+  window.dispatchEvent(new CustomEvent('open-onboarding'))
+}
 </script>
