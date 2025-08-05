@@ -1,9 +1,44 @@
 <template>
   <div class="page-container">
-    <div class="mb-8">
-      <h1 class="text-2xl font-semibold text-gray-800 mb-2">Bem vindo(a) de volta, {{ useApp().user.name }}!</h1>
-      <p class="text-gray-600">Vamos agendar um serviço hoje?</p>
-    </div>
+    <!-- Bloco de boas-vindas personalizado -->
+    <WelcomeBlock
+      :user-name="useApp().user.name || 'Doutor(a)'"
+      :next-appointment="getNextAppointmentTime()"
+      class="mb-6"
+    />
+
+    <!-- Estruturas disponíveis -->
+    <section class="mb-8">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-lg font-semibold text-gray-800">Estruturas disponíveis</h2>
+        <NuxtLink to="/locations" class="text-primary-600 text-sm font-medium">Ver todas</NuxtLink>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 mb-4">
+        <StructureCard
+          v-for="room in availableRooms"
+          :key="room.id"
+          :room="room"
+          @reserve="handleRoomReservation"
+        />
+      </div>
+
+      <div class="bg-primary-50 border border-primary-100 rounded-xl p-4">
+        <div class="flex items-start space-x-3">
+          <div class="bg-primary-100 rounded-full p-2 flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-primary-800 mb-1">Sua estrutura completa te espera</p>
+            <p class="text-xs text-primary-600 leading-relaxed">
+              Consultórios equipados, suporte técnico e ambiente acolhedor para seus pacientes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
     
     <section class="mb-8">
       <div class="flex items-center justify-between mb-4">
