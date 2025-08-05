@@ -143,10 +143,24 @@ const router = useRouter();
 const searchQuery = ref('');
 const activeTab = ref('upcoming');
 const tabs = [
-  { label: 'Todos', value: 'upcoming' },
-  { label: 'Realizados', value: 'past' },
-  { label: 'Abertos', value: 'open' },
+  { label: 'Minha agenda', value: 'upcoming' },
+  { label: 'Finalizados', value: 'past' },
+  { label: 'Em aberto', value: 'open' },
 ];
+
+// Função para contar items em cada tab
+const getTabCount = (tabValue) => {
+  switch (tabValue) {
+    case 'upcoming':
+      return filteredAppointments.value.length
+    case 'past':
+      return appointmentsDone.value.length
+    case 'open':
+      return appointmentsOpen.value.length
+    default:
+      return 0
+  }
+}
 
 const appointments = computed(() => {
   return [...useScheduling().datasource].sort((a, b) => {
