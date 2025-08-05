@@ -3,7 +3,9 @@
     <!-- Bloco de boas-vindas personalizado -->
     <div class="bg-gradient-to-br from-primary-600 to-primary-700 rounded-xl p-5 shadow-lg text-white mb-6">
       <h2 class="text-lg font-semibold mb-1">
-        Bem-vindo(a), {{ useApp().user.name || 'Doutor(a)' }}!
+        <ClientOnly fallback="Bem-vindo(a), Doutor(a)!">
+          Bem-vindo(a), {{ useApp().user.name || 'Doutor(a)' }}!
+        </ClientOnly>
       </h2>
       <p class="text-primary-100 text-sm leading-relaxed">
         Hoje a clínica Neo Viso é sua! Nossa estrutura te espera.
