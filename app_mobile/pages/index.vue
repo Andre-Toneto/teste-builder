@@ -70,9 +70,9 @@
       <div class="flex items-center justify-between mb-6">
         <div>
           <h2 class="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-            🏰 Sua clínica dos sonhos
+            🏰 Reserve seu consultório particular
           </h2>
-          <p class="text-gray-600 text-sm">Escolha seu consultório particular</p>
+          <p class="text-gray-600 text-sm">Estrutura completa para seus dias de trabalho</p>
         </div>
         <NuxtLink to="/locations" class="text-emerald-600 text-sm font-semibold hover:text-emerald-700">
           Ver todas ��
