@@ -290,6 +290,10 @@ const router = useRouter();
 
 const searchQuery = ref('');
 const activeTab = ref('upcoming');
+const viewMode = ref('list'); // 'list' or 'calendar'
+const showConfirmationFeedback = ref(false);
+const confirmationDetails = ref({});
+
 const tabs = [
   { label: '📅 Meus próximos sonhos', value: 'upcoming' },
   { label: '✨ Transformações realizadas', value: 'past' },
