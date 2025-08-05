@@ -185,9 +185,11 @@
       </div>
 
       <!-- Debug Info (temporary) -->
-      <div class="text-center text-xs text-gray-500 pb-2">
-        Slide atual: {{ currentSlide + 1 }} / 4
-      </div>
+      <ClientOnly>
+        <div class="text-center text-xs text-gray-500 pb-2">
+          Slide atual: {{ currentSlide + 1 }} / 4
+        </div>
+      </ClientOnly>
 
       <!-- Botão de Debug (temporário) -->
       <div v-if="currentSlide < 3" class="text-center pb-4">
