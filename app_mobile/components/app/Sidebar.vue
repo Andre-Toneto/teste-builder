@@ -97,12 +97,6 @@ const props = defineProps({
 
 defineEmits(['close']);
 
-// Mock user for demo, will be replaced with auth logic
-const user = ref({
-  name: '',
-  email: 'sarah.j@example.com'
-});
-
 // Menu items
 const menuItems = [
   { 
