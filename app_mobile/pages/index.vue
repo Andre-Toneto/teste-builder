@@ -278,6 +278,11 @@ const startReservation = () => {
 }
 
 onMounted( async() => {
+  // Verificar se é primeira visita para mostrar onboarding
+  setTimeout(() => {
+    checkFirstVisit()
+  }, 1000) // Delay para garantir que a página carregou
+
   await useAppProducts().getProducts()
 
   if (useApp().user.user_type == 'P') {
