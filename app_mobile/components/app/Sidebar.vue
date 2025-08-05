@@ -61,19 +61,21 @@
             </NuxtLink>
           </template>
 
-          <div v-if="user" class="px-6 pt-6">
-            <button 
-              class="w-full btn-outline flex items-center justify-center"
-              @click="handleLogout"
-            >
-              <span class="w-5 h-5 mr-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                </svg>
-              </span>
-              Sair
-            </button>
-          </div>
+          <ClientOnly>
+            <div v-if="useApp().logged" class="px-6 pt-6">
+              <button
+                class="w-full btn-outline flex items-center justify-center"
+                @click="handleLogout"
+              >
+                <span class="w-5 h-5 mr-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                  </svg>
+                </span>
+                Sair
+              </button>
+            </div>
+          </ClientOnly>
         </nav>
       </div>
     </aside>
