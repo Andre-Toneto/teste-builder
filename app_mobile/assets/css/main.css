@@ -55,6 +55,44 @@
   .page-container {
     @apply px-4 py-4 pb-20;
   }
+
+  /* Novos estilos para componentes acolhedores */
+  .welcome-gradient {
+    background: linear-gradient(135deg, theme('colors.primary.600'), theme('colors.primary.700'));
+  }
+
+  .structure-card-hover {
+    transition: all 0.3s ease;
+  }
+
+  .structure-card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  .smooth-transition {
+    transition: all 0.2s ease-in-out;
+  }
+
+  /* Animações sutis */
+  @keyframes gentle-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+
+  .gentle-bounce {
+    animation: gentle-bounce 2s ease-in-out infinite;
+  }
+
+  /* Melhorar foco nos inputs */
+  .input-field:focus {
+    @apply ring-2 ring-primary-300 border-primary-400;
+  }
+
+  /* Cards com melhor visual */
+  .card-enhanced {
+    @apply bg-white rounded-xl shadow-sm p-5 border border-gray-100 hover:shadow-md transition-all duration-200;
+  }
 }
 
 .page-enter-active,
