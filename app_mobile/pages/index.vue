@@ -254,7 +254,28 @@ const getGreeting = () => {
   return 'Boa noite, campeão! 🌙'
 }
 
-// Onboarding logic removida temporariamente
+// Onboarding Logic
+const showOnboarding = ref(false)
+
+const checkFirstVisit = () => {
+  if (process.client) {
+    const hasCompletedOnboarding = localStorage.getItem('onboarding_completed')
+    // Para demonstração, vamos sempre mostrar o onboarding
+    // Na produção, descomente a linha abaixo:
+    // if (!hasCompletedOnboarding) {
+      showOnboarding.value = true
+    // }
+  }
+}
+
+const closeOnboarding = () => {
+  showOnboarding.value = false
+}
+
+const startReservation = () => {
+  showOnboarding.value = false
+  navigateTo('/appointments/new')
+}
 
 onMounted( async() => {
   await useAppProducts().getProducts()
