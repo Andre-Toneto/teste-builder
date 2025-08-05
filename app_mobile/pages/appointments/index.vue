@@ -75,7 +75,7 @@
             :class="viewMode === 'list' ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white' : 'bg-gray-100 text-gray-700 hover:bg-purple-100'"
             class="px-4 py-2 rounded-lg text-sm font-semibold transition-all"
           >
-            📋 Lista
+            📋 Meus dias
           </button>
           <button
             @click="viewMode = 'calendar'"
