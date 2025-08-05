@@ -37,15 +37,15 @@
             </svg>
           </div>
           <div>
-            <h3 class="font-bold text-lg mb-1">Que tal mais um dia de sucesso? 🌟</h3>
-            <p class="text-white/90 text-sm">Reserve seu consultório dos sonhos agora mesmo</p>
+            <h3 class="font-bold text-lg mb-1">Escolha seu dia de atuação 🌟</h3>
+            <p class="text-white/90 text-sm">Reserve seu consultório particular e transforme vidas</p>
           </div>
         </div>
         <button
           class="bg-white text-emerald-600 px-6 py-3 rounded-xl text-sm font-bold hover:bg-emerald-50 transition-all transform hover:scale-105 shadow-lg"
           @click="navigateToNewAppointment"
         >
-          Quero reservar! 🎯
+          Montar meu dia! 🎯
         </button>
       </div>
     </div>
