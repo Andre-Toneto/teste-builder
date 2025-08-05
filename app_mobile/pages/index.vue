@@ -17,13 +17,10 @@
         <NuxtLink to="/locations" class="text-primary-600 text-sm font-medium">Ver todas</NuxtLink>
       </div>
 
-      <div class="grid grid-cols-1 gap-4 mb-4">
-        <StructureCard
-          v-for="room in availableRooms"
-          :key="room.id"
-          :room="room"
-          @reserve="handleRoomReservation"
-        />
+      <div class="card mb-4">
+        <h3 class="font-medium text-gray-800 mb-2">Consultório Premium</h3>
+        <p class="text-gray-600 text-sm mb-3">Sala com equipamentos completos - Disponível agora</p>
+        <NuxtLink to="/appointments/new" class="btn-primary text-sm">Reservar agora</NuxtLink>
       </div>
 
       <div class="bg-primary-50 border border-primary-100 rounded-xl p-4">
