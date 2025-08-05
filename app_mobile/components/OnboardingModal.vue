@@ -245,10 +245,8 @@ const showModal = ref(props.show)
 const currentSlide = ref(0)
 
 const nextSlide = () => {
-  console.log('nextSlide called, currentSlide:', currentSlide.value)
   if (currentSlide.value < 3) {
     currentSlide.value++
-    console.log('currentSlide updated to:', currentSlide.value)
   }
 }
 
