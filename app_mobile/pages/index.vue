@@ -199,6 +199,22 @@ const handleRoomReservation = (room) => {
   navigateTo(`/appointments/new?room=${room.id}`)
 }
 
+// Onboarding logic
+const showOnboarding = ref(false)
+
+const checkFirstVisit = () => {
+  if (process.client) {
+    const hasCompletedOnboarding = localStorage.getItem('onboarding_completed')
+    if (!hasCompletedOnboarding) {
+      showOnboarding.value = true
+    }
+  }
+}
+
+const closeOnboarding = () => {
+  showOnboarding.value = false
+}
+
 onMounted( async() => {
   await useAppProducts().getProducts()
 
