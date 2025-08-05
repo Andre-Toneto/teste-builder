@@ -265,14 +265,14 @@
               @click="navigateToNewAppointment"
               class="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white py-3 px-6 rounded-xl font-bold hover:from-emerald-600 hover:to-teal-600 transition-all transform hover:scale-105"
             >
-              ✨ Fazer outro agendamento
+              ✨ Montar outro dia
             </button>
 
             <button
               @click="showConfirmationFeedback = false"
               class="w-full border-2 border-gray-300 text-gray-700 py-2 px-6 rounded-xl font-semibold hover:bg-gray-50 transition-all"
             >
-              📱 Voltar para agenda
+              📱 Ver minha agenda
             </button>
           </div>
         </div>
