@@ -175,13 +175,18 @@
       </div>
 
       <!-- Navigation Dots -->
-      <div class="flex justify-center space-x-2 pb-6">
-        <div 
-          v-for="i in 4" 
-          :key="i" 
+      <div class="flex justify-center space-x-2 pb-4">
+        <div
+          v-for="i in 4"
+          :key="i"
           class="w-2 h-2 rounded-full transition-all"
           :class="currentSlide === i - 1 ? 'bg-purple-500 w-8' : 'bg-gray-300'"
         ></div>
+      </div>
+
+      <!-- Debug Info (temporary) -->
+      <div class="text-center text-xs text-gray-500 pb-2">
+        Slide atual: {{ currentSlide + 1 }} / 4
       </div>
 
       <!-- Navigation Buttons -->
