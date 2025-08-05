@@ -149,18 +149,18 @@
             </svg>
           </div>
           <h3 class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-3">
-            🎯 Sua agenda está aberta para o sucesso!
+            🎯 Pronto para montar seus próximos dias?
           </h3>
           <p class="text-gray-600 mb-8 leading-relaxed text-lg">
-            <span class="font-semibold">Hora de fazer a diferença!</span><br>
-            Sua estrutura dos sonhos na Neo Viso está te esperando.<br>
-            <span class="text-purple-600 font-medium">✨ Cada agendamento é uma vida transformada!</span>
+            <span class="font-semibold">Sua agenda está livre para você escolher!</span><br>
+            Reserve seus dias na Neo Viso e transforme vidas com nossa estrutura.<br>
+            <span class="text-purple-600 font-medium">✨ Cada dia de trabalho é uma oportunidade de brilhar!</span>
           </p>
           <button
             class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white px-8 py-4 rounded-xl text-lg font-bold hover:from-indigo-600 hover:via-purple-600 hover:to-pink-600 transition-all transform hover:scale-105 shadow-lg"
             @click="navigateToNewAppointment"
           >
-            🚀 Vamos começar agora!
+            🚀 Escolher meu dia!
           </button>
         </div>
       </div>
