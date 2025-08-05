@@ -182,12 +182,12 @@
             </svg>
           </div>
           <h3 class="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-3">
-            🏆 Seu mural de conquistas está esperando!
+            🏆 Seus dias de sucesso aparecerão aqui!
           </h3>
           <p class="text-gray-600 leading-relaxed text-lg">
-            <span class="font-semibold">Aqui será o seu hall da fama! 🌟</span><br>
-            Cada atendimento finalizado na Neo Viso vira uma<br>
-            <span class="text-emerald-600 font-medium">história de transformação para celebrar!</span>
+            <span class="font-semibold">Este será seu histórico de conquistas! 🌟</span><br>
+            Cada dia de trabalho na Neo Viso vira uma<br>
+            <span class="text-emerald-600 font-medium">lembrança especial para celebrar!</span>
           </p>
         </div>
       </div>
