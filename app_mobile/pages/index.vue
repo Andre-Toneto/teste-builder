@@ -305,6 +305,15 @@ const lastAppointment = computed(() => {
 
 // Funções simplificadas
 
+// Variáveis reativas para evitar hidratação mismatch
+const showOnboarding = ref(false)
+const userName = ref('Doutor(a)')
+const currentDate = ref({
+  day: '--',
+  month: '---'
+})
+const currentGreeting = ref('Olá!')
+
 // Função para saudação baseada no horário
 const getGreeting = () => {
   const hour = new Date().getHours()
