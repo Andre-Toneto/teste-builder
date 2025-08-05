@@ -54,24 +54,32 @@
       </div>
     </div>
 
-    <!-- Upcoming appointments section -->
+    <!-- Todos os agendamentos -->
     <div v-if="activeTab === 'upcoming'">
-      <div v-if="filteredAppointments.length > 0">
-        <AppointmentCard 
-          v-for="appointment in filteredAppointments" 
-          :key="appointment.id" 
-          :appointment="appointment" 
+      <div v-if="filteredAppointments.length > 0" class="space-y-3">
+        <AppointmentCard
+          v-for="appointment in filteredAppointments"
+          :key="appointment.id"
+          :appointment="appointment"
           @reschedule="handleReschedule"
           @cancel="handleCancel"
           @edit="editAppointment"
         />
       </div>
-      <div v-else class="text-center py-8">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-gray-300 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-        <p class="text-gray-500 mb-4">Nenhum agendamento realizado</p>
-        <button class="btn-primary" @click="navigateToNewAppointment">Agendar Agora!</button>
+      <div v-else class="card text-center py-12">
+        <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Sua agenda está livre!</h3>
+        <p class="text-gray-500 mb-6 leading-relaxed">
+          Que tal reservar um horário na nossa estrutura completa?<br>
+          A Neo Viso está pronta para receber seus pacientes.
+        </p>
+        <button class="btn-primary" @click="navigateToNewAppointment">
+          Escolher meu horário
+        </button>
       </div>
     </div>
     
