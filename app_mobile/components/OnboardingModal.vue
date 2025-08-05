@@ -59,7 +59,7 @@
               </svg>
             </div>
             <div>
-              <h3 class="font-bold text-blue-800 text-sm">🛡�� Suporte Técnico 24/7</h3>
+              <h3 class="font-bold text-blue-800 text-sm">🛡️ Suporte Técnico 24/7</h3>
               <p class="text-blue-700 text-xs">Equipe especializada sempre disponível durante seus atendimentos</p>
             </div>
           </div>
@@ -246,8 +246,10 @@ const showModal = ref(props.show)
 const currentSlide = ref(0)
 
 const nextSlide = () => {
+  console.log('nextSlide called, currentSlide:', currentSlide.value)
   if (currentSlide.value < 3) {
     currentSlide.value++
+    console.log('currentSlide updated to:', currentSlide.value)
   }
 }
 
