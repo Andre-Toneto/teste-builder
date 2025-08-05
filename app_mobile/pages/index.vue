@@ -69,7 +69,7 @@
           <p class="text-gray-600 text-sm">Escolha seu consultório particular</p>
         </div>
         <NuxtLink to="/locations" class="text-emerald-600 text-sm font-semibold hover:text-emerald-700">
-          Ver todas 🏢
+          Ver todas ��
         </NuxtLink>
       </div>
 
@@ -313,11 +313,10 @@ const showOnboarding = ref(false)
 const checkFirstVisit = () => {
   if (process.client) {
     const hasCompletedOnboarding = localStorage.getItem('onboarding_completed')
-    // Para demonstração, vamos sempre mostrar o onboarding
-    // Na produção, descomente a linha abaixo:
-    // if (!hasCompletedOnboarding) {
+    // Só mostra onboarding se nunca foi completado
+    if (!hasCompletedOnboarding) {
       showOnboarding.value = true
-    // }
+    }
   }
 }
 
