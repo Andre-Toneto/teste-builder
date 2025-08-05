@@ -108,7 +108,7 @@
           <div class="space-y-3">
             <div class="flex items-center space-x-3">
               <div class="bg-orange-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">1</div>
-              <p class="text-orange-800 text-sm"><span class="font-semibold">Voc�� reserva</span> o horário que desejar</p>
+              <p class="text-orange-800 text-sm"><span class="font-semibold">Você reserva</span> o horário que desejar</p>
             </div>
             
             <div class="flex items-center space-x-3">
@@ -205,9 +205,12 @@
 
         <button
           @click="nextSlide"
+          @mousedown="console.log('Button mousedown')"
+          @mouseup="console.log('Button mouseup')"
+          style="z-index: 999; position: relative; pointer-events: auto;"
           class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-xl text-sm font-bold hover:from-purple-600 hover:to-pink-600 transition-all flex items-center shadow-lg"
         >
-          Continuar
+          Continuar ({{ currentSlide + 1 }}/4)
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
           </svg>
