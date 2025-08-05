@@ -122,6 +122,59 @@
       </div>
     </section>
     
+    <!-- Seção dos Diferenciais Neo Viso -->
+    <section class="mb-8">
+      <div class="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-2xl p-6 text-white shadow-2xl">
+        <div class="text-center mb-6">
+          <div class="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h2 class="text-xl font-bold mb-2">🏆 Por que a Neo Viso é diferente?</h2>
+          <p class="text-white/90 text-sm">Sua clínica particular com tudo incluso!</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+            <div class="text-2xl mb-2">💎</div>
+            <h3 class="font-bold text-sm mb-1">Estrutura VIP</h3>
+            <p class="text-white/80 text-xs">Consultórios premium com equipamentos de última geração</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+            <div class="text-2xl mb-2">🛡️</div>
+            <h3 class="font-bold text-sm mb-1">Suporte 24/7</h3>
+            <p class="text-white/80 text-xs">Equipe especializada sempre disponível</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+            <div class="text-2xl mb-2">📈</div>
+            <h3 class="font-bold text-sm mb-1">Marketing</h3>
+            <p class="text-white/80 text-xs">Estratégias para alavancar seus negócios</p>
+          </div>
+
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+            <div class="text-2xl mb-2">🎨</div>
+            <h3 class="font-bold text-sm mb-1">Produtos</h3>
+            <p class="text-white/80 text-xs">Linha completa de produtos premium</p>
+          </div>
+        </div>
+
+        <div class="mt-6 text-center">
+          <p class="text-white/90 text-sm font-medium mb-2">
+            💡 <span class="font-bold">Conceito único:</span> Você é o dono por um dia!
+          </p>
+          <button
+            @click="showOnboarding = true"
+            class="bg-white text-purple-600 px-4 py-2 rounded-xl text-sm font-bold hover:bg-purple-50 transition-all"
+          >
+            🎯 Ver como funciona
+          </button>
+        </div>
+      </div>
+    </section>
+
     <section class="mb-8">
       <div class="flex items-center justify-between mb-4">
         <h2 class="text-lg font-semibold text-gray-800">Seus próximos atendimentos</h2>
