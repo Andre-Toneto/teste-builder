@@ -165,16 +165,19 @@
           @edit="editAppointment"
         />
       </div>
-      <div v-else class="card text-center py-12">
-        <div class="bg-gradient-to-br from-blue-50 to-sky-50 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      <div v-else class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-2xl p-8 text-center shadow-xl border border-blue-100">
+        <div class="bg-gradient-to-br from-blue-400 via-indigo-500 to-purple-500 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </div>
-        <h3 class="text-lg font-semibold text-gray-800 mb-2">Nenhum agendamento em aberto</h3>
-        <p class="text-gray-500 leading-relaxed">
-          Perfeito! Você está com a agenda organizada.<br>
-          Todos os seus horários estão confirmados ou finalizados.
+        <h3 class="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-3">
+          ✅ Organização em dia = Sucesso garantido!
+        </h3>
+        <p class="text-gray-600 leading-relaxed text-lg">
+          <span class="font-semibold">Parabéns, profissional! 🎉</span><br>
+          Sua agenda está 100% organizada.<br>
+          <span class="text-blue-600 font-medium">✨ Tudo confirmado para o seu sucesso!</span>
         </p>
       </div>
     </div>
