@@ -295,8 +295,8 @@ const showConfirmationFeedback = ref(false);
 const confirmationDetails = ref({});
 
 const tabs = [
-  { label: '📅 Meus próximos sonhos', value: 'upcoming' },
-  { label: '✨ Transformações realizadas', value: 'past' },
+  { label: '📅 Próximos dias de trabalho', value: 'upcoming' },
+  { label: '✨ Dias já realizados', value: 'past' },
   { label: '⏳ Aguardando confirmação', value: 'open' },
 ];
 
