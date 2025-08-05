@@ -185,10 +185,10 @@
       </div>
 
       <!-- Navigation Buttons -->
-      <div class="flex justify-between items-center px-8 pb-6" v-if="currentSlide < 3">
-        <button 
-          v-if="currentSlide > 0" 
-          @click="prevSlide" 
+      <div v-if="currentSlide < 3" class="flex justify-between items-center px-8 pb-6">
+        <button
+          v-if="currentSlide > 0"
+          @click="prevSlide"
           class="text-gray-500 hover:text-gray-700 text-sm font-medium flex items-center"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -196,11 +196,11 @@
           </svg>
           Voltar
         </button>
-        <div v-else></div>
-        
-        <button 
-          @click="nextSlide" 
-          class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-xl text-sm font-bold hover:from-purple-600 hover:to-pink-600 transition-all flex items-center"
+        <div v-else class="flex-1"></div>
+
+        <button
+          @click="nextSlide"
+          class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-xl text-sm font-bold hover:from-purple-600 hover:to-pink-600 transition-all flex items-center shadow-lg"
         >
           Continuar
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
