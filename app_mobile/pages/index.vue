@@ -199,9 +199,6 @@ const handleRoomReservation = (room) => {
 // Onboarding logic removida temporariamente
 
 onMounted( async() => {
-  // Verificar se é primeira visita para mostrar onboarding
-  checkFirstVisit()
-
   await useAppProducts().getProducts()
 
   if (useApp().user.user_type == 'P') {
