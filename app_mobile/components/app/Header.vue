@@ -15,7 +15,7 @@
       
       <div>
         <NuxtLink to="/" class="flex items-center">
-          <span class="text-primary-600 font-semibold text-lg">Neoviso</span>
+          <span class="text-primary-600 font-bold text-lg">Neo Viso</span>
         </NuxtLink>
       </div>
       
