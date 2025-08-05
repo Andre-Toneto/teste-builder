@@ -192,14 +192,16 @@
       </ClientOnly>
 
       <!-- Botão de Debug (temporário) -->
-      <div v-if="currentSlide < 3" class="text-center pb-4">
-        <button
-          @click="currentSlide = currentSlide + 1"
-          class="bg-red-500 text-white px-4 py-2 rounded-lg text-xs font-bold"
-        >
-          DEBUG: Próximo ({{ currentSlide }})
-        </button>
-      </div>
+      <ClientOnly>
+        <div v-if="currentSlide < 3" class="text-center pb-4">
+          <button
+            @click="currentSlide = currentSlide + 1"
+            class="bg-red-500 text-white px-4 py-2 rounded-lg text-xs font-bold"
+          >
+            DEBUG: Próximo ({{ currentSlide }})
+          </button>
+        </div>
+      </ClientOnly>
 
       <!-- Navigation Buttons -->
       <div v-if="currentSlide < 3" class="flex justify-between items-center px-8 pb-6">
