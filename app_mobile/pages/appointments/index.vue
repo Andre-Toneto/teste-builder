@@ -105,19 +105,25 @@
           @edit="editAppointment"
         />
       </div>
-      <div v-else class="card text-center py-12">
-        <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+      <div v-else class="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 rounded-2xl p-8 text-center shadow-xl border border-purple-100">
+        <div class="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
           </svg>
         </div>
-        <h3 class="text-lg font-semibold text-gray-800 mb-2">Sua agenda está livre!</h3>
-        <p class="text-gray-500 mb-6 leading-relaxed">
-          Que tal reservar um horário na nossa estrutura completa?<br>
-          A Neo Viso está pronta para receber seus pacientes.
+        <h3 class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-3">
+          🎯 Sua agenda está aberta para o sucesso!
+        </h3>
+        <p class="text-gray-600 mb-8 leading-relaxed text-lg">
+          <span class="font-semibold">Hora de fazer a diferença!</span><br>
+          Sua estrutura dos sonhos na Neo Viso está te esperando.<br>
+          <span class="text-purple-600 font-medium">✨ Cada agendamento é uma vida transformada!</span>
         </p>
-        <button class="btn-primary" @click="navigateToNewAppointment">
-          Escolher meu horário
+        <button
+          class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white px-8 py-4 rounded-xl text-lg font-bold hover:from-indigo-600 hover:via-purple-600 hover:to-pink-600 transition-all transform hover:scale-105 shadow-lg"
+          @click="navigateToNewAppointment"
+        >
+          🚀 Vamos começar agora!
         </button>
       </div>
     </div>
