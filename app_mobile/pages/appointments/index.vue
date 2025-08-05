@@ -138,16 +138,19 @@
           @edit="editAppointment"
         />
       </div>
-      <div v-else class="card text-center py-12">
-        <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <div v-else class="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 rounded-2xl p-8 text-center shadow-xl border border-emerald-100">
+        <div class="bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-500 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </div>
-        <h3 class="text-lg font-semibold text-gray-800 mb-2">Sem atendimentos finalizados ainda</h3>
-        <p class="text-gray-500 leading-relaxed">
-          Quando você realizar seus primeiros atendimentos na Neo Viso,<br>
-          eles aparecerão aqui como seu histórico de sucesso.
+        <h3 class="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-3">
+          🏆 Seu mural de conquistas está esperando!
+        </h3>
+        <p class="text-gray-600 leading-relaxed text-lg">
+          <span class="font-semibold">Aqui será o seu hall da fama! 🌟</span><br>
+          Cada atendimento finalizado na Neo Viso vira uma<br>
+          <span class="text-emerald-600 font-medium">história de transformação para celebrar!</span>
         </p>
       </div>
     </div>
