@@ -31,7 +31,7 @@
 
           <!-- Título principal emocional -->
           <h3 class="text-2xl font-bold text-gray-800 mb-4 leading-tight">
-            🎉 <span class="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Pronto!</span>
+            �� <span class="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Pronto!</span>
           </h3>
           
           <!-- Mensagem principal personalizada -->
@@ -144,11 +144,15 @@ const motivationalMessages = [
   "Cada vida que você tocar hoje será para sempre grata! 🙏"
 ]
 
+// Controle de hidratação
+const mounted = ref(false)
+
 // Usar mensagem fixa para evitar problemas de hidratação
 const motivationalMessage = ref("Cada paciente que você atender será tocado pela sua dedicação! 💖")
 
 // Randomizar apenas após hydratação
 onMounted(() => {
+  mounted.value = true
   nextTick(() => {
     motivationalMessage.value = motivationalMessages[Math.floor(Math.random() * motivationalMessages.length)]
   })
