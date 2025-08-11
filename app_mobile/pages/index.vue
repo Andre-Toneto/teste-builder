@@ -26,7 +26,7 @@
           <div class="flex-1">
             <div class="text-white/80 text-xs font-semibold tracking-wider uppercase mb-1">BEM-VINDO AO SEU REINO ✨</div>
             <h2 class="text-xl font-bold">
-                Olá, {{ userName }} incrível! 🌟
+                Olá, {{ userName }}! 🌟
             </h2>
           </div>
         </div>
