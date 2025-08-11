@@ -220,64 +220,14 @@
       </div>
     </div>
 
-    <!-- Feedback de Confirmação -->
-    <div v-if="showConfirmationFeedback" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-      <div class="bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl">
-        <div class="text-center">
-          <div class="bg-gradient-to-br from-green-400 to-emerald-500 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-
-          <h3 class="text-xl font-bold text-gray-800 mb-3">
-            🎉 Perfeito! Seu dia foi montado!
-          </h3>
-
-          <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4 mb-6">
-            <p class="text-gray-700 text-sm mb-3">
-              <span class="font-semibold text-purple-600">Sua estrutura dos sonhos estará pronta para você brilhar!</span>
-            </p>
-            <div class="space-y-2 text-xs text-gray-600">
-              <div class="flex items-center justify-between">
-                <span>📅 Data:</span>
-                <span class="font-semibold">{{ confirmationDetails.date }}</span>
-              </div>
-              <div class="flex items-center justify-between">
-                <span>⏰ Horário:</span>
-                <span class="font-semibold">{{ confirmationDetails.time }}</span>
-              </div>
-              <div class="flex items-center justify-between">
-                <span>🏢 Consultório:</span>
-                <span class="font-semibold">Premium VIP</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-3 mb-6 border border-yellow-200">
-            <p class="text-orange-800 text-sm">
-              💡 <span class="font-semibold">Lembre-se:</span> Durante este horário, a clínica é sua! Produtos premium, suporte 24/7 e toda estrutura à sua disposição.
-            </p>
-          </div>
-
-          <div class="space-y-3">
-            <button
-              @click="navigateToNewAppointment"
-              class="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white py-3 px-6 rounded-xl font-bold hover:from-emerald-600 hover:to-teal-600 transition-all transform hover:scale-105"
-            >
-              ✨ Montar outro dia
-            </button>
-
-            <button
-              @click="showConfirmationFeedback = false"
-              class="w-full border-2 border-gray-300 text-gray-700 py-2 px-6 rounded-xl font-semibold hover:bg-gray-50 transition-all"
-            >
-              📱 Ver minha agenda
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Modal de Confirmação -->
+    <SuccessModal
+      :show="showConfirmationFeedback"
+      :message="`Perfeito! Seu dia foi montado com sucesso! 🎉 Sua estrutura dos sonhos estará pronta para você brilhar durante este horário. Durante este período, a clínica é totalmente sua - produtos premium, suporte 24/7 e toda estrutura à sua disposição! ✨`"
+      :appointment-details="{ date: confirmationDetails.dateIso, time: confirmationDetails.hour }"
+      @close="showConfirmationFeedback = false"
+      @secondary-action="navigateToNewAppointment"
+    />
   </div>
 </template>
 
@@ -379,6 +329,8 @@ const handleSlotClick = (slotData) => {
       month: 'long',
       day: 'numeric'
     }),
+    dateIso: slotData.date,
+    hour: slotData.hour,
     time: `${slotData.hour}:00 - ${slotData.hour + 1}:00`
   }
   showConfirmationFeedback.value = true
