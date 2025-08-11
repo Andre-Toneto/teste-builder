@@ -1,14 +1,13 @@
 <template>
   <div class="page-container">
     <!-- Onboarding Modal -->
-    <ClientOnly>
-      <OnboardingModal
-        :show="showOnboarding"
-        :user-name="userName"
-        @close="closeOnboarding"
-        @start-reservation="startReservation"
-      />
-    </ClientOnly>
+    <OnboardingModal
+      v-if="mounted"
+      :show="showOnboarding"
+      :user-name="userName"
+      @close="closeOnboarding"
+      @start-reservation="startReservation"
+    />
 
     <!-- Bloco de boas-vindas emocional -->
     <div class="relative overflow-hidden bg-gradient-to-br from-violet-600 via-purple-600 to-pink-600 rounded-2xl p-6 shadow-2xl text-white mb-8">
@@ -26,16 +25,14 @@
           <div class="flex-1">
             <div class="text-white/80 text-xs font-semibold tracking-wider uppercase mb-1">BEM-VINDO AO SEU REINO ✨</div>
             <h2 class="text-xl font-bold">
-              <ClientOnly fallback="Olá, Doutor(a) incrível! 🌟">
-                Olá, {{ useApp().user.name || 'Doutor(a)' }} incrível! 🌟
-              </ClientOnly>
+                Olá, {{ userName }}! 🌟
             </h2>
           </div>
         </div>
 
         <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 mb-4">
           <p class="text-white text-sm leading-relaxed mb-2">
-            <span class="font-semibold">🏰 Hoje a Neo Viso é inteiramente sua!</span><br>
+            <span class="font-semibold">�� Hoje a Neo Viso é inteiramente sua!</span><br>
             Sua estrutura dos sonhos te espera para mais um dia de transformações incríveis.
           </p>
           <p class="text-white/90 text-xs">
@@ -45,16 +42,12 @@
 
         <div class="flex items-center justify-between">
           <div class="flex items-center space-x-4">
-            <ClientOnly fallback="<div class='text-center'><div class='text-2xl font-bold'>--</div><div class='text-xs text-white/80'>---</div></div>">
-              <div class="text-center">
-                <div class="text-2xl font-bold">{{ currentDate.day }}</div>
-                <div class="text-xs text-white/80">{{ currentDate.month }}</div>
-              </div>
-            </ClientOnly>
+            <div class="text-center">
+              <div class="text-2xl font-bold">{{ currentDate.day }}</div>
+              <div class="text-xs text-white/80">{{ currentDate.month }}</div>
+            </div>
             <div class="text-left">
-              <ClientOnly fallback="<div class='text-sm font-semibold'>Olá!</div>">
-                <div class="text-sm font-semibold">{{ currentGreeting }}</div>
-              </ClientOnly>
+              <div class="text-sm font-semibold">{{ currentGreeting }}</div>
               <div class="text-xs text-white/80">Vamos brilhar hoje? ✨</div>
             </div>
           </div>
@@ -141,11 +134,11 @@
           <p class="text-white/90 text-sm">Sua clínica particular com tudo incluso!</p>
         </div>
 
-        <div class="grid grid-cols-2 gap-4">
-          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-            <div class="text-2xl mb-2">💎</div>
-            <h3 class="font-bold text-sm mb-1">Estrutura VIP</h3>
-            <p class="text-white/80 text-xs">Consultórios premium com equipamentos de última geração</p>
+        <div class="grid grid-cols-2 gap-3 sm:gap-4">
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 text-center">
+            <div class="text-xl sm:text-2xl mb-2">💎</div>
+            <h3 class="font-bold text-xs sm:text-sm mb-1">Estrutura VIP</h3>
+            <p class="text-white/80 text-xs leading-tight">Consultórios premium com equipamentos de última geração</p>
           </div>
 
           <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
@@ -306,8 +299,9 @@ const lastAppointment = computed(() => {
 // Funções simplificadas
 
 // Variáveis reativas para evitar hidratação mismatch
+const mounted = ref(false)
 const showOnboarding = ref(false)
-const userName = ref('Doutor(a)')
+const userName = ref('Doutor(a) incrível')
 const currentDate = ref({
   day: '--',
   month: '---'
@@ -344,12 +338,12 @@ const startReservation = () => {
 
 // Inicializar dados do cliente
 const initializeClientData = () => {
+  // Configurar data atual (sempre no cliente)
   if (process.client) {
-    // Configurar dados de usuário
+    // Configurar dados de usuário apenas no cliente
     const appUser = useApp().user
-    userName.value = appUser.name || 'Doutor(a)'
+    userName.value = (appUser.name ? `${appUser.name} incrível` : 'Doutor(a) incrível')
 
-    // Configurar data atual
     const now = new Date()
     currentDate.value = {
       day: now.getDate().toString(),
@@ -366,16 +360,17 @@ const initializeClientData = () => {
   }
 }
 
-onMounted( async() => {
+onMounted(async () => {
+  // Marcar como montado
+  mounted.value = true
+
   // Inicializar dados do cliente
   initializeClientData()
 
   // Listener para reabrir onboarding do header
-  if (process.client) {
-    window.addEventListener('open-onboarding', () => {
-      showOnboarding.value = true
-    })
-  }
+  window.addEventListener('open-onboarding', () => {
+    showOnboarding.value = true
+  })
 
   await useAppProducts().getProducts()
 

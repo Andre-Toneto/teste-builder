@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xs': '375px',
+      },
       colors: {
         primary: {
           50: '#f5f3ff',
@@ -53,6 +56,7 @@ module.exports = {
       },
       spacing: {
         '18': '4.5rem',
+        '20': '5rem',
         '88': '22rem',
       }
     },

@@ -28,59 +28,59 @@
       </div>
       
       <!-- Botões de Visualização -->
-      <div class="flex space-x-2">
+      <div class="flex space-x-2 sm:space-x-3">
         <button
           @click="viewMode = 'week'"
           :class="viewMode === 'week' ? 'bg-white text-purple-500' : 'bg-white/20 text-white'"
-          class="px-4 py-2 rounded-lg text-sm font-semibold transition-all"
+          class="px-3 py-2 sm:px-4 sm:py-2 rounded-lg text-sm sm:text-base font-semibold transition-all touch-manipulation flex-1 sm:flex-none"
         >
-          📅 Semana
+          📅 <span class="hidden sm:inline">Semana</span>
         </button>
         <button
           @click="viewMode = 'day'"
           :class="viewMode === 'day' ? 'bg-white text-purple-500' : 'bg-white/20 text-white'"
-          class="px-4 py-2 rounded-lg text-sm font-semibold transition-all"
+          class="px-3 py-2 sm:px-4 sm:py-2 rounded-lg text-sm sm:text-base font-semibold transition-all touch-manipulation flex-1 sm:flex-none"
         >
-          📋 Dia
+          📋 <span class="hidden sm:inline">Dia</span>
         </button>
       </div>
     </div>
 
     <!-- Visualização Semanal -->
-    <div v-if="viewMode === 'week'" class="p-4">
+    <div v-if="viewMode === 'week'" class="p-2 sm:p-4">
       <!-- Cabeçalho dos Dias -->
-      <div class="grid grid-cols-7 gap-2 mb-4">
-        <div 
-          v-for="day in weekDays" 
+      <div class="grid grid-cols-7 gap-1 sm:gap-2 mb-4">
+        <div
+          v-for="day in weekDays"
           :key="day.date"
-          class="text-center p-2 rounded-lg"
+          class="text-center p-2 sm:p-3 rounded-lg"
           :class="isToday(day.date) ? 'bg-gradient-to-br from-purple-100 to-pink-100 text-purple-700' : 'text-gray-600'"
         >
-          <div class="text-xs font-medium">{{ day.dayName }}</div>
-          <div class="text-sm font-bold mt-1">{{ day.dayNumber }}</div>
+          <div class="text-xs sm:text-sm font-medium">{{ day.dayName }}</div>
+          <div class="text-sm sm:text-base font-bold mt-1">{{ day.dayNumber }}</div>
         </div>
       </div>
 
       <!-- Grid de Horários -->
-      <div class="space-y-2 max-h-96 overflow-y-auto">
-        <div 
-          v-for="hour in businessHours" 
+      <div class="space-y-1 sm:space-y-2 max-h-96 overflow-y-auto">
+        <div
+          v-for="hour in businessHours"
           :key="hour"
-          class="grid grid-cols-7 gap-2"
+          class="grid grid-cols-7 gap-1 sm:gap-2"
         >
-          <div 
-            v-for="day in weekDays" 
+          <div
+            v-for="day in weekDays"
             :key="`${day.date}-${hour}`"
-            class="relative min-h-12 border border-gray-100 rounded-lg p-2 hover:bg-purple-50 transition-all cursor-pointer"
+            class="relative min-h-14 sm:min-h-16 border border-gray-100 rounded-lg p-1 sm:p-2 hover:bg-purple-50 transition-all cursor-pointer touch-manipulation"
             :class="getSlotClass(day.date, hour)"
             @click="handleSlotClick(day.date, hour)"
           >
-            <div class="text-xs text-gray-500 mb-1">{{ hour }}:00</div>
+            <div class="text-xs sm:text-sm text-gray-500 mb-1 font-medium">{{ hour }}:00</div>
             <div v-if="getAppointmentForSlot(day.date, hour)" class="text-xs">
-              <div class="font-semibold truncate text-white">
+              <div class="font-semibold truncate text-white text-xs sm:text-sm">
                 {{ getAppointmentForSlot(day.date, hour).subject }}
               </div>
-              <div class="text-white/80 text-xs">
+              <div class="text-white/80 text-xs hidden sm:block">
                 {{ formatAppointmentTime(getAppointmentForSlot(day.date, hour)) }}
               </div>
             </div>
@@ -89,8 +89,8 @@
       </div>
     </div>
 
-    <!-- Visualização Diária -->
-    <div v-if="viewMode === 'day'" class="p-4">
+    <!-- Visualiza��ão Diária -->
+    <div v-if="viewMode === 'day'" class="p-2 sm:p-4">
       <!-- Seletor de Dia -->
       <div class="flex items-center justify-between mb-6">
         <button 
@@ -119,42 +119,43 @@
 
       <!-- Lista de Horários do Dia -->
       <div class="space-y-3 max-h-96 overflow-y-auto">
-        <div 
-          v-for="hour in businessHours" 
+        <div
+          v-for="hour in businessHours"
           :key="hour"
-          class="flex items-center space-x-4 p-3 border border-gray-100 rounded-xl hover:bg-purple-50 transition-all cursor-pointer"
+          class="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 border border-gray-100 rounded-xl hover:bg-purple-50 transition-all cursor-pointer touch-manipulation"
           :class="getSlotClass(selectedDate, hour)"
           @click="handleSlotClick(selectedDate, hour)"
         >
-          <div class="text-center min-w-16">
-            <div class="text-sm font-semibold text-gray-700">{{ hour }}:00</div>
-            <div class="text-xs text-gray-500">{{ hour + 1 }}:00</div>
+          <div class="text-center min-w-16 sm:min-w-20">
+            <div class="text-sm sm:text-base font-semibold text-gray-700">{{ hour }}:00</div>
+            <div class="text-xs sm:text-sm text-gray-500">{{ hour + 1 }}:00</div>
           </div>
           
           <div class="flex-1">
-            <div v-if="getAppointmentForSlot(selectedDate, hour)" class="bg-white rounded-lg p-3">
+            <div v-if="getAppointmentForSlot(selectedDate, hour)" class="bg-white rounded-lg p-3 sm:p-4">
               <div class="flex items-center justify-between">
                 <div>
-                  <h4 class="font-semibold text-gray-800 text-sm">
+                  <h4 class="font-semibold text-gray-800 text-sm sm:text-base">
                     {{ getAppointmentForSlot(selectedDate, hour).subject }}
                   </h4>
-                  <p class="text-xs text-gray-600 mt-1">
+                  <p class="text-xs sm:text-sm text-gray-600 mt-1">
                     {{ formatAppointmentTime(getAppointmentForSlot(selectedDate, hour)) }}
                   </p>
                 </div>
                 <div class="text-green-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
               </div>
             </div>
-            <div v-else class="text-gray-400 text-sm">
+            <div v-else class="text-gray-400 text-sm sm:text-base">
               <div class="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                 </svg>
-                Horário disponível - Clique para agendar
+                <span class="hidden sm:inline">Horário disponível - Clique para agendar</span>
+                <span class="sm:hidden">Disponível - Toque para agendar</span>
               </div>
             </div>
           </div>
@@ -162,30 +163,14 @@
       </div>
     </div>
 
-    <!-- Feedback de Reserva -->
-    <div v-if="showBookingFeedback" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-      <div class="bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl">
-        <div class="text-center">
-          <div class="bg-gradient-to-br from-green-400 to-emerald-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-bold text-gray-800 mb-2">
-            🎉 Agendamento confirmado!
-          </h3>
-          <p class="text-gray-600 text-sm mb-6">
-            Sua sala estará pronta para te receber às <span class="font-semibold text-purple-600">{{ selectedSlot?.time }}:00</span> do dia <span class="font-semibold text-purple-600">{{ selectedSlot?.date }}</span>.
-          </p>
-          <button 
-            @click="showBookingFeedback = false"
-            class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-xl font-semibold hover:from-purple-600 hover:to-pink-600 transition-all"
-          >
-            ✨ Perfeito!
-          </button>
-        </div>
-      </div>
-    </div>
+    <!-- Modal de Confirmação -->
+    <SuccessModal
+      :show="showBookingFeedback"
+      :appointment-details="selectedSlot"
+      :message="`Perfeito! Sua sala estará prontinha e te esperando! O horário das ${selectedSlot?.time}:00 está reservado especialmente para você! 💖`"
+      @close="showBookingFeedback = false"
+      @secondary-action="$emit('view-appointments')"
+    />
   </div>
 </template>
 
@@ -197,7 +182,7 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['slot-click', 'appointment-click'])
+const emit = defineEmits(['slot-click', 'appointment-click', 'view-appointments'])
 
 const viewMode = ref('week')
 const currentWeek = ref(new Date())
@@ -244,7 +229,10 @@ const getDayAppointmentsCount = computed(() => {
 })
 
 const isToday = (date) => {
-  return date === new Date().toISOString().split('T')[0]
+  if (process.client) {
+    return date === new Date().toISOString().split('T')[0]
+  }
+  return false
 }
 
 const getAppointmentForSlot = (date, hour) => {
