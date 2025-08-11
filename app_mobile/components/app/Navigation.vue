@@ -79,22 +79,22 @@ const route = useRoute();
   transform: scale(0.95);
 }
 
-/* Responsive utilities */
-@media (max-width: 375px) {
+/* Responsive utilities for xs screens */
+@media (max-width: 374px) {
   .xs\:hidden {
-    display: none;
+    display: none !important;
   }
   .xs\:inline {
-    display: inline;
+    display: inline !important;
   }
 }
 
-@media (min-width: 376px) {
+@media (min-width: 375px) {
   .xs\:hidden {
-    display: inline;
+    display: inline !important;
   }
   .xs\:inline {
-    display: none;
+    display: none !important;
   }
 }
 </style>
