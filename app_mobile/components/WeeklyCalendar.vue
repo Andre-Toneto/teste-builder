@@ -89,7 +89,7 @@
       </div>
     </div>
 
-    <!-- Visualização Diária -->
+    <!-- Visualiza��ão Diária -->
     <div v-if="viewMode === 'day'" class="p-2 sm:p-4">
       <!-- Seletor de Dia -->
       <div class="flex items-center justify-between mb-6">
@@ -229,7 +229,10 @@ const getDayAppointmentsCount = computed(() => {
 })
 
 const isToday = (date) => {
-  return date === new Date().toISOString().split('T')[0]
+  if (process.client) {
+    return date === new Date().toISOString().split('T')[0]
+  }
+  return false
 }
 
 const getAppointmentForSlot = (date, hour) => {
