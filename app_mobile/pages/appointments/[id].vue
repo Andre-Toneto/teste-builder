@@ -355,12 +355,19 @@
         <!-- Duração -->
         <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6">
           <h3 class="text-lg font-semibold text-gray-800 mb-4 text-center">⏱️ Duração do atendimento</h3>
-          <inputsTime
-            :input-name="'Duração'"
-            :input-name-dialog="'Selecionar Duração'"
-            :duration-backend="selectedDuration"
-            @onTime="onTime"
-          />
+          <ClientOnly>
+            <inputsTime
+              :input-name="'Duração'"
+              :input-name-dialog="'Selecionar Duração'"
+              :duration-backend="selectedDuration"
+              @onTime="onTime"
+            />
+            <template #fallback>
+              <div class="p-4 bg-white rounded-xl border-2 border-purple-200">
+                <p class="text-center text-gray-600">Carregando seletor de duração...</p>
+              </div>
+            </template>
+          </ClientOnly>
         </div>
       </div>
 
@@ -392,7 +399,7 @@
             </svg>
           </div>
           <h2 class="text-2xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent mb-3">
-            Quase pronto! ✨
+            Quase pronto! ���
           </h2>
           <p class="text-gray-600">Revise os detalhes do seu dia especial</p>
         </div>
