@@ -301,7 +301,7 @@ const lastAppointment = computed(() => {
 
 // Variáveis reativas para evitar hidratação mismatch
 const showOnboarding = ref(false)
-const userName = ref('Doutor(a)')
+const userName = ref('Doutor(a) incrível')
 const currentDate = ref({
   day: '--',
   month: '---'
