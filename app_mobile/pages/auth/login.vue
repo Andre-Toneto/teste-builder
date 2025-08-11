@@ -234,8 +234,10 @@ const handleLogin = () =>  {
             password: passLogin.value
         }
 
-        localStorage.setItem('user', userLogin.value)
-        localStorage.setItem('password', passLogin.value)
+        if (process.client) {
+          localStorage.setItem('user', userLogin.value)
+          localStorage.setItem('password', passLogin.value)
+        }
 
         useApp().login(login_data).then((res) => {
             // loadingBtn.value = false
