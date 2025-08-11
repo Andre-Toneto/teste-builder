@@ -67,38 +67,66 @@
         </span>
       </div>
     </div>
-        <div v-if="isStep('service')" class="space-y-4">
-          <h2 class="text-lg font-medium mb-4">Selecione um serviço</h2>
-            <div class="space-y-3">
-              <div 
-                v-for="list in services" 
-                :key="list.id" 
-                class="card cursor-pointer transition-all"
-                :class="selectedService?.id === list.id ? 'border-2 border-primary-500' : ''"
+        <div v-if="isStep('service')" class="space-y-6">
+          <div class="bg-white rounded-3xl p-8 shadow-xl border border-purple-100">
+            <div class="text-center mb-8">
+              <div class="bg-gradient-to-br from-blue-400 via-indigo-500 to-purple-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <h2 class="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-3">
+                Qual serviço você oferecerá?
+              </h2>
+              <p class="text-gray-600">Escolha o procedimento que transformará vidas hoje</p>
+            </div>
+
+            <div class="space-y-4">
+              <div
+                v-for="list in services"
+                :key="list.id"
+                class="p-6 rounded-2xl border-2 cursor-pointer transition-all transform hover:scale-105 hover:shadow-lg"
+                :class="selectedService?.id === list.id ?
+                  'border-purple-500 bg-gradient-to-r from-purple-50 to-indigo-50 shadow-lg' :
+                  'border-gray-200 bg-white hover:border-purple-300 hover:bg-purple-50'"
                 @click="selectService(list)"
               >
-              <div class="flex justify-between">
-                <div>
-                  <h4 class="font-medium">{{ list.description }}</h4>
-                  <p class="text-sm text-gray-500">{{ list.period }}</p>
+                <div class="flex justify-between items-center">
+                  <div class="flex-1">
+                    <div class="flex items-center space-x-3 mb-2">
+                      <div
+                        class="w-4 h-4 rounded-full border-2 transition-all"
+                        :class="selectedService?.id === list.id ?
+                          'bg-purple-500 border-purple-500' :
+                          'border-gray-300'"
+                      >
+                        <div
+                          v-if="selectedService?.id === list.id"
+                          class="w-2 h-2 bg-white rounded-full m-0.5"
+                        ></div>
+                      </div>
+                      <h4 class="font-bold text-lg text-gray-800">{{ list.description }}</h4>
+                    </div>
+                    <p class="text-sm text-gray-600 ml-7">{{ list.period }}</p>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-2xl font-bold text-purple-600">R${{ list.price }}</p>
+                    <p class="text-xs text-gray-500">por sessão</p>
+                  </div>
                 </div>
-                <div class="text-right">
-                  <p class="font-medium">R${{ list.price }}</p>
-                  <!-- <p v-if="service.points" class="text-xs text-primary-600">+ {{ service.points }} points</p> -->
-                </div>
+              </div>
             </div>
+          </div>
+
+          <button
+            class="w-full bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-700 text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-lg transition-all transform disabled:opacity-50 disabled:cursor-not-allowed enabled:hover:scale-105 enabled:hover:shadow-xl"
+            :disabled="!selectedService"
+            @click="nextStep"
+          >
+            <span v-if="selectedService">✨ Continuar com {{ selectedService.description }} ✨</span>
+            <span v-else>Selecione um serviço para continuar</span>
+          </button>
         </div>
-      </div>
-      
-      <button 
-        class="btn-primary w-full mt-6" 
-        :disabled="!selectedService" 
-        :class="{'opacity-50 cursor-not-allowed': !selectedService}"
-        @click="nextStep"
-      >
-        Continue
-      </button>
-    </div>
     
     <!-- Step 2: Select Location -->
     <div v-if="isStep('clinic')" class="space-y-4">
