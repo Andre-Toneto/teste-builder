@@ -1,22 +1,68 @@
 <template>
-  <div class="page-container">
-    <div class="mb-6">
-      <button @click="router.back()" class="flex items-center text-gray-600">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-        </svg>
-        Voltar
-      </button>
-    </div>
-    
-    <h1 class="page-title">Agende um Serviço</h1>
-    
-    <div class="mb-6">
-      <div class="relative w-full h-1 bg-gray-200 rounded-full overflow-hidden mb-2">
-        <div class="absolute h-full bg-primary-500" :style="`width: ${(currentStep / (totalSteps - 1)) * 100}%`"></div>
+  <div class="page-container bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 min-h-screen">
+    <!-- Header emocional e acolhedor -->
+    <div class="mb-8 -mx-4 sm:-mx-6">
+      <div class="bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 text-white py-8 px-6 relative overflow-hidden">
+        <!-- Elementos decorativos -->
+        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/10 to-transparent rounded-full transform translate-x-8 -translate-y-8"></div>
+        <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-white/5 to-transparent rounded-full transform -translate-x-4 translate-y-4"></div>
+
+        <div class="relative z-10">
+          <!-- Botão Voltar estilizado -->
+          <button @click="router.back()" class="flex items-center text-white/80 hover:text-white mb-6 transition-all transform hover:scale-105">
+            <div class="bg-white/20 rounded-full p-2 mr-2 backdrop-blur-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </div>
+            <span class="font-medium">Voltar</span>
+          </button>
+
+          <div class="text-center">
+            <!-- Ícone animado -->
+            <div class="mb-6">
+              <div class="bg-white/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto shadow-lg backdrop-blur-sm animate-pulse">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+            </div>
+
+            <h1 class="text-3xl font-bold mb-3 leading-tight">
+              Monte seu dia dos sonhos! ✨
+            </h1>
+            <p class="text-white/90 text-lg leading-relaxed">
+              Cada passo te aproxima do seu consultório particular<br>
+              <span class="font-medium text-yellow-300">🎯 Vamos criar algo especial juntos!</span>
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="flex justify-between text-xs text-gray-500">
-        <span v-for="step in dynamicSteps" :key="step">
+    </div>
+
+    <!-- Progresso melhorado -->
+    <div class="mb-8 bg-white rounded-2xl p-6 shadow-lg border border-purple-100">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-lg font-bold text-gray-800">Seu progresso</h3>
+        <span class="text-sm font-semibold text-purple-600 bg-purple-100 px-3 py-1 rounded-full">
+          {{ currentStep + 1 }} de {{ totalSteps }}
+        </span>
+      </div>
+
+      <div class="relative w-full h-3 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full overflow-hidden mb-4">
+        <div
+          class="absolute h-full bg-gradient-to-r from-violet-500 via-purple-500 to-pink-500 rounded-full transition-all duration-500 ease-out"
+          :style="`width: ${(currentStep / (totalSteps - 1)) * 100}%`"
+        ></div>
+      </div>
+
+      <div class="flex justify-between text-xs">
+        <span
+          v-for="(step, index) in dynamicSteps"
+          :key="step"
+          :class="index <= currentStep ? 'text-purple-600 font-semibold' : 'text-gray-500'"
+          class="transition-all"
+        >
           {{ formatStepLabel(step) }}
         </span>
       </div>
