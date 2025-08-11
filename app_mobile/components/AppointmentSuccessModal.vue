@@ -54,7 +54,8 @@
           <!-- Mensagem motivacional extra -->
           <div class="mb-6 p-4 bg-gradient-to-r from-violet-100 via-purple-100 to-pink-100 rounded-2xl border border-purple-200">
             <p class="text-purple-800 text-sm font-medium italic">
-              {{ motivationalMessage }}
+              <span v-if="!mounted">Cada paciente que você atender será tocado pela sua dedicação! 💖</span>
+              <span v-else>{{ motivationalMessage }}</span>
             </p>
           </div>
 
