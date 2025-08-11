@@ -310,14 +310,24 @@
           <div class="bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl p-6">
             <h3 class="text-lg font-semibold text-gray-800 mb-4 text-center">📅 Selecione o dia</h3>
             <div class="flex justify-center">
-              <v-date-picker
-                v-model="selectedDate"
-                color="#8b5cf6"
-                locale="pt-BR"
-                show-adjacent-months
-                hide-header
-                class="border-0 shadow-lg rounded-2xl"
-              ></v-date-picker>
+              <ClientOnly>
+                <v-date-picker
+                  v-model="selectedDate"
+                  color="#8b5cf6"
+                  locale="pt-BR"
+                  show-adjacent-months
+                  hide-header
+                  class="border-0 shadow-lg rounded-2xl"
+                ></v-date-picker>
+                <template #fallback>
+                  <div class="w-80 h-80 bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl flex items-center justify-center">
+                    <div class="text-center">
+                      <div class="animate-spin w-8 h-8 border-4 border-purple-500 border-t-transparent rounded-full mx-auto mb-4"></div>
+                      <p class="text-gray-600">Carregando calendário...</p>
+                    </div>
+                  </div>
+                </template>
+              </ClientOnly>
             </div>
           </div>
         </div>
