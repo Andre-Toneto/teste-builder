@@ -373,53 +373,108 @@
     </div>
     
     <!-- Step 4: Confirm Booking -->
-    <div v-if="isStep('confirm')" class="space-y-4">
-      <h2 class="text-lg font-medium mb-4">Confirme seu Agendamento</h2>
-      
-      <div class="card border border-gray-200 mb-6">
-        <div class="border-b border-gray-200 pb-3 mb-3">
-          <h3 class="font-medium">Detalhes do Agendamento</h3>
+    <div v-if="isStep('confirm')" class="space-y-6">
+      <div class="bg-white rounded-3xl p-8 shadow-xl border border-purple-100">
+        <div class="text-center mb-8">
+          <div class="bg-gradient-to-br from-green-400 via-emerald-500 to-teal-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg animate-pulse">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h2 class="text-2xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent mb-3">
+            Quase pronto! ✨
+          </h2>
+          <p class="text-gray-600">Revise os detalhes do seu dia especial</p>
         </div>
-        
-        <div class="space-y-3">
-          <div class="flex justify-between">
-            <span class="text-gray-600">Serviço:</span>
-            <span class="font-medium">{{ selectedService?.description }}</span>
+
+        <!-- Resumo do agendamento -->
+        <div class="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 rounded-2xl p-6 border-2 border-emerald-200 mb-6">
+          <div class="flex items-center justify-center mb-6">
+            <div class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-4 py-2 rounded-full text-sm font-bold">
+              🎯 SEU DIA DE SUCESSO
+            </div>
           </div>
-          <div v-if="userType === 'A' || userType === 'P'" class="flex justify-between" >
-            <span class="text-gray-600">Local:</span>
-            <span class="font-medium">{{ selectedClinic?.company_name }}</span>
-          </div>
-          <div v-if="userType === 'A' || userType === 'C'" class="flex justify-between">
-            <span class="text-gray-600">Profissional:</span>
-            <span class="font-medium">{{ selectedProfessional?.name }}</span>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-gray-600">Dia:</span>
-            <span class="font-medium">{{ formattedDate }}</span>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-gray-600">Hora:</span>
-            <span class="font-medium">{{ selectedTime }}</span>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-gray-600">Duração:</span>
-            <span class="font-medium">{{ selectedDuration }} hr</span>
-          </div>
-          <div class="border-t border-gray-200 pt-3 mt-3 flex justify-between">
-            <span class="font-medium">Total:</span>
-            <span class="font-semibold">R${{ selectedService?.price }}</span>
+
+          <div class="space-y-4">
+            <div class="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm">
+              <div class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+                <span class="text-gray-700 font-medium">Serviço</span>
+              </div>
+              <span class="font-bold text-purple-600">{{ selectedService?.description }}</span>
+            </div>
+
+            <div v-if="userType === 'A' || userType === 'P'" class="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm">
+              <div class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span class="text-gray-700 font-medium">Local</span>
+              </div>
+              <span class="font-bold text-emerald-600">{{ selectedClinic?.company_name }}</span>
+            </div>
+
+            <div v-if="userType === 'A' || userType === 'C'" class="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm">
+              <div class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+                <span class="text-gray-700 font-medium">Profissional</span>
+              </div>
+              <span class="font-bold text-orange-600">{{ selectedProfessional?.name }}</span>
+            </div>
+
+            <div class="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm">
+              <div class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span class="text-gray-700 font-medium">Data</span>
+              </div>
+              <span class="font-bold text-blue-600">{{ formattedDate }}</span>
+            </div>
+
+            <div class="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm">
+              <div class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="text-gray-700 font-medium">Horário</span>
+              </div>
+              <span class="font-bold text-indigo-600">{{ selectedTime }} ({{ selectedDuration }}h)</span>
+            </div>
+
+            <!-- Total destacado -->
+            <div class="bg-gradient-to-r from-green-500 to-emerald-600 p-4 rounded-xl text-white">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                  </svg>
+                  <span class="text-xl font-bold">Total do investimento</span>
+                </div>
+                <span class="text-2xl font-black">R$ {{ selectedService?.price }}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      
-      <div class="flex space-x-3">
-        <button class="btn-outline flex-1" @click="prevStep">Voltar</button>
-        <button 
-          class="btn-primary flex-1"
+
+      <div class="flex space-x-4">
+        <button
+          class="flex-1 bg-white border-2 border-gray-300 text-gray-700 px-6 py-4 rounded-2xl font-semibold transition-all hover:bg-gray-50 hover:border-gray-400"
+          @click="prevStep"
+        >
+          ← Revisar
+        </button>
+        <button
+          class="flex-1 bg-gradient-to-r from-green-600 via-emerald-600 to-teal-700 text-white px-6 py-4 rounded-2xl font-bold shadow-lg transition-all transform hover:scale-105 hover:shadow-xl active:scale-95"
           @click="confirmBooking"
         >
-          Confirmar Agendamento
+          ✨ Confirmar meu dia de sucesso! ✨
         </button>
       </div>
     </div>
