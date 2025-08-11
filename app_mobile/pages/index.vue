@@ -142,10 +142,10 @@
         </div>
 
         <div class="grid grid-cols-2 gap-3 sm:gap-4">
-          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-            <div class="text-2xl mb-2">💎</div>
-            <h3 class="font-bold text-sm mb-1">Estrutura VIP</h3>
-            <p class="text-white/80 text-xs">Consultórios premium com equipamentos de última geração</p>
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 text-center">
+            <div class="text-xl sm:text-2xl mb-2">💎</div>
+            <h3 class="font-bold text-xs sm:text-sm mb-1">Estrutura VIP</h3>
+            <p class="text-white/80 text-xs leading-tight">Consultórios premium com equipamentos de última geração</p>
           </div>
 
           <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
