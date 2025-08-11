@@ -629,6 +629,8 @@ function selectTime(time) {
   selectedTime.value = time;
 }
 
+const showSuccessModal = ref(false)
+
 const confirmBooking = () => {
 
   let startTimeFormatted = formatarDataHoraParaISO(selectedDate.value, selectedTime.value)
@@ -641,12 +643,11 @@ const confirmBooking = () => {
         "id_product": selectedService.value.id,
         "duration": selectedDuration.value
       };
-  
+
       if(status_page.value == "insert") {
         useScheduling().createSchedule(valueToInsert).then(async () => {
-            useApp().message.show = true;
-            useApp().message.text = "Agendamento criado com sucesso!";
-            useApp().message.color = "success";
+            // Mostrar modal de sucesso em vez da mensagem simples
+            showSuccessModal.value = true
         })
 
       } else if(status_page.value == "edit") {
@@ -654,10 +655,19 @@ const confirmBooking = () => {
           useApp().message.show = true;
           useApp().message.text = "Agendamento editado com sucesso!";
           useApp().message.color = "success";
+          router.push('/appointments');
         })
       }
+}
 
-  router.push('/appointments');
+const handleSuccessModalClose = () => {
+  showSuccessModal.value = false
+  router.push('/appointments')
+}
+
+const handleViewAgenda = () => {
+  showSuccessModal.value = false
+  router.push('/appointments')
 }
 
 onBeforeMount(async() => { 
