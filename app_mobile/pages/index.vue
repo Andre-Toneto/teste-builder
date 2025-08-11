@@ -342,7 +342,7 @@ const initializeClientData = () => {
   if (process.client) {
     // Configurar dados de usuário apenas no cliente
     const appUser = useApp().user
-    userName.value = appUser.name || 'Doutor(a)'
+    userName.value = (appUser.name ? `${appUser.name} incrível` : 'Doutor(a) incrível')
 
     const now = new Date()
     currentDate.value = {
