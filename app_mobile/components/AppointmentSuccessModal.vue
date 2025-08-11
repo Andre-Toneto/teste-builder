@@ -31,7 +31,7 @@
 
           <!-- Título principal emocional -->
           <h3 class="text-2xl font-bold text-gray-800 mb-4 leading-tight">
-            �� <span class="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Pronto!</span>
+            🎉 <span class="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Pronto!</span>
           </h3>
           
           <!-- Mensagem principal personalizada -->
@@ -159,15 +159,19 @@ onMounted(() => {
 })
 
 const formattedDate = computed(() => {
-  if (!props.appointmentDate) return ''
-  
-  const date = new Date(props.appointmentDate)
-  return date.toLocaleDateString('pt-BR', { 
-    weekday: 'long', 
-    day: 'numeric', 
-    month: 'long',
-    year: 'numeric'
-  })
+  if (!props.appointmentDate || !mounted.value) return ''
+
+  try {
+    const date = new Date(props.appointmentDate)
+    return date.toLocaleDateString('pt-BR', {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    })
+  } catch (error) {
+    return props.appointmentDate || ''
+  }
 })
 
 const closeModal = () => {
