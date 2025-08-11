@@ -117,8 +117,18 @@ const motivationalMessages = [
   "Cada momento planejado é um momento bem vivido! 💖"
 ]
 
-const motivationalMessage = computed(() => {
-  return motivationalMessages[Math.floor(Math.random() * motivationalMessages.length)]
+const motivationalMessage = ref("")
+
+// Função para definir mensagem motivacional apenas no cliente
+const setMotivationalMessage = () => {
+  if (process.client) {
+    motivationalMessage.value = motivationalMessages[Math.floor(Math.random() * motivationalMessages.length)]
+  }
+}
+
+// Mensagem padrão para SSR
+onMounted(() => {
+  setMotivationalMessage()
 })
 
 const formatDate = (dateStr) => {
