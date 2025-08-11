@@ -497,14 +497,16 @@
     </div>
 
     <!-- Modal de sucesso para agendamento -->
-    <AppointmentSuccessModal
-      :show="showSuccessModal"
-      :appointment-date="selectedDate"
-      :appointment-time="selectedTime"
-      :duration="selectedDuration"
-      @close="handleSuccessModalClose"
-      @secondary-action="handleViewAgenda"
-    />
+    <ClientOnly>
+      <AppointmentSuccessModal
+        :show="showSuccessModal"
+        :appointment-date="selectedDate"
+        :appointment-time="selectedTime"
+        :duration="selectedDuration"
+        @close="handleSuccessModalClose"
+        @secondary-action="handleViewAgenda"
+      />
+    </ClientOnly>
   </div>
 </template>
 
