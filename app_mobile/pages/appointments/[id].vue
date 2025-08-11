@@ -207,34 +207,84 @@
       </div>
     </div>
 
-    <div v-if="isStep('professional')" class="space-y-4">
-      <h2 class="text-lg font-medium mb-4">Selecione um Profissional</h2>
-      <div class="space-y-3">
-        <div 
-          v-for="prof in doctors" 
-          :key="prof.id" 
-          class="card cursor-pointer transition-all"
-          :class="selectedProfessional?.id === prof.id ? 'border-2 border-primary-500' : ''"
-          @click="selectProfessional(prof)"
-        >
-          <div class="flex justify-between">
-            <div>
-              <h4 class="font-medium">{{ prof.name }}</h4>
-              <p class="text-sm text-gray-500">{{ prof.medical_specialty }}</p>
+    <div v-if="isStep('professional')" class="space-y-6">
+      <div class="bg-white rounded-3xl p-8 shadow-xl border border-purple-100">
+        <div class="text-center mb-8">
+          <div class="bg-gradient-to-br from-orange-400 via-red-500 to-pink-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+          <h2 class="text-2xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent mb-3">
+            Qual profissional atenderá?
+          </h2>
+          <p class="text-gray-600">Escolha quem fará a diferença na vida dos pacientes</p>
+        </div>
+
+        <div class="space-y-4">
+          <div
+            v-for="prof in doctors"
+            :key="prof.id"
+            class="p-6 rounded-2xl border-2 cursor-pointer transition-all transform hover:scale-105 hover:shadow-lg"
+            :class="selectedProfessional?.id === prof.id ?
+              'border-orange-500 bg-gradient-to-r from-orange-50 to-pink-50 shadow-lg' :
+              'border-gray-200 bg-white hover:border-orange-300 hover:bg-orange-50'"
+            @click="selectProfessional(prof)"
+          >
+            <div class="flex items-center space-x-4">
+              <div
+                class="w-6 h-6 rounded-full border-2 transition-all flex-shrink-0"
+                :class="selectedProfessional?.id === prof.id ?
+                  'bg-orange-500 border-orange-500' :
+                  'border-gray-300'"
+              >
+                <div
+                  v-if="selectedProfessional?.id === prof.id"
+                  class="w-3 h-3 bg-white rounded-full m-0.5"
+                ></div>
+              </div>
+
+              <!-- Avatar placeholder -->
+              <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+
+              <div class="flex-1">
+                <h4 class="font-bold text-lg text-gray-800">{{ prof.name }}</h4>
+                <div class="flex items-center space-x-2 mt-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                  </svg>
+                  <p class="text-sm text-gray-600">{{ prof.medical_specialty }}</p>
+                </div>
+              </div>
+
+              <div class="flex-shrink-0">
+                <div class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-semibold">
+                  Especialista
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="flex space-x-3 mt-6">
-        <button class="btn-outline flex-1" @click="prevStep">Voltar</button>
-        <button 
-          class="btn-primary flex-1" 
-          :disabled="!selectedProfessional" 
-          :class="{'opacity-50 cursor-not-allowed': !selectedProfessional}"
+      <div class="flex space-x-4">
+        <button
+          class="flex-1 bg-white border-2 border-gray-300 text-gray-700 px-6 py-4 rounded-2xl font-semibold transition-all hover:bg-gray-50 hover:border-gray-400"
+          @click="prevStep"
+        >
+          ← Voltar
+        </button>
+        <button
+          class="flex-1 bg-gradient-to-r from-orange-600 via-red-600 to-pink-700 text-white px-6 py-4 rounded-2xl font-bold shadow-lg transition-all transform disabled:opacity-50 disabled:cursor-not-allowed enabled:hover:scale-105 enabled:hover:shadow-xl"
+          :disabled="!selectedProfessional"
           @click="nextStep"
         >
-          Continue
+          <span v-if="selectedProfessional">Continuar com Dr(a). {{ selectedProfessional.name }} ���</span>
+          <span v-else>Selecione um profissional →</span>
         </button>
       </div>
     </div>
