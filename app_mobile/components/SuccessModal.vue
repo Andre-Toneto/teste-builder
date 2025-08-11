@@ -117,18 +117,14 @@ const motivationalMessages = [
   "Cada momento planejado é um momento bem vivido! 💖"
 ]
 
-const motivationalMessage = ref("")
+// Usar mensagem fixa para evitar problemas de hidratação
+const motivationalMessage = ref("Você está construindo seu dia perfeito! 🌟")
 
-// Função para definir mensagem motivacional apenas no cliente
-const setMotivationalMessage = () => {
-  if (process.client) {
-    motivationalMessage.value = motivationalMessages[Math.floor(Math.random() * motivationalMessages.length)]
-  }
-}
-
-// Mensagem padrão para SSR
+// Randomizar apenas após hydratação
 onMounted(() => {
-  setMotivationalMessage()
+  nextTick(() => {
+    motivationalMessage.value = motivationalMessages[Math.floor(Math.random() * motivationalMessages.length)]
+  })
 })
 
 const formatDate = (dateStr) => {
