@@ -49,7 +49,7 @@
     <!-- Visualização Semanal -->
     <div v-if="viewMode === 'week'" class="p-2 sm:p-4">
       <!-- Cabeçalho dos Dias -->
-      <div class="grid grid-cols-7 gap-1 sm:gap-2 mb-4">
+      <div class="grid grid-cols-4 gap-1 sm:gap-2 mb-4">
         <div
           v-for="day in weekDays"
           :key="day.date"
@@ -66,7 +66,7 @@
         <div
           v-for="hour in businessHours"
           :key="hour"
-          class="grid grid-cols-7 gap-1 sm:gap-2"
+          class="grid grid-cols-4 gap-1 sm:gap-2"
         >
           <div
             v-for="day in weekDays"
@@ -196,7 +196,7 @@ const weekDays = computed(() => {
   const start = new Date(currentWeek.value)
   const startOfWeek = start.getDate() - start.getDay()
   
-  return Array.from({ length: 7 }, (_, i) => {
+  return Array.from({ length: 4 }, (_, i) => {
     const date = new Date(start.setDate(startOfWeek + i))
     return {
       date: date.toISOString().split('T')[0],
@@ -208,7 +208,7 @@ const weekDays = computed(() => {
 
 const formatWeekRange = computed(() => {
   const firstDay = weekDays.value[0]
-  const lastDay = weekDays.value[6]
+  const lastDay = weekDays.value[3]
   return `${firstDay.dayNumber} - ${lastDay.dayNumber} de ${new Date(currentWeek.value).toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' })}`
 })
 

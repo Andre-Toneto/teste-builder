@@ -2,7 +2,7 @@
   <div class="min-h-screen flex flex-col">
     <div class="bg-primary-600 text-white py-8 px-4">
       <h1 class="text-2xl font-semibold">Bem-vindo(a) de volta!</h1>
-      <p class="text-primary-100">Sua clínica particular te espera na Neo Viso</p>
+      <p class="text-primary-100">Sua clínica particular te espera na Neoviso</p>
     </div>
     
     <div class="flex-1 p-6">
@@ -34,9 +34,9 @@
         <button type="submit" class="btn-primary w-full text-white" >Acessar minha clínica</button>
       </form>
 
-      <!-- Diferenciais da Neo Viso -->
+      <!-- Diferenciais da Neoviso -->
       <div class="mt-8 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-5 border border-purple-100">
-        <h3 class="font-bold text-purple-800 text-center mb-4">🏆 Por que escolher a Neo Viso?</h3>
+        <h3 class="font-bold text-purple-800 text-center mb-4">🏆 Por que escolher a Neoviso?</h3>
 
         <div class="space-y-3">
           <div class="flex items-center space-x-3">
@@ -114,7 +114,7 @@
       
       <div class="mt-6 text-center">
         <p class="text-sm text-gray-600">
-          Ainda não faz parte da Neo Viso?
+          Ainda não faz parte da Neoviso?
           <NuxtLink to="/auth/register" class="text-primary-600 font-medium">Quero me cadastrar</NuxtLink>
         </p>
       </div>

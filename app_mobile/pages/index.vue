@@ -32,7 +32,7 @@
 
         <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 mb-4">
           <p class="text-white text-sm leading-relaxed mb-2">
-            <span class="font-semibold">�� Hoje a Neo Viso é inteiramente sua!</span><br>
+            <span class="font-semibold">�� Hoje a Neoviso é inteiramente sua!</span><br>
             Sua estrutura dos sonhos te espera para mais um dia de transformações incríveis.
           </p>
           <p class="text-white/90 text-xs">
@@ -109,7 +109,7 @@
             </svg>
           </div>
           <div>
-            <h4 class="font-bold text-purple-800 mb-2">🎯 Por que a Neo Viso é especial?</h4>
+            <h4 class="font-bold text-purple-800 mb-2">🎯 Por que a Neoviso é especial?</h4>
             <ul class="text-purple-700 text-sm space-y-1">
               <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Consultórios com tecnologia de ponta</li>
               <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Suporte técnico 24/7 durante atendimentos</li>
@@ -121,7 +121,7 @@
       </div>
     </section>
     
-    <!-- Seção dos Diferenciais Neo Viso -->
+    <!-- Seção dos Diferenciais Neoviso -->
     <section class="mb-8">
       <div class="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-2xl p-6 text-white shadow-2xl">
         <div class="text-center mb-6">
@@ -130,7 +130,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
-          <h2 class="text-xl font-bold mb-2">🏆 Por que a Neo Viso é diferente?</h2>
+          <h2 class="text-xl font-bold mb-2">🏆 Por que a Neoviso é diferente?</h2>
           <p class="text-white/90 text-sm">Sua clínica particular com tudo incluso!</p>
         </div>
 
@@ -194,7 +194,7 @@
           </svg>
         </div>
         <h3 class="text-lg font-medium text-gray-800 mb-2">Pronto para seu primeiro atendimento?</h3>
-        <p class="text-gray-500 mb-4 text-center">Reserve seu horário e comece a transformar vidas com a estrutura completa da Neo Viso</p>
+        <p class="text-gray-500 mb-4 text-center">Reserve seu horário e comece a transformar vidas com a estrutura completa da Neoviso</p>
         <NuxtLink to="/appointments/new" class="btn-primary">Escolher meu horário</NuxtLink>
       </div>
     </section>

@@ -21,7 +21,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
             </div>
-            <span class="text-white font-bold text-lg tracking-wide">Neo Viso</span>
+            <span class="text-white font-bold text-lg tracking-wide">Neoviso</span>
             <span class="bg-white/20 text-white text-xs px-2 py-0.5 rounded-full font-semibold">SUA CLÍNICA</span>
           </div>
         </NuxtLink>
@@ -30,7 +30,7 @@
         <button
           @click="openOnboarding"
           class="bg-white/20 hover:bg-white/30 text-white px-2 py-1 rounded-lg text-xs font-bold transition-all flex items-center space-x-1"
-          title="Ver tour da Neo Viso"
+          title="Ver tour da Neoviso"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />

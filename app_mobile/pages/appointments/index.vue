@@ -6,22 +6,25 @@
         <div class="flex items-start justify-between">
           <div class="flex-1">
             <div class="flex items-center mb-3">
-              <div class="bg-white/20 rounded-full p-2 mr-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
+              <div class="flex">
+                <div class="bg-white/20 rounded-full p-2 mr-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </div>
+                <span class="text-white/80 text-sm font-medium">SUA CLÍNICA PARTICULAR</span>
               </div>
-              <span class="text-white/80 text-sm font-medium">SUA CLÍNICA PARTICULAR</span>
+              <div class="flex bg-white/10 rounded-xl px-3 py-2 backdrop-blur-sm">
+                <div class="text-xs text-white/70 mb-1">Próximos dias</div>
+                <div class="text-lg font-bold">{{ getTabCount('upcoming') }}</div>
+              </div>
             </div>
-            <h1 class="text-2xl font-bold mb-2">Monte seu dia com a estrutura da Neo Viso</h1>
+            
+            <h1 class="text-2xl font-bold mb-2">Monte seu dia com a estrutura da Neoviso</h1>
             <p class="text-white/90 text-sm leading-relaxed">
               Cada dia que você reserva é uma oportunidade de transformar vidas. <br>
               <span class="font-medium">Sua agenda, seu consultório, seu sucesso! ✨</span>
             </p>
-          </div>
-          <div class="bg-white/10 rounded-xl px-3 py-2 backdrop-blur-sm">
-            <div class="text-xs text-white/70 mb-1">Próximos dias</div>
-            <div class="text-lg font-bold">{{ getTabCount('upcoming') }}</div>
           </div>
         </div>
       </div>
@@ -31,16 +34,12 @@
     <div class="bg-gradient-to-r from-emerald-400 via-teal-500 to-blue-500 rounded-2xl p-5 mb-6 text-white shadow-xl">
       <div class="flex items-center justify-between">
         <div class="flex items-center">
-          <div class="bg-white/20 rounded-full p-3 mr-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-            </svg>
-          </div>
           <div>
             <h3 class="font-bold text-lg mb-1">Escolha seu dia de atuação 🌟</h3>
             <p class="text-white/90 text-sm">Reserve seu consultório particular e transforme vidas</p>
           </div>
         </div>
+        
         <button
           class="bg-white text-emerald-600 px-6 py-3 rounded-xl text-sm font-bold hover:bg-emerald-50 transition-all transform hover:scale-105 shadow-lg"
           @click="navigateToNewAppointment"
@@ -50,10 +49,10 @@
       </div>
     </div>
 
-    <!-- Dica Neo Viso -->
+    <!-- Dica Neoviso -->
     <NeoVisoTip
       tip-id="appointments_concept"
-      tip-title="Conceito Neo Viso: Sua clínica por um dia!"
+      tip-title="Conceito Neoviso: Sua clínica por um dia!"
       tip-content="Aqui você não está apenas alugando uma sala. Você se torna o dono da clínica durante seu atendimento! Estrutura completa, produtos premium e suporte 24/7 para você brilhar."
       :tip-action="{ text: '🎯 Ver como funciona', callback: () => navigateTo('/') }"
     />
@@ -153,7 +152,7 @@
           </h3>
           <p class="text-gray-600 mb-8 leading-relaxed text-lg">
             <span class="font-semibold">Sua agenda está livre para você escolher!</span><br>
-            Reserve seus dias na Neo Viso e transforme vidas com nossa estrutura.<br>
+            Reserve seus dias na Neoviso e transforme vidas com nossa estrutura.<br>
             <span class="text-purple-600 font-medium">✨ Cada dia de trabalho é uma oportunidade de brilhar!</span>
           </p>
           <button
@@ -186,7 +185,7 @@
           </h3>
           <p class="text-gray-600 leading-relaxed text-lg">
             <span class="font-semibold">Este será seu histórico de conquistas! 🌟</span><br>
-            Cada dia de trabalho na Neo Viso vira uma<br>
+            Cada dia de trabalho na Neoviso vira uma<br>
             <span class="text-emerald-600 font-medium">lembrança especial para celebrar!</span>
           </p>
         </div>

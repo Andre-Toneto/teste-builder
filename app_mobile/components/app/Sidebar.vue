@@ -27,7 +27,7 @@
               </div>
             </div>
             <div v-else class="flex flex-col space-y-3">
-              <p class="text-white font-medium">Bem-vindo à Neo Viso</p>
+              <p class="text-white font-medium">Bem-vindo à Neoviso</p>
               <NuxtLink
                 to="/auth/login"
                 class="btn-outline bg-white text-primary-600 border-none text-center"
@@ -38,7 +38,7 @@
             </div>
             <template #fallback>
               <div class="flex flex-col space-y-3">
-                <p class="text-white font-medium">Bem-vindo à Neo Viso</p>
+                <p class="text-white font-medium">Bem-vindo à Neoviso</p>
               </div>
             </template>
           </ClientOnly>

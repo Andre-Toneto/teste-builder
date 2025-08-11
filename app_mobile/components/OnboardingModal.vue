@@ -20,14 +20,14 @@
           </p>
           <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4">
             <p class="text-white/90 text-sm">
-              <span class="font-bold">🏰 A partir de agora, a Neo Viso é sua!</span><br>
+              <span class="font-bold">🏰 A partir de agora, a Neoviso é sua!</span><br>
               Vamos te mostrar como transformar vidas com nossa estrutura dos sonhos.
             </p>
           </div>
         </div>
       </div>
 
-      <!-- Slide 2: Diferenciais da Neo Viso -->
+      <!-- Slide 2: Diferenciais da Neoviso -->
       <div v-show="currentSlide === 1" class="p-8">
         <div class="text-center mb-6">
           <div class="bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
@@ -35,7 +35,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h4a1 1 0 011 1v5m-6 0h6" />
             </svg>
           </div>
-          <h2 class="text-xl font-bold text-gray-800 mb-2">🌟 Por que a Neo Viso é única?</h2>
+          <h2 class="text-xl font-bold text-gray-800 mb-2">🌟 Por que a Neoviso é única?</h2>
           <p class="text-gray-600 text-sm">Sua clínica dos sonhos com tudo incluso!</p>
         </div>
         
@@ -99,7 +99,7 @@
             </svg>
           </div>
           <h2 class="text-xl font-bold text-gray-800 mb-2">🏰 Seja o Dono Por Um Dia!</h2>
-          <p class="text-gray-600 text-sm mb-4">O conceito revolucionário da Neo Viso</p>
+          <p class="text-gray-600 text-sm mb-4">O conceito revolucionário da Neoviso</p>
         </div>
 
         <div class="bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50 rounded-2xl p-5 border border-yellow-200 mb-6">

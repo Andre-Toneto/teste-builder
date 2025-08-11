@@ -46,11 +46,11 @@
     <!-- Clinic list -->
     <div class="space-y-4">
       <div class="flex items-center justify-between">
-        <h2 class="text-lg font-bold text-gray-800 flex items-center">
+        <h2 class="text-md font-bold text-gray-800 flex items-center">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h4a1 1 0 011 1v5m-6 0h6" />
           </svg>
-          Estruturas disponíveis para você
+          Locais para chamar de seu
         </h2>
         <span class="text-sm text-emerald-600 font-medium">{{ filteredClinics.length }} unidades</span>
       </div>
@@ -63,7 +63,7 @@
           @click="showClinicDetails(clinic)"
         >
           <div class="flex justify-between items-start">
-            <div class="flex-1">
+            <div class="flex-[7]">
               <div class="flex items-center mb-2">
                 <div class="bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full p-2 mr-3">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -86,8 +86,8 @@
                 {{ clinic.phone }}
               </p>
             </div>
-            <div class="text-right">
-              <span class="inline-block px-3 py-1 bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-700 rounded-full text-xs font-semibold mb-2">
+            <div class="text-center flex-[3]">
+              <span class="inline-block px-1 py-1 bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-700 rounded-full text-xs font-semibold mb-2">
                 {{ clinic.city }} - {{ clinic.state }}
               </span>
               <div class="text-xs text-gray-500 flex items-center">
