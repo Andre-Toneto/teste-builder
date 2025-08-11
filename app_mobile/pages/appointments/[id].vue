@@ -283,7 +283,7 @@
           :disabled="!selectedProfessional"
           @click="nextStep"
         >
-          <span v-if="selectedProfessional">Continuar com Dr(a). {{ selectedProfessional.name }} ���</span>
+          <span v-if="selectedProfessional">Continuar com Dr(a). {{ selectedProfessional.name }} →</span>
           <span v-else>Selecione um profissional →</span>
         </button>
       </div>
@@ -291,59 +291,83 @@
 
     
     <!-- Step 3: Select Date & Time -->
-    <div v-if="isStep('datetime')" class="space-y-4">
-      <h2 class="text-lg font-medium mb-4">Selecione Dia & Hora</h2>
-      
-      <div class="mb-6">
-        <!-- Simple date selector with 5 days -->
-        <div class="flex space-x-3 overflow-x-auto  justify-center">
-          <div>
-            <v-date-picker
-              v-model="selectedDate"
-              color="#8b5cf6"
-               locale="pt-BR"
-              show-adjacent-months
-              hide-header
-            ></v-date-picker>
+    <div v-if="isStep('datetime')" class="space-y-6">
+      <div class="bg-white rounded-3xl p-8 shadow-xl border border-purple-100">
+        <div class="text-center mb-8">
+          <div class="bg-gradient-to-br from-indigo-400 via-blue-500 to-cyan-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h2 class="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-cyan-600 bg-clip-text text-transparent mb-3">
+            Quando será o grande dia?
+          </h2>
+          <p class="text-gray-600">Escolha o momento perfeito para transformar vidas</p>
+        </div>
 
+        <!-- Calendário -->
+        <div class="mb-8">
+          <div class="bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl p-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4 text-center">📅 Selecione o dia</h3>
+            <div class="flex justify-center">
+              <v-date-picker
+                v-model="selectedDate"
+                color="#8b5cf6"
+                locale="pt-BR"
+                show-adjacent-months
+                hide-header
+                class="border-0 shadow-lg rounded-2xl"
+              ></v-date-picker>
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div class="space-y-3">
-        <p class="text-sm text-gray-600 font-medium">Horários disponíveis</p>
-        <div class="grid grid-cols-3 gap-3">
-          <button 
-            v-for="slot in availableTimeSlots" 
-            :key="slot"
-            class="py-2 px-2 text-sm rounded-md border transition-all text-center"
-            :class="selectedTime === slot ? 'bg-primary-100 border-primary-300 text-primary-700' : 'border-gray-200 text-gray-700 hover:bg-gray-50'"
-            @click="selectTime(slot)"
-          >
-            {{ slot }}
-          </button>
+
+        <!-- Horários -->
+        <div class="mb-8">
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4 text-center">⏰ Escolha o horário</h3>
+            <div class="grid grid-cols-3 gap-3">
+              <button
+                v-for="slot in availableTimeSlots"
+                :key="slot"
+                class="py-3 px-4 text-sm font-semibold rounded-xl border-2 transition-all text-center transform hover:scale-105"
+                :class="selectedTime === slot ?
+                  'bg-gradient-to-r from-blue-500 to-indigo-600 border-blue-500 text-white shadow-lg' :
+                  'border-gray-200 text-gray-700 hover:border-blue-300 hover:bg-blue-50 bg-white'"
+                @click="selectTime(slot)"
+              >
+                {{ slot }}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Duração -->
+        <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6">
+          <h3 class="text-lg font-semibold text-gray-800 mb-4 text-center">⏱️ Duração do atendimento</h3>
+          <inputsTime
+            :input-name="'Duração'"
+            :input-name-dialog="'Selecionar Duração'"
+            :duration-backend="selectedDuration"
+            @onTime="onTime"
+          />
         </div>
       </div>
-       <div class="space-y-3">
-        <p class="text-sm text-gray-600 font-medium">Selecione a Duração</p>
-        <div class="grid grid-cols-1 ">
-          <inputsTime 
-                :input-name="'Duração'" 
-                :input-name-dialog="'Selecionar Hora'" 
-                :duration-backend="selectedDuration" 
-                @onTime="onTime" />
-        </div>
-      </div>
-      
-      <div class="flex space-x-3 mt-6">
-        <button class="btn-outline flex-1" @click="prevStep">Voltar</button>
-        <button 
-          class="btn-primary flex-1" 
-          :disabled="!selectedDate || !selectedTime || !selectedDuration" 
-          :class="{'opacity-50 cursor-not-allowed': !selectedDate || !selectedTime || !selectedDuration}"
+
+      <div class="flex space-x-4">
+        <button
+          class="flex-1 bg-white border-2 border-gray-300 text-gray-700 px-6 py-4 rounded-2xl font-semibold transition-all hover:bg-gray-50 hover:border-gray-400"
+          @click="prevStep"
+        >
+          ← Voltar
+        </button>
+        <button
+          class="flex-1 bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-700 text-white px-6 py-4 rounded-2xl font-bold shadow-lg transition-all transform disabled:opacity-50 disabled:cursor-not-allowed enabled:hover:scale-105 enabled:hover:shadow-xl"
+          :disabled="!selectedDate || !selectedTime || !selectedDuration"
           @click="nextStep"
         >
-          Continue
+          <span v-if="selectedDate && selectedTime && selectedDuration">Continuar para confirmação →</span>
+          <span v-else>Selecione data, hora e duração →</span>
         </button>
       </div>
     </div>
