@@ -129,39 +129,80 @@
         </div>
     
     <!-- Step 2: Select Location -->
-    <div v-if="isStep('clinic')" class="space-y-4">
-      <h2 class="text-lg font-medium mb-4">Selecione a Clinica</h2>
-      <div class="space-y-3">
-        <div 
-          v-for="clinic in clinics" 
-          :key="clinic.id" 
-          class="card cursor-pointer transition-all"
-          :class="selectedClinic?.id === clinic.id ? 'border-2 border-primary-500' : ''"
-          @click="selectClinic(clinic)"
-        >
-          <div class="flex justify-between">
-            <div>
-              <h4 class="font-medium">{{ clinic.company_name }}</h4>
-              <p class="text-sm text-gray-500">
-                {{ clinic.street_avenue }}, {{ clinic.number }}, {{ clinic.neighborhood }}, {{ clinic.city }}-{{ clinic.state }} 
-              </p>
-            </div>
-            <div class="text-right">
-              <!-- <p class="text-sm text-gray-500">{{ clinic.distance }}</p> -->
+    <div v-if="isStep('clinic')" class="space-y-6">
+      <div class="bg-white rounded-3xl p-8 shadow-xl border border-purple-100">
+        <div class="text-center mb-8">
+          <div class="bg-gradient-to-br from-emerald-400 via-teal-500 to-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h2 class="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-3">
+            Onde você vai brilhar?
+          </h2>
+          <p class="text-gray-600">Escolha a clínica que será sua casa por um dia</p>
+        </div>
+
+        <div class="space-y-4">
+          <div
+            v-for="clinic in clinics"
+            :key="clinic.id"
+            class="p-6 rounded-2xl border-2 cursor-pointer transition-all transform hover:scale-105 hover:shadow-lg"
+            :class="selectedClinic?.id === clinic.id ?
+              'border-emerald-500 bg-gradient-to-r from-emerald-50 to-teal-50 shadow-lg' :
+              'border-gray-200 bg-white hover:border-emerald-300 hover:bg-emerald-50'"
+            @click="selectClinic(clinic)"
+          >
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-6 h-6 rounded-full border-2 transition-all flex-shrink-0 mt-1"
+                :class="selectedClinic?.id === clinic.id ?
+                  'bg-emerald-500 border-emerald-500' :
+                  'border-gray-300'"
+              >
+                <div
+                  v-if="selectedClinic?.id === clinic.id"
+                  class="w-3 h-3 bg-white rounded-full m-0.5"
+                ></div>
+              </div>
+              <div class="flex-1">
+                <h4 class="font-bold text-lg text-gray-800 mb-2">{{ clinic.company_name }}</h4>
+                <div class="flex items-center space-x-2 text-gray-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <p class="text-sm">
+                    {{ clinic.street_avenue }}, {{ clinic.number }}, {{ clinic.neighborhood }}<br>
+                    {{ clinic.city }}-{{ clinic.state }}
+                  </p>
+                </div>
+              </div>
+              <div class="flex-shrink-0">
+                <div class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-semibold">
+                  Premium
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      
-      <div class="flex space-x-3 mt-6">
-        <button class="btn-outline flex-1" @click="prevStep">Voltar</button>
-        <button 
-          class="btn-primary flex-1" 
-          :disabled="!selectedClinic" 
-          :class="{'opacity-50 cursor-not-allowed': !selectedClinic}"
+
+      <div class="flex space-x-4">
+        <button
+          class="flex-1 bg-white border-2 border-gray-300 text-gray-700 px-6 py-4 rounded-2xl font-semibold transition-all hover:bg-gray-50 hover:border-gray-400"
+          @click="prevStep"
+        >
+          ← Voltar
+        </button>
+        <button
+          class="flex-1 bg-gradient-to-r from-emerald-600 via-teal-600 to-blue-700 text-white px-6 py-4 rounded-2xl font-bold shadow-lg transition-all transform disabled:opacity-50 disabled:cursor-not-allowed enabled:hover:scale-105 enabled:hover:shadow-xl"
+          :disabled="!selectedClinic"
           @click="nextStep"
         >
-          Continue
+          <span v-if="selectedClinic">Continuar com {{ selectedClinic.company_name }} →</span>
+          <span v-else>Selecione uma clínica →</span>
         </button>
       </div>
     </div>
