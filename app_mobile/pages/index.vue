@@ -362,16 +362,14 @@ const initializeClientData = () => {
   }
 }
 
-onMounted( async() => {
+onMounted(async () => {
   // Inicializar dados do cliente
   initializeClientData()
 
   // Listener para reabrir onboarding do header
-  if (process.client) {
-    window.addEventListener('open-onboarding', () => {
-      showOnboarding.value = true
-    })
-  }
+  window.addEventListener('open-onboarding', () => {
+    showOnboarding.value = true
+  })
 
   await useAppProducts().getProducts()
 
