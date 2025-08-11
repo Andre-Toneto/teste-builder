@@ -91,51 +91,81 @@
         </form>
       </div>
 
-      <!-- Diferenciais da Neo Viso -->
-      <div class="mt-8 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-5 border border-purple-100">
-        <h3 class="font-bold text-purple-800 text-center mb-4">🏆 Por que escolher a Neo Viso?</h3>
+      <!-- Diferenciais da Neo Viso aprimorados -->
+      <div class="bg-white rounded-3xl p-8 shadow-xl border border-purple-100">
+        <div class="text-center mb-8">
+          <div class="bg-gradient-to-br from-yellow-400 via-orange-400 to-red-400 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <span class="text-2xl">🏆</span>
+          </div>
+          <h3 class="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
+            Por que escolher a Neo Viso?
+          </h3>
+          <p class="text-gray-600">Sua jornada de sucesso começa aqui</p>
+        </div>
 
-        <div class="space-y-3">
-          <div class="flex items-center space-x-3">
-            <div class="bg-purple-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+        <div class="space-y-5">
+          <div class="flex items-start space-x-4 p-4 rounded-2xl bg-gradient-to-r from-purple-50 to-indigo-50 hover:from-purple-100 hover:to-indigo-100 transition-all transform hover:scale-105">
+            <div class="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
             </div>
-            <p class="text-purple-700 text-sm"><span class="font-semibold">Consultórios VIP</span> com equipamentos de última geração</p>
+            <div>
+              <p class="text-purple-800 font-semibold">Consultórios VIP de última geração</p>
+              <p class="text-purple-600 text-sm mt-1">Ambiente premium que inspira confiança nos seus pacientes</p>
+            </div>
           </div>
 
-          <div class="flex items-center space-x-3">
-            <div class="bg-purple-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+          <div class="flex items-start space-x-4 p-4 rounded-2xl bg-gradient-to-r from-emerald-50 to-teal-50 hover:from-emerald-100 hover:to-teal-100 transition-all transform hover:scale-105">
+            <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <p class="text-purple-700 text-sm"><span class="font-semibold">Suporte técnico 24/7</span> durante seus atendimentos</p>
+            <div>
+              <p class="text-emerald-800 font-semibold">Suporte técnico 24/7</p>
+              <p class="text-emerald-600 text-sm mt-1">Nossa equipe te acompanha em cada atendimento</p>
+            </div>
           </div>
 
-          <div class="flex items-center space-x-3">
-            <div class="bg-purple-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+          <div class="flex items-start space-x-4 p-4 rounded-2xl bg-gradient-to-r from-orange-50 to-red-50 hover:from-orange-100 hover:to-red-100 transition-all transform hover:scale-105">
+            <div class="bg-gradient-to-br from-orange-500 to-red-600 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2M7 4h10l-1 12a2 2 0 01-2 2H10a2 2 0 01-2-2L7 4zM10 10v4m4-4v4" />
               </svg>
             </div>
-            <p class="text-purple-700 text-sm"><span class="font-semibold">Marketing especializado</span> para alavancar seus negócios</p>
+            <div>
+              <p class="text-orange-800 font-semibold">Marketing especializado</p>
+              <p class="text-orange-600 text-sm mt-1">Estratégias personalizadas para alavancar seu negócio</p>
+            </div>
           </div>
 
-          <div class="flex items-center space-x-3">
-            <div class="bg-purple-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+          <div class="flex items-start space-x-4 p-4 rounded-2xl bg-gradient-to-r from-pink-50 to-rose-50 hover:from-pink-100 hover:to-rose-100 transition-all transform hover:scale-105">
+            <div class="bg-gradient-to-br from-pink-500 to-rose-600 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
               </svg>
             </div>
-            <p class="text-purple-700 text-sm"><span class="font-semibold">Produtos premium</span> disponíveis no local</p>
+            <div>
+              <p class="text-pink-800 font-semibold">Produtos premium inclusos</p>
+              <p class="text-pink-600 text-sm mt-1">Linha completa de produtos de alta qualidade à sua disposição</p>
+            </div>
           </div>
         </div>
 
-        <div class="mt-4 p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl text-center">
-          <p class="text-white text-sm font-bold">
-            🎯 Conceito único: <span class="text-yellow-300">Você é o dono por um dia!</span>
+        <!-- CTA especial -->
+        <div class="mt-8 p-6 bg-gradient-to-br from-violet-500 via-purple-500 to-indigo-600 rounded-2xl text-center shadow-xl">
+          <div class="flex items-center justify-center mb-3">
+            <div class="bg-white/20 rounded-full p-2 mr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <span class="text-white text-lg font-bold">🎯 Conceito único na região!</span>
+          </div>
+          <p class="text-white/90 text-lg leading-relaxed">
+            <span class="font-bold text-yellow-300">Você é o dono por um dia!</span><br>
+            <span class="text-sm">A clínica inteira trabalhando para o seu sucesso ✨</span>
           </p>
         </div>
       </div>
