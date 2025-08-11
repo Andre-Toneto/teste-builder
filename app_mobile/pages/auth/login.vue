@@ -242,7 +242,9 @@ const handleLogin = () =>  {
         useApp().login(login_data).then((res) => {
             // loadingBtn.value = false
             useApp().logged = true
-            localStorage.setItem('logged', 'true')
+            if (process.client) {
+              localStorage.setItem('logged', 'true')
+            }
             useApp().setUser(res)
             router.push('/')
         }).catch((error) => {
