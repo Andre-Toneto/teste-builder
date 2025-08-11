@@ -478,6 +478,16 @@
         </button>
       </div>
     </div>
+
+    <!-- Modal de sucesso para agendamento -->
+    <AppointmentSuccessModal
+      :show="showSuccessModal"
+      :appointment-date="selectedDate"
+      :appointment-time="selectedTime"
+      :duration="selectedDuration"
+      @close="handleSuccessModalClose"
+      @secondary-action="handleViewAgenda"
+    />
   </div>
 </template>
 
