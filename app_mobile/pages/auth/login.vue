@@ -1,84 +1,171 @@
 <template>
-  <div class="min-h-screen flex flex-col">
-    <div class="bg-primary-600 text-white py-8 px-4">
-      <h1 class="text-2xl font-semibold">Bem-vindo(a) de volta!</h1>
-      <p class="text-primary-100">Sua clínica particular te espera na Neo Viso</p>
+  <div class="min-h-screen flex flex-col bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+    <!-- Header emocional e acolhedor -->
+    <div class="relative overflow-hidden">
+      <div class="bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 text-white py-12 px-6 relative">
+        <!-- Elementos decorativos -->
+        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/10 to-transparent rounded-full transform translate-x-8 -translate-y-8"></div>
+        <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-white/5 to-transparent rounded-full transform -translate-x-4 translate-y-4"></div>
+
+        <div class="relative z-10 text-center">
+          <!-- Ícone animado -->
+          <div class="mb-6">
+            <div class="bg-white/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto shadow-lg backdrop-blur-sm animate-pulse">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </div>
+          </div>
+
+          <h1 class="text-3xl font-bold mb-3 leading-tight">
+            Bem-vindo(a) de volta! 🌟
+          </h1>
+          <p class="text-white/90 text-lg leading-relaxed">
+            Sua clínica particular te espera na Neo Viso<br>
+            <span class="font-medium text-yellow-300">✨ Pronto para transformar vidas hoje?</span>
+          </p>
+
+          <!-- Detalhe visual -->
+          <div class="flex justify-center mt-6 space-x-2">
+            <div class="w-2 h-2 bg-white/60 rounded-full animate-bounce" style="animation-delay: 0ms;"></div>
+            <div class="w-2 h-2 bg-white/60 rounded-full animate-bounce" style="animation-delay: 150ms;"></div>
+            <div class="w-2 h-2 bg-white/60 rounded-full animate-bounce" style="animation-delay: 300ms;"></div>
+          </div>
+        </div>
+      </div>
     </div>
-    
-    <div class="flex-1 p-6">
-      <form @submit.prevent="handleLogin" class="space-y-5">
-        <div>
-          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Seu usuário</label>
-          <input
-            id="email"
-            type="text"
-            v-model="userLogin"
-            class="input-field"
-            placeholder="Digite seu usuário"
-            required
-          />
+
+    <div class="flex-1 p-6 space-y-8">
+      <!-- Formulário melhorado -->
+      <div class="bg-white rounded-3xl p-8 shadow-xl border border-purple-100">
+        <div class="text-center mb-8">
+          <h2 class="text-xl font-bold text-gray-800 mb-2">Acesse sua conta</h2>
+          <p class="text-gray-600">Entre e comece a criar momentos especiais</p>
         </div>
 
-        <div>
-          <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Sua senha</label>
-          <input
-            id="password"
-            type="password"
-            v-model="passLogin"
-            class="input-field"
-            placeholder="Digite sua senha"
-            required
-          />
+        <form @submit.prevent="handleLogin" class="space-y-6">
+          <div class="space-y-2">
+            <label for="email" class="block text-sm font-semibold text-gray-700">Seu usuário</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+              <input
+                id="email"
+                type="text"
+                v-model="userLogin"
+                class="w-full pl-12 pr-4 py-4 bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl text-gray-800 placeholder-purple-400 focus:border-purple-400 focus:outline-none focus:ring-4 focus:ring-purple-100 transition-all"
+                placeholder="Digite seu usuário"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label for="password" class="block text-sm font-semibold text-gray-700">Sua senha</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                </svg>
+              </div>
+              <input
+                id="password"
+                type="password"
+                v-model="passLogin"
+                class="w-full pl-12 pr-4 py-4 bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl text-gray-800 placeholder-purple-400 focus:border-purple-400 focus:outline-none focus:ring-4 focus:ring-purple-100 transition-all"
+                placeholder="Digite sua senha"
+                required
+              />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-700 text-white px-8 py-4 rounded-xl text-lg font-bold hover:from-violet-700 hover:via-purple-700 hover:to-indigo-800 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl active:scale-95"
+          >
+            ✨ Acessar minha clínica ✨
+          </button>
+        </form>
+      </div>
+
+      <!-- Diferenciais da Neo Viso aprimorados -->
+      <div class="bg-white rounded-3xl p-8 shadow-xl border border-purple-100">
+        <div class="text-center mb-8">
+          <div class="bg-gradient-to-br from-yellow-400 via-orange-400 to-red-400 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <span class="text-2xl">🏆</span>
+          </div>
+          <h3 class="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
+            Por que escolher a Neo Viso?
+          </h3>
+          <p class="text-gray-600">Sua jornada de sucesso começa aqui</p>
         </div>
 
-        <button type="submit" class="btn-primary w-full text-white" >Acessar minha clínica</button>
-      </form>
-
-      <!-- Diferenciais da Neo Viso -->
-      <div class="mt-8 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-5 border border-purple-100">
-        <h3 class="font-bold text-purple-800 text-center mb-4">🏆 Por que escolher a Neo Viso?</h3>
-
-        <div class="space-y-3">
-          <div class="flex items-center space-x-3">
-            <div class="bg-purple-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+        <div class="space-y-5">
+          <div class="flex items-start space-x-4 p-4 rounded-2xl bg-gradient-to-r from-purple-50 to-indigo-50 hover:from-purple-100 hover:to-indigo-100 transition-all transform hover:scale-105">
+            <div class="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
             </div>
-            <p class="text-purple-700 text-sm"><span class="font-semibold">Consultórios VIP</span> com equipamentos de última geração</p>
+            <div>
+              <p class="text-purple-800 font-semibold">Consultórios VIP de última geração</p>
+              <p class="text-purple-600 text-sm mt-1">Ambiente premium que inspira confiança nos seus pacientes</p>
+            </div>
           </div>
 
-          <div class="flex items-center space-x-3">
-            <div class="bg-purple-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+          <div class="flex items-start space-x-4 p-4 rounded-2xl bg-gradient-to-r from-emerald-50 to-teal-50 hover:from-emerald-100 hover:to-teal-100 transition-all transform hover:scale-105">
+            <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <p class="text-purple-700 text-sm"><span class="font-semibold">Suporte técnico 24/7</span> durante seus atendimentos</p>
+            <div>
+              <p class="text-emerald-800 font-semibold">Suporte técnico 24/7</p>
+              <p class="text-emerald-600 text-sm mt-1">Nossa equipe te acompanha em cada atendimento</p>
+            </div>
           </div>
 
-          <div class="flex items-center space-x-3">
-            <div class="bg-purple-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+          <div class="flex items-start space-x-4 p-4 rounded-2xl bg-gradient-to-r from-orange-50 to-red-50 hover:from-orange-100 hover:to-red-100 transition-all transform hover:scale-105">
+            <div class="bg-gradient-to-br from-orange-500 to-red-600 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2M7 4h10l-1 12a2 2 0 01-2 2H10a2 2 0 01-2-2L7 4zM10 10v4m4-4v4" />
               </svg>
             </div>
-            <p class="text-purple-700 text-sm"><span class="font-semibold">Marketing especializado</span> para alavancar seus negócios</p>
+            <div>
+              <p class="text-orange-800 font-semibold">Marketing especializado</p>
+              <p class="text-orange-600 text-sm mt-1">Estratégias personalizadas para alavancar seu negócio</p>
+            </div>
           </div>
 
-          <div class="flex items-center space-x-3">
-            <div class="bg-purple-500 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+          <div class="flex items-start space-x-4 p-4 rounded-2xl bg-gradient-to-r from-pink-50 to-rose-50 hover:from-pink-100 hover:to-rose-100 transition-all transform hover:scale-105">
+            <div class="bg-gradient-to-br from-pink-500 to-rose-600 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
               </svg>
             </div>
-            <p class="text-purple-700 text-sm"><span class="font-semibold">Produtos premium</span> disponíveis no local</p>
+            <div>
+              <p class="text-pink-800 font-semibold">Produtos premium inclusos</p>
+              <p class="text-pink-600 text-sm mt-1">Linha completa de produtos de alta qualidade à sua disposição</p>
+            </div>
           </div>
         </div>
 
-        <div class="mt-4 p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl text-center">
-          <p class="text-white text-sm font-bold">
-            🎯 Conceito único: <span class="text-yellow-300">Você é o dono por um dia!</span>
+        <!-- CTA especial -->
+        <div class="mt-8 p-6 bg-gradient-to-br from-violet-500 via-purple-500 to-indigo-600 rounded-2xl text-center shadow-xl">
+          <div class="flex items-center justify-center mb-3">
+            <div class="bg-white/20 rounded-full p-2 mr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <span class="text-white text-lg font-bold">🎯 Conceito único na região!</span>
+          </div>
+          <p class="text-white/90 text-lg leading-relaxed">
+            <span class="font-bold text-yellow-300">Você é o dono por um dia!</span><br>
+            <span class="text-sm">A clínica inteira trabalhando para o seu sucesso ✨</span>
           </p>
         </div>
       </div>
@@ -147,13 +234,17 @@ const handleLogin = () =>  {
             password: passLogin.value
         }
 
-        localStorage.setItem('user', userLogin.value)
-        localStorage.setItem('password', passLogin.value)
+        if (process.client) {
+          localStorage.setItem('user', userLogin.value)
+          localStorage.setItem('password', passLogin.value)
+        }
 
         useApp().login(login_data).then((res) => {
             // loadingBtn.value = false
             useApp().logged = true
-            localStorage.setItem('logged', 'true')
+            if (process.client) {
+              localStorage.setItem('logged', 'true')
+            }
             useApp().setUser(res)
             router.push('/')
         }).catch((error) => {
