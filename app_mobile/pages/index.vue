@@ -141,7 +141,7 @@
           <p class="text-white/90 text-sm">Sua clínica particular com tudo incluso!</p>
         </div>
 
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-2 gap-3 sm:gap-4">
           <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
             <div class="text-2xl mb-2">💎</div>
             <h3 class="font-bold text-sm mb-1">Estrutura VIP</h3>
