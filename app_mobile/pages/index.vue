@@ -32,7 +32,7 @@
 
         <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 mb-4">
           <p class="text-white text-sm leading-relaxed mb-2">
-            <span class="font-semibold">🏰 Hoje a Neo Viso é inteiramente sua!</span><br>
+            <span class="font-semibold">�� Hoje a Neo Viso é inteiramente sua!</span><br>
             Sua estrutura dos sonhos te espera para mais um dia de transformações incríveis.
           </p>
           <p class="text-white/90 text-xs">
@@ -361,6 +361,9 @@ const initializeClientData = () => {
 }
 
 onMounted(async () => {
+  // Marcar como montado
+  mounted.value = true
+
   // Inicializar dados do cliente
   initializeClientData()
 
