@@ -704,7 +704,11 @@ const handleViewAgenda = () => {
   router.push('/appointments')
 }
 
-onBeforeMount(async() => { 
+onMounted(() => {
+  isMounted.value = true
+})
+
+onBeforeMount(async() => {
   await useAppProducts().getProducts()
   await useAppClinic().getClinics()
   await useAppDoctors().getDoctors();
