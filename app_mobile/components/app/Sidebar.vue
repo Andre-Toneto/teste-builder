@@ -97,6 +97,12 @@ const props = defineProps({
 
 defineEmits(['close']);
 
+const mounted = ref(false);
+
+onMounted(() => {
+  mounted.value = true;
+});
+
 // Menu items
 const menuItems = [
   { 
