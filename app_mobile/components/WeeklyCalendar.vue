@@ -163,30 +163,14 @@
       </div>
     </div>
 
-    <!-- Feedback de Reserva -->
-    <div v-if="showBookingFeedback" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-      <div class="bg-white rounded-2xl p-6 max-w-sm w-full shadow-2xl">
-        <div class="text-center">
-          <div class="bg-gradient-to-br from-green-400 to-emerald-500 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-bold text-gray-800 mb-2">
-            🎉 Agendamento confirmado!
-          </h3>
-          <p class="text-gray-600 text-sm mb-6">
-            Sua sala estará pronta para te receber às <span class="font-semibold text-purple-600">{{ selectedSlot?.time }}:00</span> do dia <span class="font-semibold text-purple-600">{{ selectedSlot?.date }}</span>.
-          </p>
-          <button 
-            @click="showBookingFeedback = false"
-            class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded-xl font-semibold hover:from-purple-600 hover:to-pink-600 transition-all"
-          >
-            ✨ Perfeito!
-          </button>
-        </div>
-      </div>
-    </div>
+    <!-- Modal de Confirmação -->
+    <SuccessModal
+      :show="showBookingFeedback"
+      :appointment-details="selectedSlot"
+      :message="`Perfeito! Sua sala estará prontinha e te esperando! O horário das ${selectedSlot?.time}:00 está reservado especialmente para você! 💖`"
+      @close="showBookingFeedback = false"
+      @secondary-action="$emit('view-appointments')"
+    />
   </div>
 </template>
 
@@ -198,7 +182,7 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['slot-click', 'appointment-click'])
+const emit = defineEmits(['slot-click', 'appointment-click', 'view-appointments'])
 
 const viewMode = ref('week')
 const currentWeek = ref(new Date())
