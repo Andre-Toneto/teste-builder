@@ -84,7 +84,7 @@
   }
 
   .page-container {
-    @apply px-4 py-4 pb-20;
+    @apply px-2 sm:px-4 py-2 sm:py-4 pb-20 sm:pb-24;
   }
 
   /* Novos estilos para componentes acolhedores */
