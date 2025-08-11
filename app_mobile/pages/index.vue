@@ -338,12 +338,12 @@ const startReservation = () => {
 
 // Inicializar dados do cliente
 const initializeClientData = () => {
-  // Configurar dados de usuário
-  const appUser = useApp().user
-  userName.value = appUser.name || 'Doutor(a)'
-
   // Configurar data atual (sempre no cliente)
   if (process.client) {
+    // Configurar dados de usuário apenas no cliente
+    const appUser = useApp().user
+    userName.value = appUser.name || 'Doutor(a)'
+
     const now = new Date()
     currentDate.value = {
       day: now.getDate().toString(),
