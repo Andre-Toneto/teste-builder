@@ -399,7 +399,7 @@
             </svg>
           </div>
           <h2 class="text-2xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent mb-3">
-            Quase pronto! ���
+            Quase pronto! ✨
           </h2>
           <p class="text-gray-600">Revise os detalhes do seu dia especial</p>
         </div>
@@ -595,12 +595,19 @@ const availableTimeSlots = ref([
   '16:00', '16:30'
 ]);
 
+// Controle de hidratação
+const isMounted = ref(false)
+
 // Formatted selected date
 const formattedDate = computed(() => {
-  if (!selectedDate.value) return '';
-  
-  const date = new Date(selectedDate.value);
-  return date.toLocaleDateString('pt-BR', { weekday: 'long', month: 'long', day: 'numeric' });
+  if (!selectedDate.value || !isMounted.value) return '';
+
+  try {
+    const date = new Date(selectedDate.value);
+    return date.toLocaleDateString('pt-BR', { weekday: 'long', month: 'long', day: 'numeric' });
+  } catch (error) {
+    return selectedDate.value || '';
+  }
 });
 
 
