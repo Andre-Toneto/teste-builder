@@ -299,6 +299,7 @@ const lastAppointment = computed(() => {
 // Funções simplificadas
 
 // Variáveis reativas para evitar hidratação mismatch
+const mounted = ref(false)
 const showOnboarding = ref(false)
 const userName = ref('Doutor(a) incrível')
 const currentDate = ref({
