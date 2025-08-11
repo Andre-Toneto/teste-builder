@@ -26,9 +26,7 @@
           <div class="flex-1">
             <div class="text-white/80 text-xs font-semibold tracking-wider uppercase mb-1">BEM-VINDO AO SEU REINO ✨</div>
             <h2 class="text-xl font-bold">
-              <ClientOnly fallback="Olá, Doutor(a) incrível! 🌟">
-                Olá, {{ useApp().user.name || 'Doutor(a)' }} incrível! 🌟
-              </ClientOnly>
+                Olá, {{ userName }} incrível! 🌟
             </h2>
           </div>
         </div>
