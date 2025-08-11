@@ -53,3 +53,48 @@
 <script setup>
 const route = useRoute();
 </script>
+
+<style scoped>
+.nav-item-gradient {
+  @apply relative transition-all duration-200 ease-in-out rounded-lg mx-1 hover:bg-gradient-to-br from-white/50 to-white/30;
+  min-height: 4rem;
+  touch-action: manipulation;
+}
+
+.nav-active {
+  @apply bg-gradient-to-br from-purple-100 to-pink-100;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+}
+
+.nav-icon-wrapper {
+  @apply transition-transform duration-200;
+}
+
+.nav-item-gradient:active {
+  transform: translateY(1px);
+}
+
+.nav-item-gradient:active .nav-icon-wrapper {
+  transform: scale(0.95);
+}
+
+/* Responsive utilities */
+@media (max-width: 375px) {
+  .xs\:hidden {
+    display: none;
+  }
+  .xs\:inline {
+    display: inline;
+  }
+}
+
+@media (min-width: 376px) {
+  .xs\:hidden {
+    display: inline;
+  }
+  .xs\:inline {
+    display: none;
+  }
+}
+</style>
