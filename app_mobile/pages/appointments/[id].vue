@@ -602,7 +602,7 @@ const isMounted = ref(false)
 
 // Formatted selected date
 const formattedDate = computed(() => {
-  if (!selectedDate.value || !isMounted.value) return '';
+  if (!selectedDate.value || !isMounted.value || process.server) return '';
 
   try {
     const date = new Date(selectedDate.value);
