@@ -1,38 +1,95 @@
 <template>
-  <div class="min-h-screen flex flex-col">
-    <div class="bg-primary-600 text-white py-8 px-4">
-      <h1 class="text-2xl font-semibold">Bem-vindo(a) de volta!</h1>
-      <p class="text-primary-100">Sua clínica particular te espera na Neo Viso</p>
+  <div class="min-h-screen flex flex-col bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+    <!-- Header emocional e acolhedor -->
+    <div class="relative overflow-hidden">
+      <div class="bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 text-white py-12 px-6 relative">
+        <!-- Elementos decorativos -->
+        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/10 to-transparent rounded-full transform translate-x-8 -translate-y-8"></div>
+        <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-white/5 to-transparent rounded-full transform -translate-x-4 translate-y-4"></div>
+
+        <div class="relative z-10 text-center">
+          <!-- Ícone animado -->
+          <div class="mb-6">
+            <div class="bg-white/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto shadow-lg backdrop-blur-sm animate-pulse">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </div>
+          </div>
+
+          <h1 class="text-3xl font-bold mb-3 leading-tight">
+            Bem-vindo(a) de volta! 🌟
+          </h1>
+          <p class="text-white/90 text-lg leading-relaxed">
+            Sua clínica particular te espera na Neo Viso<br>
+            <span class="font-medium text-yellow-300">✨ Pronto para transformar vidas hoje?</span>
+          </p>
+
+          <!-- Detalhe visual -->
+          <div class="flex justify-center mt-6 space-x-2">
+            <div class="w-2 h-2 bg-white/60 rounded-full animate-bounce" style="animation-delay: 0ms;"></div>
+            <div class="w-2 h-2 bg-white/60 rounded-full animate-bounce" style="animation-delay: 150ms;"></div>
+            <div class="w-2 h-2 bg-white/60 rounded-full animate-bounce" style="animation-delay: 300ms;"></div>
+          </div>
+        </div>
+      </div>
     </div>
-    
-    <div class="flex-1 p-6">
-      <form @submit.prevent="handleLogin" class="space-y-5">
-        <div>
-          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Seu usuário</label>
-          <input
-            id="email"
-            type="text"
-            v-model="userLogin"
-            class="input-field"
-            placeholder="Digite seu usuário"
-            required
-          />
+
+    <div class="flex-1 p-6 space-y-8">
+      <!-- Formulário melhorado -->
+      <div class="bg-white rounded-3xl p-8 shadow-xl border border-purple-100">
+        <div class="text-center mb-8">
+          <h2 class="text-xl font-bold text-gray-800 mb-2">Acesse sua conta</h2>
+          <p class="text-gray-600">Entre e comece a criar momentos especiais</p>
         </div>
 
-        <div>
-          <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Sua senha</label>
-          <input
-            id="password"
-            type="password"
-            v-model="passLogin"
-            class="input-field"
-            placeholder="Digite sua senha"
-            required
-          />
-        </div>
+        <form @submit.prevent="handleLogin" class="space-y-6">
+          <div class="space-y-2">
+            <label for="email" class="block text-sm font-semibold text-gray-700">Seu usuário</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+              <input
+                id="email"
+                type="text"
+                v-model="userLogin"
+                class="w-full pl-12 pr-4 py-4 bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl text-gray-800 placeholder-purple-400 focus:border-purple-400 focus:outline-none focus:ring-4 focus:ring-purple-100 transition-all"
+                placeholder="Digite seu usuário"
+                required
+              />
+            </div>
+          </div>
 
-        <button type="submit" class="btn-primary w-full text-white" >Acessar minha clínica</button>
-      </form>
+          <div class="space-y-2">
+            <label for="password" class="block text-sm font-semibold text-gray-700">Sua senha</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                </svg>
+              </div>
+              <input
+                id="password"
+                type="password"
+                v-model="passLogin"
+                class="w-full pl-12 pr-4 py-4 bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl text-gray-800 placeholder-purple-400 focus:border-purple-400 focus:outline-none focus:ring-4 focus:ring-purple-100 transition-all"
+                placeholder="Digite sua senha"
+                required
+              />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-700 text-white px-8 py-4 rounded-xl text-lg font-bold hover:from-violet-700 hover:via-purple-700 hover:to-indigo-800 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl active:scale-95"
+          >
+            ✨ Acessar minha clínica ✨
+          </button>
+        </form>
+      </div>
 
       <!-- Diferenciais da Neo Viso -->
       <div class="mt-8 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-5 border border-purple-100">
