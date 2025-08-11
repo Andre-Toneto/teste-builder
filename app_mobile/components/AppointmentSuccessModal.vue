@@ -159,7 +159,7 @@ onMounted(() => {
 })
 
 const formattedDate = computed(() => {
-  if (!props.appointmentDate || !mounted.value) return ''
+  if (!props.appointmentDate || !mounted.value || process.server) return ''
 
   try {
     const date = new Date(props.appointmentDate)
