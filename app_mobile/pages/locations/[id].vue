@@ -74,7 +74,7 @@
       <!-- Informações organizadas em cards emocionais -->
       <div class="space-y-6">
         <!-- Horário de funcionamento -->
-        <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border border-amber-100 shadow-lg">
+        <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl gradient-section border border-amber-100 shadow-lg">
           <div class="flex items-center mb-4">
             <div class="bg-gradient-to-r from-amber-400 to-orange-500 rounded-full p-3 mr-3">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
