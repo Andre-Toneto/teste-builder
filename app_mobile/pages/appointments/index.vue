@@ -20,9 +20,9 @@
               </div>
             </div>
             
-            <h1 class="text-2xl font-bold mb-2">Monte seu dia com a estrutura da Neoviso</h1>
+            <h1 class="text-lg font-bold mb-2">Monte seu dia com a estrutura da Neoviso</h1>
             <p class="text-white/90 text-sm leading-relaxed">
-              Cada dia que você reserva é uma oportunidade de transformar vidas. <br>
+              Cada reserva é uma oportunidade de transformar vidas. <br>
               <span class="font-medium">Sua agenda, seu consultório, seu sucesso! ✨</span>
             </p>
           </div>
@@ -85,18 +85,18 @@
           </button>
         </div>
 
-        <div v-if="viewMode === 'list'" class="flex flex-wrap gap-3 mb-4">
+        <div v-if="viewMode === 'list'" class="flex flex-wrap gap-1 mb-4">
           <button
             v-for="tab in tabs"
             :key="tab.value"
             @click="activeTab = tab.value"
             class="px-4 py-2.5 text-sm font-semibold rounded-full transition-all transform hover:scale-105"
             :class="activeTab === tab.value ?
-              'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg' :
-              'bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 hover:from-purple-100 hover:to-pink-100'"
+              'bg-gradient-to-r from-purple-500 to-pink-500 text-xs text-white shadow-lg' :
+              'bg-gradient-to-r from-gray-100 to-gray-200 text-xs text-gray-700 hover:from-purple-100 hover:to-pink-100'"
           >
             {{ tab.label }}
-            <span v-if="getTabCount(tab.value) > 0" class="ml-2 text-xs bg-white/30 px-2 py-0.5 rounded-full">
+            <span v-if="getTabCount(tab.value) > 0" class="ml-2 text-xs bg-white/30 px-1 py-0.5 rounded-full">
               {{ getTabCount(tab.value) }}
             </span>
           </button>
@@ -105,8 +105,8 @@
         <div v-if="viewMode === 'list'" class="relative">
           <input
             type="text"
-            class="w-full pl-12 pr-4 py-3 bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl text-gray-700 placeholder-purple-400 focus:border-purple-400 focus:outline-none transition-all"
-            placeholder="🔍 Procurar por um dia específico ou procedimento..."
+            class="w-full pl-12 pr-4 py-3 bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl text-sm text-gray-700 placeholder-purple-400 focus:border-purple-400 focus:outline-none transition-all"
+            placeholder="Procurar por um dia específico ou procedimento..."
             v-model="searchQuery"
           />
           <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -244,8 +244,8 @@ const showConfirmationFeedback = ref(false);
 const confirmationDetails = ref({});
 
 const tabs = [
-  { label: '📅 Próximos dias de trabalho', value: 'upcoming' },
-  { label: '✨ Dias já realizados', value: 'past' },
+  { label: '📅 Confirmados', value: 'upcoming' },
+  { label: '✨ Concluídos', value: 'past' },
   { label: '⏳ Aguardando confirmação', value: 'open' },
 ];
 

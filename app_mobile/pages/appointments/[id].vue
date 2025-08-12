@@ -1,15 +1,15 @@
 <template>
   <div class="page-container bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 min-h-screen">
     <!-- Header emocional e acolhedor -->
-    <div class="mb-8 -mx-4 sm:-mx-6">
-      <div class="bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 text-white py-8 px-6 relative overflow-hidden">
+    <div class="mb-4 -mx-4 sm:-mx-6">
+      <div class="bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 text-white py-4 px-6 relative overflow-hidden">
         <!-- Elementos decorativos -->
         <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/10 to-transparent rounded-full transform translate-x-8 -translate-y-8"></div>
         <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-white/5 to-transparent rounded-full transform -translate-x-4 translate-y-4"></div>
 
         <div class="relative z-10">
           <!-- Botão Voltar estilizado -->
-          <button @click="router.back()" class="flex items-center text-white/80 hover:text-white mb-6 transition-all transform hover:scale-105">
+          <button @click="router.back()" class="flex items-center text-white/80 hover:text-white transition-all transform hover:scale-105">
             <div class="bg-white/20 rounded-full p-2 mr-2 backdrop-blur-sm">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -18,20 +18,23 @@
             <span class="font-medium">Voltar</span>
           </button>
 
-          <div class="text-center">
+          <div class="text-left mt-2">
             <!-- Ícone animado -->
-            <div class="mb-6">
-              <div class="bg-white/20 rounded-full w-20 h-20 flex items-center justify-center mx-auto shadow-lg backdrop-blur-sm animate-pulse">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
+            <div class="flex">
+              <h1 class="text-xl font-bold mb-3 leading-tight">
+                Monte seu dia dos sonhos! ✨
+              </h1>
+              <div>
+                <div class="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg backdrop-blur-sm animate-pulse">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </div>
               </div>
+  
+              
             </div>
-
-            <h1 class="text-3xl font-bold mb-3 leading-tight">
-              Monte seu dia dos sonhos! ✨
-            </h1>
-            <p class="text-white/90 text-lg leading-relaxed">
+            <p class="text-white/90 text-md leading-relaxed">
               Cada passo te aproxima do seu consultório particular<br>
               <span class="font-medium text-yellow-300">🎯 Vamos criar algo especial juntos!</span>
             </p>
@@ -41,7 +44,7 @@
     </div>
 
     <!-- Progresso melhorado -->
-    <div class="mb-8 bg-white rounded-2xl p-6 shadow-lg border border-purple-100">
+    <div class="mb-2 bg-white rounded-2xl p-4 shadow-lg border border-purple-100">
       <div class="flex items-center justify-between mb-4">
         <h3 class="text-lg font-bold text-gray-800">Seu progresso</h3>
         <span class="text-sm font-semibold text-purple-600 bg-purple-100 px-3 py-1 rounded-full">
@@ -68,24 +71,24 @@
       </div>
     </div>
         <div v-if="isStep('service')" class="space-y-6">
-          <div class="bg-white rounded-3xl p-8 shadow-xl border border-purple-100">
-            <div class="text-center mb-8">
-              <div class="bg-gradient-to-br from-blue-400 via-indigo-500 to-purple-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
+          <div class="bg-white rounded-3xl p-4 shadow-xl border border-purple-100">
+            <div class="flex text-left mb-2">             
+              <h2 class="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                Qual serviço você oferecerá?
+              </h2>
+              <div class="bg-gradient-to-br from-blue-400 via-indigo-500 to-purple-600 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-3 shadow-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </div>
-              <h2 class="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-3">
-                Qual serviço você oferecerá?
-              </h2>
-              <p class="text-gray-600">Escolha o procedimento que transformará vidas hoje</p>
             </div>
+            <p class="text-gray-600 text-sm text-center mb-3">Escolha o procedimento que transformará vidas hoje</p>
 
             <div class="space-y-4">
               <div
                 v-for="list in services"
                 :key="list.id"
-                class="p-6 rounded-2xl border-2 cursor-pointer transition-all transform hover:scale-105 hover:shadow-lg"
+                class="p-4 rounded-2xl border-2 cursor-pointer transition-all transform hover:scale-105 hover:shadow-lg"
                 :class="selectedService?.id === list.id ?
                   'border-purple-500 bg-gradient-to-r from-purple-50 to-indigo-50 shadow-lg' :
                   'border-gray-200 bg-white hover:border-purple-300 hover:bg-purple-50'"
@@ -105,12 +108,12 @@
                           class="w-2 h-2 bg-white rounded-full m-0.5"
                         ></div>
                       </div>
-                      <h4 class="font-bold text-lg text-gray-800">{{ list.description }}</h4>
+                      <h4 class="font-bold text-md text-gray-800">{{ list.description }}</h4>
                     </div>
                     <p class="text-sm text-gray-600 ml-7">{{ list.period }}</p>
                   </div>
                   <div class="text-right">
-                    <p class="text-2xl font-bold text-purple-600">R${{ list.price }}</p>
+                    <p class="text-lg font-bold text-purple-600">R${{ list.price }}</p>
                     <p class="text-xs text-gray-500">por sessão</p>
                   </div>
                 </div>
@@ -119,7 +122,7 @@
           </div>
 
           <button
-            class="w-full bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-700 text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-lg transition-all transform disabled:opacity-50 disabled:cursor-not-allowed enabled:hover:scale-105 enabled:hover:shadow-xl"
+            class="w-full bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-700 text-white px-4 py-4 rounded-2xl text-lg font-bold shadow-lg transition-all transform disabled:opacity-50 disabled:cursor-not-allowed enabled:hover:scale-105 enabled:hover:shadow-xl"
             :disabled="!selectedService"
             @click="nextStep"
           >
@@ -130,19 +133,20 @@
     
     <!-- Step 2: Select Location -->
     <div v-if="isStep('clinic')" class="space-y-6">
-      <div class="bg-white rounded-3xl p-8 shadow-xl border border-purple-100">
-        <div class="text-center mb-8">
-          <div class="bg-gradient-to-br from-emerald-400 via-teal-500 to-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
+      <div class="bg-white content-center rounded-3xl p-4 shadow-xl border border-purple-100">
+        <div class="text-left flex mb-8">
+          <h2 class="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent  mr-3">
+            Onde você vai brilhar?
+          </h2>
+          <div class="bg-gradient-to-br from-emerald-400 via-teal-500 to-blue-600 rounded-full w-14 h-14 flex items-center justify-center mx-auto shadow-lg">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
           </div>
-          <h2 class="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-3">
-            Onde você vai brilhar?
-          </h2>
-          <p class="text-gray-600">Escolha a clínica que será sua casa por um dia</p>
+        
         </div>
+        <p class="text-gray-600">Escolha a clínica que será sua casa por um dia</p>
 
         <div class="space-y-4">
           <div

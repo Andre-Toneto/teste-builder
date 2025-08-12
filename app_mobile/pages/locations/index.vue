@@ -11,7 +11,7 @@
             </svg>
           </div>
           <div>
-            <h1 class="text-2xl font-bold mb-2">Escolha onde você quer brilhar ✨</h1>
+            <h1 class="text-md font-bold mb-2">Escolha onde você quer brilhar ✨</h1>
             <p class="text-white/90 text-sm">Sua estrutura dos sonhos está te esperando em várias localidades</p>
           </div>
         </div>
@@ -30,8 +30,8 @@
         <div class="relative">
           <input
             type="text"
-            class="w-full pl-12 pr-4 py-3 bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-200 rounded-xl text-gray-700 placeholder-emerald-400 focus:border-emerald-400 focus:outline-none transition-all"
-            placeholder="🔍 Digite o nome da clínica ou cidade..."
+            class="w-full pl-12 pr-4 py-3 bg-gradient-to-r text-smgit  from-emerald-50 to-teal-50 border-2 border-emerald-200 rounded-xl text-gray-700 placeholder-emerald-400 focus:border-emerald-400 focus:outline-none transition-all"
+            placeholder="Digite o nome da clínica ou cidade..."
             v-model="searchQuery"
           />
           <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">

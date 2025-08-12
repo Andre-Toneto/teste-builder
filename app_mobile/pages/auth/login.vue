@@ -2,7 +2,7 @@
   <div class="min-h-screen flex flex-col bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
     <!-- Header emocional e acolhedor -->
     <div class="relative overflow-hidden">
-      <div class="bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 text-white py-12 px-6 relative">
+      <div class="bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 text-white py-4 px-6 relative">
         <!-- Elementos decorativos -->
         <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/10 to-transparent rounded-full transform translate-x-8 -translate-y-8"></div>
         <div class="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-white/5 to-transparent rounded-full transform -translate-x-4 translate-y-4"></div>
@@ -17,11 +17,11 @@
             </div>
           </div>
 
-          <h1 class="text-3xl font-bold mb-3 leading-tight">
+          <h1 class="text-xl font-bold mb-3 leading-tight">
             Bem-vindo(a) de volta! 🌟
           </h1>
-          <p class="text-white/90 text-lg leading-relaxed">
-            Sua clínica particular te espera na Neo Viso<br>
+          <p class="text-white/90 text-md leading-relaxed">
+            Sua clínica particular te espera na Neoviso<br>
             <span class="font-medium text-yellow-300">✨ Pronto para transformar vidas hoje?</span>
           </p>
 
@@ -84,21 +84,41 @@
 
           <button
             type="submit"
-            class="w-full bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-700 text-white px-8 py-4 rounded-xl text-lg font-bold hover:from-violet-700 hover:via-purple-700 hover:to-indigo-800 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl active:scale-95"
+            class="w-full bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-700 text-white px-4 py-4 rounded-xl text-md font-bold hover:from-violet-700 hover:via-purple-700 hover:to-indigo-800 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl active:scale-95"
           >
             ✨ Acessar minha clínica ✨
           </button>
         </form>
+        <div class="mt-6 text-center">
+        <p class="text-sm text-gray-600">
+          Ainda não faz parte da Neoviso?
+          <NuxtLink to="/auth/register" class="text-primary-600 font-medium">Quero me cadastrar</NuxtLink>
+        </p>
+      </div>
       </div>
 
-      <!-- Diferenciais da Neo Viso aprimorados -->
+      <!-- Diferenciais da Neoviso aprimorados -->
+       <div class="mt-8 p-6 bg-gradient-to-br from-violet-500 via-purple-500 to-indigo-600 rounded-2xl text-center shadow-xl">
+          <div class="flex items-center justify-center mb-3">
+            <div class="bg-white/20 rounded-full p-2 mr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <span class="text-white text-lg font-bold">🎯 Conceito único na região!</span>
+          </div>
+          <p class="text-white/90 text-lg leading-relaxed">
+            <span class="font-bold text-yellow-300">Você é o dono por um dia!</span><br>
+            <span class="text-sm">A clínica inteira trabalhando para o seu sucesso ✨</span>
+          </p>
+        </div>
       <div class="bg-white rounded-3xl p-8 shadow-xl border border-purple-100">
         <div class="text-center mb-8">
           <div class="bg-gradient-to-br from-yellow-400 via-orange-400 to-red-400 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
             <span class="text-2xl">🏆</span>
           </div>
           <h3 class="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
-            Por que escolher a Neo Viso?
+            Por que escolher a Neoviso?
           </h3>
           <p class="text-gray-600">Sua jornada de sucesso começa aqui</p>
         </div>
@@ -154,20 +174,7 @@
         </div>
 
         <!-- CTA especial -->
-        <div class="mt-8 p-6 bg-gradient-to-br from-violet-500 via-purple-500 to-indigo-600 rounded-2xl text-center shadow-xl">
-          <div class="flex items-center justify-center mb-3">
-            <div class="bg-white/20 rounded-full p-2 mr-3">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <span class="text-white text-lg font-bold">🎯 Conceito único na região!</span>
-          </div>
-          <p class="text-white/90 text-lg leading-relaxed">
-            <span class="font-bold text-yellow-300">Você é o dono por um dia!</span><br>
-            <span class="text-sm">A clínica inteira trabalhando para o seu sucesso ✨</span>
-          </p>
-        </div>
+        
       </div>
 <!--       
       <div class="mt-8">
@@ -199,12 +206,6 @@
         </div>
       </div> -->
       
-      <div class="mt-6 text-center">
-        <p class="text-sm text-gray-600">
-          Ainda não faz parte da Neoviso?
-          <NuxtLink to="/auth/register" class="text-primary-600 font-medium">Quero me cadastrar</NuxtLink>
-        </p>
-      </div>
     </div>
     <Messageapp />
   </div>

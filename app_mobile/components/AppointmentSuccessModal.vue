@@ -94,7 +94,7 @@
           <!-- Mensagem final de rodapé -->
           <div class="mt-6 text-center">
             <p class="text-xs text-gray-500 italic">
-              🎯 Neo Viso: Onde profissionais se tornam lendas!
+              🎯 Neoviso: Onde profissionais se tornam lendas!
             </p>
           </div>
         </div>

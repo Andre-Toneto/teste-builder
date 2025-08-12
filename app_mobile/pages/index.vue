@@ -10,14 +10,14 @@
     />
 
     <!-- Bloco de boas-vindas emocional -->
-    <div class="relative overflow-hidden bg-gradient-to-br from-violet-600 via-purple-600 to-pink-600 rounded-2xl p-6 shadow-2xl text-white mb-8">
+    <div class="relative overflow-hidden bg-gradient-to-br from-violet-600 via-purple-600 to-pink-600 rounded-2xl p-6 px-4 shadow-2xl text-white mb-8">
       <!-- Decoração de fundo -->
       <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-white/10 rounded-full"></div>
       <div class="absolute bottom-0 left-0 -mb-8 -ml-8 w-32 h-32 bg-white/5 rounded-full"></div>
 
       <div class="relative z-10">
         <div class="flex items-center mb-4">
-          <div class="bg-white/20 rounded-full p-3 mr-4">
+          <div class="bg-white/20 rounded-full p-3 mr-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>
@@ -25,19 +25,32 @@
           <div class="flex-1">
             <div class="text-white/80 text-xs font-semibold tracking-wider uppercase mb-1">BEM-VINDO AO SEU REINO ✨</div>
             <h2 class="text-xl font-bold">
-                Olá, {{ userName }}! 🌟
+                {{currentGreeting}}, {{ userName }}! 🌟
             </h2>
           </div>
         </div>
 
         <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 mb-4">
           <p class="text-white text-sm leading-relaxed mb-2">
-            <span class="font-semibold">�� Hoje a Neoviso é inteiramente sua!</span><br>
+            <!-- <span class="font-semibold">Hoje a Neoviso é inteiramente sua!</span><br> -->
             Sua estrutura dos sonhos te espera para mais um dia de transformações incríveis.
           </p>
           <p class="text-white/90 text-xs">
             💫 Cada atendimento é uma oportunidade de realizar sonhos!
           </p>
+          <div class="flex items-center">
+            <p class="text-white/90 text-xs mr-2">Conheça sua Neoviso, faça um:</p>
+            <button
+                @click="openOnboarding"
+                class="bg-white/20 hover:bg-white/30 text-white px-2 py-1 mt-1 rounded-lg text-xs font-bold transition-all flex items-center space-x-1"
+                title="Ver tour da Neoviso"
+              >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Tour</span>
+            </button>
+          </div>
         </div>
 
         <div class="flex items-center justify-between">
@@ -46,12 +59,15 @@
               <div class="text-2xl font-bold">{{ currentDate.day }}</div>
               <div class="text-xs text-white/80">{{ currentDate.month }}</div>
             </div>
-            <div class="text-left">
-              <div class="text-sm font-semibold">{{ currentGreeting }}</div>
+            <div class="flex text-left mr-2">
               <div class="text-xs text-white/80">Vamos brilhar hoje? ✨</div>
+
+             
             </div>
+            
           </div>
-          <NuxtLink to="/appointments/new" class="bg-white text-purple-600 px-4 py-2 rounded-xl text-sm font-bold hover:bg-purple-50 transition-all transform hover:scale-105">
+          
+          <NuxtLink to="/appointments/new" class="bg-white text-center text-purple-600 px-2 py-2 rounded-xl text-sm font-bold hover:bg-purple-50 transition-all transform hover:scale-105">
             🚀 Montar meu dia!
           </NuxtLink>
         </div>
@@ -67,8 +83,8 @@
           </h2>
           <p class="text-gray-600 text-sm">Estrutura completa para seus dias de trabalho</p>
         </div>
-        <NuxtLink to="/locations" class="text-emerald-600 text-sm font-semibold hover:text-emerald-700">
-          Ver todas ��
+        <NuxtLink to="/locations" class="text-center text-emerald-600 text-md font-semibold hover:text-emerald-700">
+          Ver todas  
         </NuxtLink>
       </div>
 
@@ -99,25 +115,6 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
           </svg>
         </NuxtLink>
-      </div>
-
-      <div class="bg-gradient-to-r from-purple-100 via-pink-100 to-indigo-100 rounded-2xl p-5 border border-purple-200">
-        <div class="flex items-start space-x-4">
-          <div class="bg-gradient-to-r from-purple-500 to-pink-500 rounded-full p-3 flex-shrink-0">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <div>
-            <h4 class="font-bold text-purple-800 mb-2">🎯 Por que a Neoviso é especial?</h4>
-            <ul class="text-purple-700 text-sm space-y-1">
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Consultórios com tecnologia de ponta</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Suporte técnico 24/7 durante atendimentos</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Ambiente acolhedor para seus pacientes</li>
-              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> <span class="font-semibold">Marketing de resultados para alavancar seus negócios! 📈</span></li>
-            </ul>
-          </div>
-        </div>
       </div>
     </section>
     
@@ -311,9 +308,9 @@ const currentGreeting = ref('Olá!')
 // Função para saudação baseada no horário
 const getGreeting = () => {
   const hour = new Date().getHours()
-  if (hour < 12) return 'Bom dia, estrela! ☀️'
-  if (hour < 18) return 'Boa tarde, sucesso! 🌟'
-  return 'Boa noite, campeão! 🌙'
+  if (hour < 12) return 'Bom dia'
+  if (hour < 18) return 'Boa tarde'
+  return 'Boa noite'
 }
 
 // Funções de onboarding
@@ -342,7 +339,7 @@ const initializeClientData = () => {
   if (process.client) {
     // Configurar dados de usuário apenas no cliente
     const appUser = useApp().user
-    userName.value = (appUser.name ? `${appUser.name} incrível` : 'Doutor(a) incrível')
+    userName.value = (appUser.name ? `${appUser.name}` : 'Doutor(a)')
 
     const now = new Date()
     currentDate.value = {
@@ -358,6 +355,10 @@ const initializeClientData = () => {
       checkFirstVisit()
     }, 1000)
   }
+}
+function openOnboarding() {
+  // Emitir evento para abrir onboarding
+  window.dispatchEvent(new CustomEvent('open-onboarding'))
 }
 
 onMounted(async () => {
