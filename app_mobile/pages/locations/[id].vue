@@ -15,7 +15,7 @@
     
     <div v-if="clinic">
       <!-- Cabeçalho principal da clínica -->
-      <div class="relative overflow-hidden bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-600 rounded-2xl p-6 text-white mb-8 shadow-2xl">
+      <div class="relative overflow-hidden bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-600 rounded-2xl gradient-section text-white mb-8 shadow-2xl">
         <!-- Decoração de fundo -->
         <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-white/10 rounded-full"></div>
         <div class="absolute bottom-0 left-0 -mb-8 -ml-8 w-32 h-32 bg-white/5 rounded-full"></div>
@@ -71,7 +71,7 @@
         </a>
       </div>
 
-      <!-- Informa��ões organizadas em cards emocionais -->
+      <!-- Informações organizadas em cards emocionais -->
       <div class="space-y-6">
         <!-- Horário de funcionamento -->
         <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border border-amber-100 shadow-lg">
