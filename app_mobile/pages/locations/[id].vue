@@ -104,7 +104,7 @@
         </div>
 
         <!-- Contatos -->
-        <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 border border-purple-100 shadow-lg">
+        <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl gradient-section border border-purple-100 shadow-lg">
           <div class="flex items-center mb-4">
             <div class="bg-gradient-to-r from-purple-400 to-pink-500 rounded-full p-3 mr-3">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
