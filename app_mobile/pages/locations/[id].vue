@@ -257,40 +257,8 @@ function bookAppointment() {
 </script>
 
 <style scoped>
-/* Responsividade otimizada para iPhone 12 Pro (390x844) */
-@media (max-width: 390px) {
-  .page-container {
-    padding: 1rem;
-  }
-  
-  .grid-cols-2 {
-    gap: 0.75rem;
-  }
-  
-  .text-2xl {
-    font-size: 1.4rem;
-  }
-  
-  .p-6 {
-    padding: 1rem;
-  }
-  
-  .p-4 {
-    padding: 0.875rem;
-  }
-}
-
-/* Animações suaves */
-.transition-all {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
+/* Estilos específicos para esta página */
 .transform:hover {
   transform: translateY(-2px);
-}
-
-/* Gradientes personalizados */
-.bg-gradient-to-br {
-  background: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
 </style>
