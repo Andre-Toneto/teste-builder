@@ -265,7 +265,7 @@
 
     <!-- Procedimentos dos sonhos -->
     <section class="mb-8">
-      <div class="bg-gradient-to-br from-cyan-500 via-blue-500 to-indigo-600 rounded-2xl p-6 text-white shadow-2xl">
+      <div class="bg-gradient-to-br from-cyan-500 via-blue-500 to-indigo-600 rounded-2xl gradient-section text-white shadow-2xl">
         <div class="flex items-center justify-between mb-4">
           <div class="flex items-center">
             <div class="bg-white/20 rounded-full p-3 mr-3">
