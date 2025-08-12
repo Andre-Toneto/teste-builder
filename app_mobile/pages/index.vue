@@ -173,7 +173,7 @@
 
     <!-- Sua próxima missão -->
     <section class="mb-8">
-      <div class="bg-gradient-to-br from-amber-500 via-orange-500 to-red-500 rounded-2xl p-6 text-white shadow-2xl">
+      <div class="bg-gradient-to-br from-amber-500 via-orange-500 to-red-500 rounded-2xl gradient-section text-white shadow-2xl">
         <div class="flex items-center mb-4">
           <div class="bg-white/20 rounded-full p-3 mr-3">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
