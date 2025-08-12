@@ -10,7 +10,7 @@
     />
 
     <!-- Bloco de boas-vindas emocional -->
-    <div class="relative overflow-hidden bg-gradient-to-br from-violet-600 via-purple-600 to-pink-600 rounded-2xl gradient-section shadow-2xl text-white mb-8">
+    <div class="relative overflow-hidden bg-gradient-to-br from-violet-600 via-purple-600 to-pink-600 rounded-2xl p-6 px-4 shadow-2xl text-white mb-8">
       <!-- Decoração de fundo -->
       <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-white/10 rounded-full"></div>
       <div class="absolute bottom-0 left-0 -mb-8 -ml-8 w-32 h-32 bg-white/5 rounded-full"></div>
@@ -120,7 +120,7 @@
     
     <!-- Seção dos Diferenciais Neoviso -->
     <section class="mb-8">
-      <div class="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-2xl gradient-section text-white shadow-2xl">
+      <div class="bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-2xl p-6 text-white shadow-2xl">
         <div class="text-center mb-6">
           <div class="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -171,81 +171,34 @@
       </div>
     </section>
 
-    <!-- Sua próxima missão -->
     <section class="mb-8">
-      <div class="bg-gradient-to-br from-amber-500 via-orange-500 to-red-500 rounded-2xl gradient-section text-white shadow-2xl">
-        <div class="flex items-center mb-4">
-          <div class="bg-white/20 rounded-full p-3 mr-3">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <div class="flex-1">
-            <div class="text-white/80 text-xs font-semibold tracking-wider uppercase mb-1">SUA PRÓXIMA MISSÃO ⚡</div>
-            <h2 class="text-xl font-bold">
-              🎯 Agenda dos seus sonhos
-            </h2>
-          </div>
-          <NuxtLink to="/appointments" class="text-white/90 hover:text-white text-sm font-medium bg-white/10 hover:bg-white/20 px-3 py-1 rounded-lg transition-all">
-            Ver todas
-          </NuxtLink>
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-lg font-semibold text-gray-800">Seus próximos atendimentos</h2>
+        <NuxtLink to="/appointments" class="text-primary-600 text-sm font-medium">Ver agenda completa</NuxtLink>
+      </div>
+
+      <div v-if="lastAppointment">
+        <AppointmentCard
+          :key="lastAppointment.id"
+          :appointment="lastAppointment"
+          class="mb-3"
+        />
+      </div>
+      <div v-else class="card flex flex-col items-center justify-center py-8">
+        <div class="bg-primary-100 rounded-full p-4 mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
         </div>
-
-        <div v-if="lastAppointment" class="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-          <div class="flex items-center justify-between mb-3">
-            <div class="flex items-center">
-              <div class="bg-white/20 rounded-full p-2 mr-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <div>
-                <span class="bg-green-400 text-green-900 text-xs px-2 py-1 rounded-full font-semibold">✨ CONFIRMADO</span>
-              </div>
-            </div>
-            <div class="text-white/90 text-sm font-medium">
-              {{ new Date(lastAppointment.startTime).toLocaleDateString('pt-BR') }}
-            </div>
-          </div>
-
-          <h3 class="font-bold text-white mb-2">💫 Transformação em andamento!</h3>
-          <p class="text-white/90 text-sm mb-3">
-            Seu espaço está reservado e te esperando para mais um dia incrível de realizações.
-          </p>
-
-          <div class="flex items-center justify-between text-sm">
-            <span class="text-white/80">{{ new Date(lastAppointment.startTime).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }) }}</span>
-            <span class="font-medium">🏰 Consultório Premium</span>
-          </div>
-        </div>
-
-        <div v-else class="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-          <div class="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-            </svg>
-          </div>
-          <h3 class="font-bold text-xl mb-3">🚀 Pronto para decolar?</h3>
-          <p class="text-white/90 text-sm mb-4 leading-relaxed">
-            <span class="font-semibold">Sua primeira aventura te espera!</span><br>
-            Reserve seu espaço e comece a construir o império dos seus sonhos.
-          </p>
-          <NuxtLink
-            to="/appointments/new"
-            class="bg-white text-orange-600 px-6 py-3 rounded-xl text-sm font-bold hover:bg-orange-50 transition-all transform hover:scale-105 inline-flex items-center"
-          >
-            🌟 Iniciar minha jornada!
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </NuxtLink>
-        </div>
+        <h3 class="text-lg font-medium text-gray-800 mb-2">Pronto para seu primeiro atendimento?</h3>
+        <p class="text-gray-500 mb-4 text-center">Reserve seu horário e comece a transformar vidas com a estrutura completa da Neoviso</p>
+        <NuxtLink to="/appointments/new" class="btn-primary">Escolher meu horário</NuxtLink>
       </div>
     </section>
     
     <section class="mb-8">
       <div class="flex items-center justify-between mb-4">
-        <h2 class="text-xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">💎 Procedimentos em alta</h2>
+        <h2 class="text-lg font-semibold text-gray-800">Procedimentos em alta</h2>
         <NuxtLink to="/appointments" class="text-primary-600 text-sm font-medium">Ver catálogo completo</NuxtLink>
       </div>
       
@@ -262,70 +215,7 @@
         </div>
       </div>
     </section>
-
-    <!-- Procedimentos dos sonhos -->
-    <section class="mb-8">
-      <div class="bg-gradient-to-br from-cyan-500 via-blue-500 to-indigo-600 rounded-2xl gradient-section text-white shadow-2xl">
-        <div class="flex items-center justify-between mb-4">
-          <div class="flex items-center">
-            <div class="bg-white/20 rounded-full p-3 mr-3">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <div>
-              <div class="text-white/80 text-xs font-semibold tracking-wider uppercase mb-1">TENDÊNCIAS QUENTES 🔥</div>
-              <h2 class="text-xl font-bold">💎 Procedimentos dos sonhos</h2>
-            </div>
-          </div>
-          <NuxtLink to="/appointments" class="text-white/90 hover:text-white text-sm font-medium bg-white/10 hover:bg-white/20 px-3 py-1 rounded-lg transition-all">
-            Ver catálogo
-          </NuxtLink>
-        </div>
-
-        <p class="text-white/90 text-sm mb-6 leading-relaxed">
-          ✨ <span class="font-semibold">Os tratamentos mais desejados</span> estão aqui!<br>
-          Transforme vidas com as técnicas que estão revolucionando a estética.
-        </p>
-
-        <div class="grid grid-cols-1 xs:grid-cols-2 gap-4">
-          <div v-for="treatment in featuredTreatments" :key="treatment.id" class="bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all">
-            <div class="flex items-start">
-              <div class="bg-white/20 rounded-xl w-16 h-16 flex items-center justify-center mr-4 flex-shrink-0">
-                <div class="text-2xl">💫</div>
-              </div>
-              <div class="flex-1">
-                <div class="flex items-center mb-2">
-                  <span class="bg-yellow-400 text-yellow-900 text-xs px-2 py-1 rounded-full font-bold">🔥 POPULAR</span>
-                </div>
-                <h3 class="font-bold text-white mb-1 text-sm leading-tight">{{ treatment.description }}</h3>
-                <p class="text-white/80 text-xs mb-2">{{ treatment.duration || '1-2 horas' }}</p>
-                <div class="flex items-center justify-between">
-                  <span class="text-white font-semibold text-sm">R$ {{ treatment.price }}</span>
-                  <span class="text-white/70 text-xs">🌟 Premium</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-6 text-center">
-          <p class="text-white/90 text-sm font-medium mb-3">
-            🎯 <span class="font-bold">Seja pioneiro:</span> Domine as técnicas que todo mundo quer!
-          </p>
-          <NuxtLink
-            to="/appointments/new"
-            class="bg-white text-blue-600 px-6 py-3 rounded-xl text-sm font-bold hover:bg-blue-50 transition-all transform hover:scale-105 inline-flex items-center"
-          >
-            🚀 Escolher meu procedimento!
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </NuxtLink>
-        </div>
-      </div>
-    </section>
-
+    
     <!-- <section class="mb-8">
       <div class="card bg-primary-50 border border-primary-100">
         <div class="flex items-center">
