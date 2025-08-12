@@ -24,9 +24,16 @@
           </div>
           <div class="flex-1">
             <div class="text-white/80 text-xs font-semibold tracking-wider uppercase mb-1">BEM-VINDO AO SEU REINO ✨</div>
-            <h2 class="text-xl font-bold">
-                {{currentGreeting}}, {{ userName }}! 🌟
-            </h2>
+            <ClientOnly>
+              <h2 class="text-xl font-bold">
+                  {{currentGreeting}}, {{ userName }}! 🌟
+              </h2>
+              <template #fallback>
+                <h2 class="text-xl font-bold">
+                    Olá, Doutor(a)! 🌟
+                </h2>
+              </template>
+            </ClientOnly>
           </div>
         </div>
 
