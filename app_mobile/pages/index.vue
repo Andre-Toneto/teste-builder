@@ -262,7 +262,70 @@
         </div>
       </div>
     </section>
-    
+
+    <!-- Procedimentos dos sonhos -->
+    <section class="mb-8">
+      <div class="bg-gradient-to-br from-cyan-500 via-blue-500 to-indigo-600 rounded-2xl p-6 text-white shadow-2xl">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <div class="bg-white/20 rounded-full p-3 mr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div>
+              <div class="text-white/80 text-xs font-semibold tracking-wider uppercase mb-1">TENDÊNCIAS QUENTES 🔥</div>
+              <h2 class="text-xl font-bold">💎 Procedimentos dos sonhos</h2>
+            </div>
+          </div>
+          <NuxtLink to="/appointments" class="text-white/90 hover:text-white text-sm font-medium bg-white/10 hover:bg-white/20 px-3 py-1 rounded-lg transition-all">
+            Ver catálogo
+          </NuxtLink>
+        </div>
+
+        <p class="text-white/90 text-sm mb-6 leading-relaxed">
+          ✨ <span class="font-semibold">Os tratamentos mais desejados</span> estão aqui!<br>
+          Transforme vidas com as técnicas que estão revolucionando a estética.
+        </p>
+
+        <div class="grid grid-cols-1 xs:grid-cols-2 gap-4">
+          <div v-for="treatment in featuredTreatments" :key="treatment.id" class="bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all">
+            <div class="flex items-start">
+              <div class="bg-white/20 rounded-xl w-16 h-16 flex items-center justify-center mr-4 flex-shrink-0">
+                <div class="text-2xl">💫</div>
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center mb-2">
+                  <span class="bg-yellow-400 text-yellow-900 text-xs px-2 py-1 rounded-full font-bold">🔥 POPULAR</span>
+                </div>
+                <h3 class="font-bold text-white mb-1 text-sm leading-tight">{{ treatment.description }}</h3>
+                <p class="text-white/80 text-xs mb-2">{{ treatment.duration || '1-2 horas' }}</p>
+                <div class="flex items-center justify-between">
+                  <span class="text-white font-semibold text-sm">R$ {{ treatment.price }}</span>
+                  <span class="text-white/70 text-xs">🌟 Premium</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 text-center">
+          <p class="text-white/90 text-sm font-medium mb-3">
+            🎯 <span class="font-bold">Seja pioneiro:</span> Domine as técnicas que todo mundo quer!
+          </p>
+          <NuxtLink
+            to="/appointments/new"
+            class="bg-white text-blue-600 px-6 py-3 rounded-xl text-sm font-bold hover:bg-blue-50 transition-all transform hover:scale-105 inline-flex items-center"
+          >
+            🚀 Escolher meu procedimento!
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+
     <!-- <section class="mb-8">
       <div class="card bg-primary-50 border border-primary-100">
         <div class="flex items-center">
