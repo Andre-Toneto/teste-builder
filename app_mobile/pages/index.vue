@@ -10,7 +10,7 @@
     />
 
     <!-- Bloco de boas-vindas emocional -->
-    <div class="relative overflow-hidden bg-gradient-to-br from-violet-600 via-purple-600 to-pink-600 rounded-2xl p-6 px-4 shadow-2xl text-white mb-8">
+    <div class="relative overflow-hidden bg-gradient-to-br from-violet-600 via-purple-600 to-pink-600 rounded-2xl gradient-section shadow-2xl text-white mb-8">
       <!-- Decoração de fundo -->
       <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-white/10 rounded-full"></div>
       <div class="absolute bottom-0 left-0 -mb-8 -ml-8 w-32 h-32 bg-white/5 rounded-full"></div>
