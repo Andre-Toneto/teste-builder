@@ -134,7 +134,7 @@
     <!-- Step 2: Select Location -->
     <div v-if="isStep('clinic')" class="space-y-6">
       <div class="bg-white content-center rounded-3xl p-4 shadow-xl border border-purple-100">
-        <div class="text-left items-center flex mb-3">
+        <div class="text-left flex mb-8">
           <h2 class="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent  mr-3">
             Onde você vai brilhar?
           </h2>
@@ -146,7 +146,7 @@
           </div>
         
         </div>
-        <p class="text-gray-600 text-center">Escolha a clínica que será sua casa por um dia</p>
+        <p class="text-gray-600">Escolha a clínica que será sua casa por um dia</p>
 
         <div class="space-y-4">
           <div
