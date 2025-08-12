@@ -187,7 +187,7 @@
 
       <!-- Botão de agendamento principal -->
       <div class="mt-8 mb-8">
-        <div class="bg-gradient-to-br from-rose-500 via-pink-500 to-purple-600 rounded-2xl p-6 text-white shadow-2xl">
+        <div class="bg-gradient-to-br from-rose-500 via-pink-500 to-purple-600 rounded-2xl gradient-section text-white shadow-2xl">
           <div class="text-center">
             <div class="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
