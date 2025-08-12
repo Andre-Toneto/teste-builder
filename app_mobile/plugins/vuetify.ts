@@ -6,11 +6,14 @@ import { pt } from 'vuetify/locale'
 
 export default defineNuxtPlugin((app) => {
   const vuetify = createVuetify({
-    // ... your configuration
+    ssr: true,
     locale: {
       locale: 'pt',
       messages: { pt },
     },
+    theme: {
+      defaultTheme: 'light'
+    }
   })
   app.vueApp.use(vuetify)
 })
