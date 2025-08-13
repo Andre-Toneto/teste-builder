@@ -18,24 +18,24 @@
             <span class="font-medium">Voltar</span>
           </button>
 
-          <div class="text-left mt-2">
+          <div class="text-center sm:text-left mt-2">
             <!-- Ícone animado -->
-            <div class="flex">
-              <h1 class="text-xl font-bold mb-3 leading-tight">
-                Monte seu dia dos sonhos! ✨
-              </h1>
-              <div>
-                <div class="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto shadow-lg backdrop-blur-sm animate-pulse">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4">
+              <div class="flex-1">
+                <h1 class="text-lg sm:text-xl font-bold mb-3 leading-tight">
+                  Monte seu dia dos sonhos! ✨
+                </h1>
+              </div>
+              <div class="flex-shrink-0">
+                <div class="bg-white/20 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center shadow-lg backdrop-blur-sm animate-pulse">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                 </div>
               </div>
-  
-              
             </div>
-            <p class="text-white/90 text-md leading-relaxed">
-              Cada passo te aproxima do seu consultório particular<br>
+            <p class="text-white/90 text-sm sm:text-base leading-relaxed text-center sm:text-left">
+              Cada passo te aproxima do seu consultório particular<br class="hidden sm:block">
               <span class="font-medium text-yellow-300">🎯 Vamos criar algo especial juntos!</span>
             </p>
           </div>
@@ -44,10 +44,10 @@
     </div>
 
     <!-- Progresso melhorado -->
-    <div class="mb-2 bg-white rounded-2xl p-4 shadow-lg border border-purple-100">
-      <div class="flex items-center justify-between mb-4">
-        <h3 class="text-lg font-bold text-gray-800">Seu progresso</h3>
-        <span class="text-sm font-semibold text-purple-600 bg-purple-100 px-3 py-1 rounded-full">
+    <div class="mb-4 sm:mb-6 bg-white rounded-2xl p-3 sm:p-4 shadow-lg border border-purple-100">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 space-y-2 sm:space-y-0">
+        <h3 class="text-base sm:text-lg font-bold text-gray-800 text-center sm:text-left">Seu progresso</h3>
+        <span class="text-xs sm:text-sm font-semibold text-purple-600 bg-purple-100 px-2 sm:px-3 py-1 rounded-full text-center">
           {{ currentStep + 1 }} de {{ totalSteps }}
         </span>
       </div>
@@ -59,12 +59,12 @@
         ></div>
       </div>
 
-      <div class="flex justify-between text-xs">
+      <div class="flex justify-between text-xs overflow-x-auto">
         <span
           v-for="(step, index) in dynamicSteps"
           :key="step"
           :class="index <= currentStep ? 'text-purple-600 font-semibold' : 'text-gray-500'"
-          class="transition-all"
+          class="transition-all whitespace-nowrap flex-shrink-0 px-1"
         >
           {{ formatStepLabel(step) }}
         </span>
