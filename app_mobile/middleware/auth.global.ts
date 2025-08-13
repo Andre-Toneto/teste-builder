@@ -1,16 +1,12 @@
 export default defineNuxtRouteMiddleware((to, from) => {
-  const appStore = useApp()
-
-  // No servidor, assume não logado por segurança
+  // Skip SSR for auth middleware to prevent hydration mismatches
   if (process.server) {
-    // Redireciona para login se não for página de auth
-    if (!to.path.startsWith('/auth/')) {
-      return navigateTo('/auth/login')
-    }
+    return
   }
 
-  // No cliente, verifica localStorage
+  // Only run on client to avoid hydration issues
   if (process.client) {
+    const appStore = useApp()
     const isLogged = localStorage.getItem('logged') === 'true'
     appStore.logged = isLogged
 

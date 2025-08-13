@@ -24,9 +24,16 @@
           </div>
           <div class="flex-1">
             <div class="text-white/80 text-xs font-semibold tracking-wider uppercase mb-1">BEM-VINDO AO SEU REINO ✨</div>
-            <h2 class="text-xl font-bold">
-                {{currentGreeting}}, {{ userName }}! 🌟
-            </h2>
+            <ClientOnly>
+              <h2 class="text-xl font-bold">
+                  {{currentGreeting}}, {{ userName }}! 🌟
+              </h2>
+              <template #fallback>
+                <h2 class="text-xl font-bold">
+                    Olá, Doutor(a)! 🌟
+                </h2>
+              </template>
+            </ClientOnly>
           </div>
         </div>
 
@@ -55,10 +62,18 @@
 
         <div class="flex items-center justify-between">
           <div class="flex items-center space-x-4">
-            <div class="text-center">
-              <div class="text-2xl font-bold">{{ currentDate.day }}</div>
-              <div class="text-xs text-white/80">{{ currentDate.month }}</div>
-            </div>
+            <ClientOnly>
+              <div class="text-center">
+                <div class="text-2xl font-bold">{{ currentDate.day }}</div>
+                <div class="text-xs text-white/80">{{ currentDate.month }}</div>
+              </div>
+              <template #fallback>
+                <div class="text-center">
+                  <div class="text-2xl font-bold">--</div>
+                  <div class="text-xs text-white/80">---</div>
+                </div>
+              </template>
+            </ClientOnly>
             <div class="flex text-left mr-2">
               <div class="text-xs text-white/80">Vamos brilhar hoje? ✨</div>
 
