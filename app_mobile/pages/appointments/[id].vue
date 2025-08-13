@@ -122,12 +122,12 @@
           </div>
 
           <button
-            class="w-full bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-700 text-white px-4 py-4 rounded-2xl text-lg font-bold shadow-lg transition-all transform disabled:opacity-50 disabled:cursor-not-allowed enabled:hover:scale-105 enabled:hover:shadow-xl"
+            class="w-full bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-700 text-white px-4 py-3 sm:py-4 rounded-2xl text-base sm:text-lg font-bold shadow-lg transition-all transform disabled:opacity-50 disabled:cursor-not-allowed enabled:hover:scale-105 enabled:hover:shadow-xl"
             :disabled="!selectedService"
             @click="nextStep"
           >
-            <span v-if="selectedService">✨ Continuar com {{ selectedService.description }} ✨</span>
-            <span v-else>Selecione um serviço para continuar</span>
+            <span v-if="selectedService" class="text-sm sm:text-base">✨ Continuar com {{ selectedService.description }} ✨</span>
+            <span v-else class="text-sm sm:text-base">Selecione um serviço para continuar</span>
           </button>
         </div>
     
@@ -398,21 +398,21 @@
     
     <!-- Step 4: Confirm Booking -->
     <div v-if="isStep('confirm')" class="space-y-6">
-      <div class="bg-white rounded-3xl p-8 shadow-xl border border-purple-100">
-        <div class="text-center mb-8">
-          <div class="bg-gradient-to-br from-green-400 via-emerald-500 to-teal-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-lg animate-pulse">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <div class="bg-white rounded-3xl p-4 sm:p-8 shadow-xl border border-purple-100">
+        <div class="text-center mb-6 sm:mb-8">
+          <div class="bg-gradient-to-br from-green-400 via-emerald-500 to-teal-600 rounded-full w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-4 shadow-lg animate-pulse">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <h2 class="text-2xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent mb-3">
+          <h2 class="text-lg sm:text-2xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent mb-2 sm:mb-3">
             Quase pronto! ✨
           </h2>
-          <p class="text-gray-600">Revise os detalhes do seu dia especial</p>
+          <p class="text-sm sm:text-base text-gray-600">Revise os detalhes do seu dia especial</p>
         </div>
 
         <!-- Resumo do agendamento -->
-        <div class="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 rounded-2xl p-6 border-2 border-emerald-200 mb-6">
+        <div class="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 rounded-2xl p-4 sm:p-6 border-2 border-emerald-200 mb-4 sm:mb-6">
           <div class="flex items-center justify-center mb-6">
             <div class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-4 py-2 rounded-full text-sm font-bold">
               🎯 SEU DIA DE SUCESSO
@@ -420,14 +420,14 @@
           </div>
 
           <div class="space-y-4">
-            <div class="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 sm:p-4 bg-white rounded-xl shadow-sm space-y-2 sm:space-y-0">
               <div class="flex items-center space-x-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 text-purple-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
-                <span class="text-gray-700 font-medium">Serviço</span>
+                <span class="text-sm sm:text-base text-gray-700 font-medium">Serviço</span>
               </div>
-              <span class="font-bold text-purple-600">{{ selectedService?.description }}</span>
+              <span class="text-sm sm:text-base font-bold text-purple-600 pl-7 sm:pl-0">{{ selectedService?.description }}</span>
             </div>
 
             <div v-if="userType === 'A' || userType === 'P'" class="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm">
@@ -472,33 +472,33 @@
             </div>
 
             <!-- Total destacado -->
-            <div class="bg-gradient-to-r from-green-500 to-emerald-600 p-4 rounded-xl text-white">
-              <div class="flex items-center justify-between">
+            <div class="bg-gradient-to-r from-green-500 to-emerald-600 p-3 sm:p-4 rounded-xl text-white">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-2 sm:space-y-0">
                 <div class="flex items-center space-x-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                   </svg>
-                  <span class="text-xl font-bold">Total do investimento</span>
+                  <span class="text-lg sm:text-xl font-bold">Total do investimento</span>
                 </div>
-                <span class="text-2xl font-black">R$ {{ selectedService?.price }}</span>
+                <span class="text-xl sm:text-2xl font-black text-center sm:text-right">R$ {{ selectedService?.price }}</span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="flex space-x-4">
+      <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
         <button
-          class="flex-1 bg-white border-2 border-gray-300 text-gray-700 px-6 py-4 rounded-2xl font-semibold transition-all hover:bg-gray-50 hover:border-gray-400"
+          class="w-full sm:flex-1 bg-white border-2 border-gray-300 text-gray-700 px-4 sm:px-6 py-3 sm:py-4 rounded-2xl font-semibold transition-all hover:bg-gray-50 hover:border-gray-400"
           @click="prevStep"
         >
           ← Revisar
         </button>
         <button
-          class="flex-1 bg-gradient-to-r from-green-600 via-emerald-600 to-teal-700 text-white px-6 py-4 rounded-2xl font-bold shadow-lg transition-all transform hover:scale-105 hover:shadow-xl active:scale-95"
+          class="w-full sm:flex-1 bg-gradient-to-r from-green-600 via-emerald-600 to-teal-700 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-2xl font-bold shadow-lg transition-all transform hover:scale-105 hover:shadow-xl active:scale-95"
           @click="confirmBooking"
         >
-          ✨ Confirmar meu dia de sucesso! ✨
+          <span class="text-sm sm:text-base">✨ Confirmar meu dia de sucesso! ✨</span>
         </button>
       </div>
     </div>
