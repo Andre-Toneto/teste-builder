@@ -157,34 +157,36 @@
               'border-gray-200 bg-white hover:border-emerald-300 hover:bg-emerald-50'"
             @click="selectClinic(clinic)"
           >
-            <div class="flex items-start space-x-4">
-              <div
-                class="w-6 h-6 rounded-full border-2 transition-all flex-shrink-0 mt-1"
-                :class="selectedClinic?.id === clinic.id ?
-                  'bg-emerald-500 border-emerald-500' :
-                  'border-gray-300'"
-              >
+            <div class="flex flex-col sm:flex-row sm:items-start space-y-3 sm:space-y-0 sm:space-x-4">
+              <div class="flex items-center space-x-3">
                 <div
-                  v-if="selectedClinic?.id === clinic.id"
-                  class="w-3 h-3 bg-white rounded-full m-0.5"
-                ></div>
+                  class="w-6 h-6 rounded-full border-2 transition-all flex-shrink-0"
+                  :class="selectedClinic?.id === clinic.id ?
+                    'bg-emerald-500 border-emerald-500' :
+                    'border-gray-300'"
+                >
+                  <div
+                    v-if="selectedClinic?.id === clinic.id"
+                    class="w-3 h-3 bg-white rounded-full m-0.5"
+                  ></div>
+                </div>
+                <div class="flex-1">
+                  <h4 class="font-bold text-base sm:text-lg text-gray-800 mb-1">{{ clinic.company_name }}</h4>
+                  <div class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full text-xs font-semibold inline-block">
+                    Premium
+                  </div>
+                </div>
               </div>
-              <div class="flex-1">
-                <h4 class="font-bold text-lg text-gray-800 mb-2">{{ clinic.company_name }}</h4>
-                <div class="flex items-center space-x-2 text-gray-600">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div class="flex-1 mt-2 sm:mt-0">
+                <div class="flex items-start space-x-2 text-gray-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  <p class="text-sm">
+                  <p class="text-sm leading-tight">
                     {{ clinic.street_avenue }}, {{ clinic.number }}, {{ clinic.neighborhood }}<br>
                     {{ clinic.city }}-{{ clinic.state }}
                   </p>
-                </div>
-              </div>
-              <div class="flex-shrink-0">
-                <div class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-semibold">
-                  Premium
                 </div>
               </div>
             </div>
@@ -192,20 +194,20 @@
         </div>
       </div>
 
-      <div class="flex space-x-4">
+      <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
         <button
-          class="flex-1 bg-white border-2 border-gray-300 text-gray-700 px-6 py-4 rounded-2xl font-semibold transition-all hover:bg-gray-50 hover:border-gray-400"
+          class="w-full sm:flex-1 bg-white border-2 border-gray-300 text-gray-700 px-4 sm:px-6 py-3 sm:py-4 rounded-2xl font-semibold transition-all hover:bg-gray-50 hover:border-gray-400"
           @click="prevStep"
         >
           ← Voltar
         </button>
         <button
-          class="flex-1 bg-gradient-to-r from-emerald-600 via-teal-600 to-blue-700 text-white px-6 py-4 rounded-2xl font-bold shadow-lg transition-all transform disabled:opacity-50 disabled:cursor-not-allowed enabled:hover:scale-105 enabled:hover:shadow-xl"
+          class="w-full sm:flex-1 bg-gradient-to-r from-emerald-600 via-teal-600 to-blue-700 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-2xl font-bold shadow-lg transition-all transform disabled:opacity-50 disabled:cursor-not-allowed enabled:hover:scale-105 enabled:hover:shadow-xl"
           :disabled="!selectedClinic"
           @click="nextStep"
         >
-          <span v-if="selectedClinic">Continuar com {{ selectedClinic.company_name }} →</span>
-          <span v-else>Selecione uma clínica →</span>
+          <span v-if="selectedClinic" class="text-sm sm:text-base">Continuar com {{ selectedClinic.company_name }} →</span>
+          <span v-else class="text-sm sm:text-base">Selecione uma clínica →</span>
         </button>
       </div>
     </div>
