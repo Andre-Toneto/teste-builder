@@ -6,78 +6,77 @@
       @click="handleBackdropClick"
     >
       <div 
-        class="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl transform transition-all duration-500 scale-100 relative overflow-hidden"
-        @click.stop
+        class="bg-white rounded-3xl p-3 max-w-md w-full shadow-2xl transform transition-all duration-500 scale-100 relative overflow-hidden"
+        style="max-height: 525px;"
       >
-        <!-- Elementos decorativos animados -->
-        <div class="absolute -top-10 -left-10 w-20 h-20 bg-gradient-to-br from-yellow-300 to-orange-400 rounded-full opacity-30 animate-bounce" style="animation-delay: 0ms;"></div>
-        <div class="absolute -top-6 -right-8 w-16 h-16 bg-gradient-to-br from-pink-300 to-purple-400 rounded-full opacity-40 animate-bounce" style="animation-delay: 200ms;"></div>
-        <div class="absolute -bottom-8 -left-6 w-14 h-14 bg-gradient-to-br from-blue-300 to-indigo-400 rounded-full opacity-35 animate-bounce" style="animation-delay: 400ms;"></div>
-        <div class="absolute -bottom-4 -right-12 w-18 h-18 bg-gradient-to-br from-emerald-300 to-teal-400 rounded-full opacity-30 animate-bounce" style="animation-delay: 600ms;"></div>
+        <!-- Elementos decorativos animados (reduzidos) -->
+        <div class="absolute -top-6 -left-6 w-14 h-14 bg-gradient-to-br from-yellow-300 to-orange-400 rounded-full opacity-30 animate-bounce"></div>
+        <div class="absolute -top-4 -right-6 w-12 h-12 bg-gradient-to-br from-pink-300 to-purple-400 rounded-full opacity-40 animate-bounce"></div>
+        <div class="absolute -bottom-6 -left-4 w-10 h-10 bg-gradient-to-br from-blue-300 to-indigo-400 rounded-full opacity-35 animate-bounce"></div>
+        <div class="absolute -bottom-3 -right-8 w-12 h-12 bg-gradient-to-br from-emerald-300 to-teal-400 rounded-full opacity-30 animate-bounce"></div>
 
         <div class="text-center relative z-10">
-          <!-- Ícone principal com animação especial -->
-          <div class="relative mx-auto mb-6">
-            <div class="bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-600 rounded-full w-24 h-24 flex items-center justify-center mx-auto shadow-xl animate-pulse">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <!-- Ícone principal menor -->
+          <div class="relative mx-auto mb-4">
+            <div class="bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-600 rounded-full w-12 h-12 flex items-center justify-center mx-auto shadow-xl animate-pulse">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <!-- Estrelas decorativas -->
-            <div class="absolute -top-2 -right-2 text-yellow-400 animate-ping">✨</div>
-            <div class="absolute -bottom-1 -left-2 text-yellow-300 animate-pulse">⭐</div>
-            <div class="absolute top-1 -right-4 text-yellow-500 animate-bounce" style="animation-delay: 300ms;">🌟</div>
+            <div class="absolute -top-1 -right-1 text-yellow-400 animate-ping text-sm">✨</div>
+            <div class="absolute bottom-0 -left-1 text-yellow-300 animate-pulse text-sm">⭐</div>
+            <div class="absolute top-0 -right-3 text-yellow-500 animate-bounce text-sm">🌟</div>
           </div>
 
-          <!-- Título principal emocional -->
-          <h3 class="text-2xl font-bold text-gray-800 mb-4 leading-tight">
+          <!-- Título menor -->
+          <h3 class="text-base font-bold text-gray-800 mb-3 leading-tight">
             🎉 <span class="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">Pronto!</span>
           </h3>
           
-          <!-- Mensagem principal personalizada -->
-          <div class="mb-6 space-y-3">
-            <p class="text-gray-700 text-lg leading-relaxed font-medium">
+          <!-- Mensagem principal -->
+          <div class="mb-2 space-y-2">
+            <p class="text-gray-700 text-[13px] leading-snug font-medium">
               Sua clínica para o dia <span class="font-bold text-emerald-600">{{ formattedDate }}</span>, 
               às <span class="font-bold text-emerald-600">{{ appointmentTime }}</span> já está confirmada!
             </p>
             
-            <div class="bg-gradient-to-r from-emerald-50 via-teal-50 to-cyan-50 rounded-2xl p-5 mt-4 border-2 border-emerald-200">
-              <p class="text-emerald-800 text-base leading-relaxed">
-                <span class="font-bold">✨ Será um imenso prazer tê-lo(a) conosco!</span><br>
+            <div class="bg-gradient-to-r from-emerald-50 via-teal-50 to-cyan-50 rounded-xl p-3 mt-2 border border-emerald-200">
+              <p class="text-emerald-800 text-[11px] leading-snug">
+                <span class="font-bold">✨ Será um prazer tê-lo(a) conosco!</span><br>
                 Durante esse período, você será o verdadeiro dono da clínica. 
-                Nossa equipe estará 100% dedicada ao seu sucesso, 
-                <span class="font-semibold">transformando sonhos em realidade! 🌟</span>
+                      Nossa equipe estará 100% dedicada ao seu sucesso,
+                <span class="font-semibold text-[11px]">transformando sonhos em realidade! 🌟</span>
+
               </p>
             </div>
           </div>
 
-          <!-- Mensagem motivacional extra -->
-          <div class="mb-6 p-4 bg-gradient-to-r from-violet-100 via-purple-100 to-pink-100 rounded-2xl border border-purple-200">
-            <p class="text-purple-800 text-sm font-medium italic">
-              <span v-if="!mounted">Cada paciente que você atender será tocado pela sua dedicação! 💖</span>
-              <span v-else>{{ motivationalMessage }}</span>
+          <!-- Mensagem motivacional -->
+          <div class="mb-2 p-3 bg-gradient-to-r from-violet-100 via-purple-100 to-pink-100 rounded-xl border border-purple-200">
+            <p class="text-purple-800 text-[11px] font-medium italic">
+              {{ motivationalMessage }}
             </p>
           </div>
 
-          <!-- Detalhes do agendamento destacados -->
-          <div class="bg-white border-2 border-emerald-200 rounded-2xl p-4 mb-6 shadow-inner">
-            <div class="grid grid-cols-2 gap-4 text-sm">
+          <!-- Detalhes -->
+          <div class="bg-white border border-emerald-200 rounded-xl p-2 mb-4 shadow-inner">
+            <div class="grid grid-cols-2 gap-2 text-[11px]">
               <div class="text-center">
-                <div class="text-emerald-600 font-bold text-lg">{{ appointmentTime }}</div>
+                <div class="text-emerald-600 font-bold text-base">{{ appointmentTime }}</div>
                 <div class="text-gray-600">Horário</div>
               </div>
               <div class="text-center">
-                <div class="text-emerald-600 font-bold text-lg">{{ duration }}h</div>
+                <div class="text-emerald-600 font-bold text-base">{{ duration }}h</div>
                 <div class="text-gray-600">Duração</div>
               </div>
             </div>
           </div>
 
-          <!-- Botões de ação -->
-          <div class="space-y-3">
+          <!-- Botões -->
+          <div class="space-y-2">
             <button 
               @click="closeModal"
-              class="w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 active:scale-95"
+              class="w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600 text-white px-6 py-3 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 active:scale-95"
             >
               🚀 Que alegria! Estou pronto(a)! 🚀
             </button>
@@ -85,20 +84,21 @@
             <button 
               v-if="showSecondaryAction"
               @click="$emit('secondary-action')"
-              class="w-full bg-white border-2 border-emerald-200 text-emerald-700 px-6 py-3 rounded-2xl font-semibold text-base hover:bg-emerald-50 transition-all duration-200"
+              class="w-full bg-white border border-emerald-200 text-emerald-700 px-4 py-2 rounded-xl font-semibold text-xs hover:bg-emerald-50 transition-all duration-200"
             >
               📋 Ver minha agenda completa
             </button>
           </div>
 
-          <!-- Mensagem final de rodapé -->
-          <div class="mt-6 text-center">
-            <p class="text-xs text-gray-500 italic">
+          <!-- Rodapé -->
+          <div class="mb-1 text-center">
+            <p class="text-[10px] text-gray-500 italic">
               🎯 Neoviso: Onde profissionais se tornam lendas!
             </p>
           </div>
         </div>
       </div>
+
     </div>
   </Teleport>
 </template>

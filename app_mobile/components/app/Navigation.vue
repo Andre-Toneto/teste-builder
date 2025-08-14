@@ -2,7 +2,7 @@
   <nav class="fixed inset-x-0 bottom-0 bg-white shadow-2xl border-t-4 border-gradient-to-r from-purple-400 to-pink-400 z-10">
     <div class="bg-gradient-to-r from-purple-50 via-pink-50 to-indigo-50 px-1 sm:px-2 py-1 sm:py-2">
       <div class="grid grid-cols-4 h-18 sm:h-20">
-        <NuxtLink to="/" class="nav-item-gradient" :class="{ 'nav-active': route.path === '/' }">
+        <NuxtLink v-if="route" to="/" class="nav-item-gradient" :class="{ 'nav-active': route.path === '/' }">
           <div class="flex flex-col items-center justify-center h-full p-1">
             <div class="nav-icon-wrapper mb-1">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -18,7 +18,7 @@
           </div>
         </NuxtLink>
 
-        <NuxtLink to="/appointments" class="nav-item-gradient" :class="{ 'nav-active': route.path.includes('/appointments') }">
+        <NuxtLink v-if="route" to="/appointments" class="nav-item-gradient" :class="{ 'nav-active': route.path.includes('/appointments') }">
           <div class="flex flex-col items-center justify-center h-full p-1">
             <div class="nav-icon-wrapper mb-1">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -34,7 +34,7 @@
           </div>
         </NuxtLink>
 
-        <NuxtLink to="/appointments/new" class="nav-item-gradient nav-cta" :class="{ 'nav-active': route.path.includes('/appointments/new') }">
+        <NuxtLink v-if="route" to="/appointments/new" class="nav-item-gradient nav-cta" :class="{ 'nav-active': route.path.includes('/appointments/new') }">
           <div class="flex flex-col items-center justify-center h-full p-1">
             <div class="bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full p-2 sm:p-3 mb-1 shadow-lg transform hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -50,7 +50,7 @@
           </div>
         </NuxtLink>
 
-        <NuxtLink to="/locations" class="nav-item-gradient" :class="{ 'nav-active': route.path.includes('/locations') }">
+        <NuxtLink v-if="route" to="/locations" class="nav-item-gradient" :class="{ 'nav-active': route.path.includes('/locations') }">
           <div class="flex flex-col items-center justify-center h-full p-1">
             <div class="nav-icon-wrapper mb-1">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-7 sm:w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">

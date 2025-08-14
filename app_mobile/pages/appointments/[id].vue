@@ -20,14 +20,14 @@
 
           <div class="text-center sm:text-left mt-2">
             <!-- Ícone animado -->
-            <div class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4">
+            <div class="flex items-center ">
               <div class="flex-1">
-                <h1 class="text-lg sm:text-xl font-bold mb-3 leading-tight">
+                <h1 class="text-lg sm:text-xl font-bold leading-tight">
                   Monte seu dia dos sonhos! ✨
                 </h1>
               </div>
-              <div class="flex-shrink-0">
-                <div class="bg-white/20 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center shadow-lg backdrop-blur-sm animate-pulse">
+              <div class="">
+                <div class="bg-white/20 rounded-full w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center shadow-lg backdrop-blur-sm animate-pulse mb-3">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
@@ -45,12 +45,12 @@
 
     <!-- Progresso melhorado -->
     <div class="mb-4 sm:mb-6 bg-white rounded-2xl p-3 sm:p-4 shadow-lg border border-purple-100">
-      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 space-y-2 sm:space-y-0">
+      <!-- <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 space-y-2 sm:space-y-0">
         <h3 class="text-base sm:text-lg font-bold text-gray-800 text-center sm:text-left">Seu progresso</h3>
         <span class="text-xs sm:text-sm font-semibold text-purple-600 bg-purple-100 px-2 sm:px-3 py-1 rounded-full text-center">
           {{ currentStep + 1 }} de {{ totalSteps }}
         </span>
-      </div>
+      </div> -->
 
       <div class="relative w-full h-3 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full overflow-hidden mb-4">
         <div
@@ -72,8 +72,8 @@
     </div>
         <div v-if="isStep('service')" class="space-y-6">
           <div class="bg-white rounded-3xl p-4 sm:p-6 shadow-xl border border-purple-100">
-          <div class="text-center mb-6">
-            <div class="bg-gradient-to-br from-blue-400 via-indigo-500 to-purple-600 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 shadow-lg">
+          <div class="flex items-center text-center mb-3">
+            <div class="bg-gradient-to-br from-blue-400 via-indigo-500 to-purple-600 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-1 shadow-lg">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
@@ -134,9 +134,9 @@
     <!-- Step 2: Select Location -->
     <div v-if="isStep('clinic')" class="space-y-6">
       <div class="bg-white content-center rounded-3xl p-4 sm:p-6 shadow-xl border border-purple-100">
-        <div class="text-center mb-6">
-          <div class="bg-gradient-to-br from-emerald-400 via-teal-500 to-blue-600 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="text-center flex items-center mb-3">
+          <div class="bg-gradient-to-br from-emerald-400 via-teal-500 to-blue-600 rounded-full w-14 h-14 flex items-center justify-center mr-4 mb-1 shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
@@ -145,13 +145,13 @@
             Onde você vai brilhar?
           </h2>
         </div>
-        <p class="text-gray-600">Escolha a clínica que será sua casa por um dia</p>
+        <p class="text-gray-600 text-center mb-3">Escolha a clínica que será sua casa por um dia</p>
 
         <div class="space-y-4">
           <div
             v-for="clinic in clinics"
             :key="clinic.id"
-            class="p-6 rounded-2xl border-2 cursor-pointer transition-all transform hover:scale-105 hover:shadow-lg"
+            class="p-2 rounded-2xl border-2 cursor-pointer transition-all transform hover:scale-105 hover:shadow-lg"
             :class="selectedClinic?.id === clinic.id ?
               'border-emerald-500 bg-gradient-to-r from-emerald-50 to-teal-50 shadow-lg' :
               'border-gray-200 bg-white hover:border-emerald-300 hover:bg-emerald-50'"
@@ -183,7 +183,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  <p class="text-sm leading-tight">
+                  <p class="text-xs leading-tight">
                     {{ clinic.street_avenue }}, {{ clinic.number }}, {{ clinic.neighborhood }}<br>
                     {{ clinic.city }}-{{ clinic.state }}
                   </p>
@@ -214,23 +214,23 @@
 
     <div v-if="isStep('professional')" class="space-y-6">
       <div class="bg-white rounded-3xl p-4 sm:p-8 shadow-xl border border-purple-100">
-        <div class="text-center mb-6 sm:mb-8">
-          <div class="bg-gradient-to-br from-orange-400 via-red-500 to-pink-600 rounded-full w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
+        <div class="text-center flex items-center mb-3 sm:mb-8">
+          <div class="bg-gradient-to-br from-orange-400 via-red-500 to-pink-600 rounded-full w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-1 shadow-lg">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
           </div>
-          <h2 class="text-lg sm:text-2xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent mb-2 sm:mb-3">
+          <h2 class="text-lg sm:text-lg font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent mb-2 sm:mb-3">
             Qual profissional atenderá?
           </h2>
-          <p class="text-sm sm:text-base text-gray-600">Escolha quem fará a diferença na vida dos pacientes</p>
         </div>
+        <p class="text-sm text-center sm:text-base text-gray-600 mb-3">Escolha quem fará a diferença na vida dos pacientes</p>
 
         <div class="space-y-4">
           <div
             v-for="prof in doctors"
             :key="prof.id"
-            class="p-6 rounded-2xl border-2 cursor-pointer transition-all transform hover:scale-105 hover:shadow-lg"
+            class="p-2 rounded-2xl border-2 cursor-pointer transition-all transform hover:scale-105 hover:shadow-lg"
             :class="selectedProfessional?.id === prof.id ?
               'border-orange-500 bg-gradient-to-r from-orange-50 to-pink-50 shadow-lg' :
               'border-gray-200 bg-white hover:border-orange-300 hover:bg-orange-50'"
@@ -266,11 +266,11 @@
               </div>
 
               <div class="flex-1 mt-2 sm:mt-0">
-                <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-2 ml-5">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-orange-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                   </svg>
-                  <p class="text-sm text-gray-600">{{ prof.medical_specialty }}</p>
+                  <p class="text-xs text-gray-600">{{ prof.medical_specialty }}</p>
                 </div>
               </div>
             </div>
@@ -300,22 +300,22 @@
     <!-- Step 3: Select Date & Time -->
     <div v-if="isStep('datetime')" class="space-y-6">
       <div class="bg-white rounded-3xl p-4 sm:p-8 shadow-xl border border-purple-100">
-        <div class="text-center mb-6 sm:mb-8">
-          <div class="bg-gradient-to-br from-indigo-400 via-blue-500 to-cyan-600 rounded-full w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-4 shadow-lg">
+        <div class="text-center flex items-center mb-3">
+          <div class="bg-gradient-to-br from-indigo-400 via-blue-500 to-cyan-600 rounded-full w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-1 shadow-lg">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <h2 class="text-lg sm:text-2xl font-bold bg-gradient-to-r from-indigo-600 to-cyan-600 bg-clip-text text-transparent mb-2 sm:mb-3">
+          <h2 class="text-lg sm:text-2xl font-bold bg-gradient-to-r from-indigo-600 to-cyan-600 bg-clip-text text-transparent mb-2 ml-3 sm:mb-3">
             Quando será o grande dia?
           </h2>
-          <p class="text-sm sm:text-base text-gray-600">Escolha o momento perfeito para transformar vidas</p>
         </div>
+        <p class="text-sm sm:text-base text-center text-gray-600 mb-3">Escolha o momento perfeito para transformar vidas</p>
 
         <!-- Calendário -->
         <div class="mb-8">
-          <div class="bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl p-6">
-            <h3 class="text-lg font-semibold text-gray-800 mb-4 text-center">📅 Selecione o dia</h3>
+          <div class="bg-gradient-to-r from-indigo-50 to-cyan-50 rounded-2xl">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4 text-center pt-2">📅 Selecione o dia</h3>
             <div class="flex justify-center">
               <ClientOnly>
                 <v-date-picker
@@ -399,17 +399,17 @@
     <!-- Step 4: Confirm Booking -->
     <div v-if="isStep('confirm')" class="space-y-6">
       <div class="bg-white rounded-3xl p-4 sm:p-8 shadow-xl border border-purple-100">
-        <div class="text-center mb-6 sm:mb-8">
-          <div class="bg-gradient-to-br from-green-400 via-emerald-500 to-teal-600 rounded-full w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-4 shadow-lg animate-pulse">
+        <div class="text-center flex items-center mb-3 sm:mb-8">
+          <div class="bg-gradient-to-br from-green-400 via-emerald-500 to-teal-600 rounded-full w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mr-3 mb-1 shadow-lg animate-pulse">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <h2 class="text-lg sm:text-2xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent mb-2 sm:mb-3">
+          <h2 class="text-lg  font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent mb-2 sm:mb-3">
             Quase pronto! ✨
           </h2>
-          <p class="text-sm sm:text-base text-gray-600">Revise os detalhes do seu dia especial</p>
         </div>
+        <p class="text-sm text-center mb-3 sm:text-base text-gray-600">Revise os detalhes do seu dia especial</p>
 
         <!-- Resumo do agendamento -->
         <div class="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 rounded-2xl p-4 sm:p-6 border-2 border-emerald-200 mb-4 sm:mb-6">
@@ -419,15 +419,15 @@
             </div>
           </div>
 
-          <div class="space-y-4">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 sm:p-4 bg-white rounded-xl shadow-sm space-y-2 sm:space-y-0">
+          <div class="space-y-4 ">
+            <div class="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm">
               <div class="flex items-center space-x-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 text-purple-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
-                <span class="text-sm sm:text-base text-gray-700 font-medium">Serviço</span>
+                <span class="text-xs text-gray-700 font-medium">Serviço</span>
               </div>
-              <span class="text-sm sm:text-base font-bold text-purple-600 pl-7 sm:pl-0">{{ selectedService?.description }}</span>
+              <span class="text-xs font-bold text-purple-600 text-right">{{ selectedService?.description }}</span>
             </div>
 
             <div v-if="userType === 'A' || userType === 'P'" class="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm">
@@ -436,9 +436,9 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span class="text-gray-700 font-medium">Local</span>
+                <span class="text-gray-700 text-xs font-medium">Local</span>
               </div>
-              <span class="font-bold text-emerald-600">{{ selectedClinic?.company_name }}</span>
+              <span class="font-bold text-xs text-right text-emerald-600">{{ selectedClinic?.company_name }}</span>
             </div>
 
             <div v-if="userType === 'A' || userType === 'C'" class="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm">
@@ -446,9 +446,9 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
-                <span class="text-gray-700 font-medium">Profissional</span>
+                <span class="text-gray-700 text-xs font-medium">Profissional</span>
               </div>
-              <span class="font-bold text-orange-600">{{ selectedProfessional?.name }}</span>
+              <span class="font-bold text-xs text-right text-orange-600">{{ selectedProfessional?.name }}</span>
             </div>
 
             <div class="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm">
@@ -456,9 +456,9 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-                <span class="text-gray-700 font-medium">Data</span>
+                <span class="text-gray-700 text-xs font-medium">Data</span>
               </div>
-              <span class="font-bold text-blue-600">{{ formattedDate }}</span>
+              <span class="font-bold text-xs text-right text-blue-600">{{ formattedDate }}</span>
             </div>
 
             <div class="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm">
@@ -466,21 +466,21 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span class="text-gray-700 font-medium">Horário</span>
+                <span class="text-gray-700 text-xs font-medium">Horário</span>
               </div>
-              <span class="font-bold text-indigo-600">{{ selectedTime }} ({{ selectedDuration }}h)</span>
+              <span class="font-bold text-xs text-right text-indigo-600">{{ selectedTime }} ({{ selectedDuration }}h)</span>
             </div>
 
             <!-- Total destacado -->
-            <div class="bg-gradient-to-r from-green-500 to-emerald-600 p-3 sm:p-4 rounded-xl text-white">
-              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-2 sm:space-y-0">
+            <div class="bg-gradient-to-r from-green-500 to-emerald-600 p-3  rounded-xl text-white">
+              <div class="flex items-center justify-between space-y-2 ">
                 <div class="flex items-center space-x-3">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                   </svg>
-                  <span class="text-lg sm:text-xl font-bold">Total do investimento</span>
+                  <span class="text-xs  font-bold">Investimento</span>
                 </div>
-                <span class="text-xl sm:text-2xl font-black text-center sm:text-right">R$ {{ selectedService?.price }}</span>
+                <span class="text-sm  font-black text-center sm:text-right">R$ {{ selectedService?.price }}</span>
               </div>
             </div>
           </div>
@@ -503,7 +503,7 @@
       </div>
     </div>
 
-    <!-- Modal de sucesso para agendamento -->
+    <!-- Modal de sucesso para agendamento showSuccessModal-->
     <ClientOnly>
       <AppointmentSuccessModal
         :show="showSuccessModal"
