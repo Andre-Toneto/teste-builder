@@ -73,7 +73,7 @@
         <div v-if="isStep('service')" class="space-y-6">
           <div class="bg-white rounded-3xl p-4 sm:p-6 shadow-xl border border-purple-100">
           <div class="flex items-center text-center mb-3">
-            <div class="bg-gradient-to-br from-blue-400 via-indigo-500 to-purple-600 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-1 shadow-lg">
+            <div class="bg-gradient-to-br from-blue-400 via-indigo-500 to-purple-600 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-1 mr-3 shadow-lg">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
@@ -215,7 +215,7 @@
     <div v-if="isStep('professional')" class="space-y-6">
       <div class="bg-white rounded-3xl p-4 sm:p-8 shadow-xl border border-purple-100">
         <div class="text-center flex items-center mb-3 sm:mb-8">
-          <div class="bg-gradient-to-br from-orange-400 via-red-500 to-pink-600 rounded-full w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-1 shadow-lg">
+          <div class="bg-gradient-to-br from-orange-400 via-red-500 to-pink-600 rounded-full w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mx-auto mb-1 mr-3 shadow-lg">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-8 sm:w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
@@ -259,20 +259,21 @@
 
                 <div class="flex-1">
                   <h4 class="font-bold text-base sm:text-lg text-gray-800">{{ prof.name }}</h4>
-                  <div class="bg-orange-100 text-orange-700 px-2 py-1 rounded-full text-xs font-semibold inline-block mt-1">
+                  <!-- <div class="bg-orange-100 text-orange-700 px-2 py-1 rounded-full text-xs font-semibold inline-block mt-1">
                     Especialista
+                  </div> -->
+                  <div class="flex-1 mt-2 sm:mt-0">
+                    <div class="flex items-center space-x-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-orange-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                      </svg>
+                      <p class="text-xs text-gray-600">{{ prof.medical_specialty }}</p>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div class="flex-1 mt-2 sm:mt-0">
-                <div class="flex items-center space-x-2 ml-5">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-orange-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                  </svg>
-                  <p class="text-xs text-gray-600">{{ prof.medical_specialty }}</p>
-                </div>
-              </div>
+            
             </div>
           </div>
         </div>
@@ -472,15 +473,15 @@
             </div>
 
             <!-- Total destacado -->
-            <div class="bg-gradient-to-r from-green-500 to-emerald-600 p-3  rounded-xl text-white">
+            <div class="bg-gradient-to-r from-green-500 to-emerald-600 p-1  rounded-xl text-white">
               <div class="flex items-center justify-between space-y-2 ">
-                <div class="flex items-center space-x-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                   </svg>
                   <span class="text-xs  font-bold">Investimento</span>
                 </div>
-                <span class="text-sm  font-black text-center sm:text-right">R$ {{ selectedService?.price }}</span>
+                <span class="text-sm mt-0 mr-3 font-black text-center sm:text-right">R$ {{ selectedService?.price }}</span>
               </div>
             </div>
           </div>

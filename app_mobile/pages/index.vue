@@ -188,7 +188,7 @@
 
     <section class="mb-8">
       <div class="flex items-center justify-between mb-4">
-        <h2 class="text-lg font-semibold text-gray-800">Seus próximos atendimentos</h2>
+        <h2 class="text-lg font-semibold text-gray-800">Sua próxima missão</h2>
         <NuxtLink to="/appointments" class="text-primary-600 text-sm font-medium">Ver agenda completa</NuxtLink>
       </div>
 
